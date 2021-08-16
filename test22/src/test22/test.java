@@ -1,4 +1,4 @@
-package project2jo;
+package test22;
 
 public class test {
 
