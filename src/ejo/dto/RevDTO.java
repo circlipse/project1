@@ -8,7 +8,7 @@ public class RevDTO {
 	private String rev_title;
 	private String rev_content;
 	private int rev_readno;
-	
+	 
 	
 	public RevDTO(int rev_no, int rsv_no, int user_no, String rev_title, String rev_content, int rev_readno) {
 		super();
