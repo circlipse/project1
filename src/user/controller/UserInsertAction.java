@@ -15,7 +15,7 @@ public class UserInsertAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String user_id = request.getParameter("user_id");
-		//String user_pwd 
+		//String user_pwd   
 		
 		return null;
 	}
