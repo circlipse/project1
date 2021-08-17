@@ -11,6 +11,10 @@
 <h2>예약</h2>
 <ul>
 	<li>
+		<label for="user_no">회원번호</label>
+		<input type="text" name="user_no" id="user_no">
+	</li>
+	<li>
 		<label for="rsv_date">예약일</label>
 		<input type="date" name="rsv_date" id="rsv_date" required>
 	</li>
@@ -19,20 +23,12 @@
 	</li>
 	<li>
 		<label for="addr_depart">출발</label>
-		<select name="addr_depart" id="addr_depart">
-			<option value="airport">공항</option>
-			<option value="accommodation">숙소</option>
-		</select>
-		<input type="text" name="addr_depart_detail" id="addr_depart_detail"
+		<input type="text" name="addr_depart" id="addr_depart"
 			placeholder="짐 맡기는 위치">
 	</li>
 	<li>
 		<label for="addr_arrive">도착</label>
-		<select name="addr_depart" id="addr_depart">
-			<option value="airport">공항</option>
-			<option value="accommodation">숙소</option>
-		</select>
-		<input type="text" name="addr_arrive_detail" id="addr_arrive_detail"
+		<input type="text" name="addr_arrive" id="addr_arrive"
 			placeholder="짐 찾아가는 위치">
 	</li>
 </ul>

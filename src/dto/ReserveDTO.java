@@ -9,7 +9,8 @@ public class ReserveDTO {
 	private String addr_depart;
 	private String addr_arrive;
 	private int bag_no;
-	private int bag_val;
+	private int bag_val_1;
+	private int bag_val_2;
 	private int bag;
 	private long price;
 	public int getRsv_no() {
@@ -60,11 +61,17 @@ public class ReserveDTO {
 	public void setBag_no(int bag_no) {
 		this.bag_no = bag_no;
 	}
-	public int getBag_val() {
-		return bag_val;
+	public int getBag_val_1() {
+		return bag_val_1;
 	}
-	public void setBag_val(int bag_val) {
-		this.bag_val = bag_val;
+	public void setBag_val_1(int bag_val_1) {
+		this.bag_val_1 = bag_val_1;
+	}
+	public int getBag_val_2() {
+		return bag_val_2;
+	}
+	public void setBag_val_2(int bag_val_2) {
+		this.bag_val_2 = bag_val_2;
 	}
 	public int getBag() {
 		return bag;
@@ -77,5 +84,6 @@ public class ReserveDTO {
 	}
 	public void setPrice(long price) {
 		this.price = price;
-	} 
+	}
+
 }
