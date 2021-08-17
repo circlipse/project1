@@ -46,7 +46,8 @@ public class ReserveInsertResultAction implements Action {
          dto.setBag_val_2(bag_val_2);
          dto.setRsv_content(rsv_content);
          
-         service.insertRsv(dto);
+         int rsv_no = service.insertRsv(dto);
+         request.setAttribute("rsv_no", rsv_no);
          
          Forward forward=new Forward();
          forward.setForward(false);
