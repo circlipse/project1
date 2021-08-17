@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import comm.Forward;
 import dto.ReserveDTO;
 import service.ReserveService;
-
+ 
 public class ReserveInsertResultAction implements Action {
 
 	@Override

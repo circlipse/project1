@@ -12,7 +12,7 @@ import dto.ReviewDTO;
 import service.ReviewService;
 
 public class ReviewInsertResultAction implements Action {
-
+ 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

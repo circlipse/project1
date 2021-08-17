@@ -10,7 +10,7 @@ import controller.Action;
 import comm.Forward;
 
 public class ReviewInsertAction implements Action {
-
+ 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
