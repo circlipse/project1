@@ -17,8 +17,7 @@ public class ReserveDAO {
 	public void modifyReserve(Connection conn, ReserveDTO dto){
 		StringBuilder sql = new StringBuilder();
 		sql.append(" update reserve_2jo         ");
-		sql.append(" set    sub_date = ?        ");
-		sql.append("        , rsv_date = ?      ");
+		sql.append(" set      rsv_date = ?      ");
 		sql.append("        , rsv_content = ?   ");
 		sql.append("        , addr_depart = ?   ");
 		sql.append("        , addr_arrive = ?   ");
@@ -28,20 +27,26 @@ public class ReserveDAO {
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 								
 			){
-			pstmt.setString(1, dto.getSub_date()); 
-			pstmt.setString(2, dto.getRsv_date());
-			pstmt.setString(3, dto.getRsv_content());
-			pstmt.setString(4, dto.getAddr_depart());
-			pstmt.setString(5, dto.getAddr_arrive());
-			pstmt.setInt(6, dto.getRsv_no());
+			//pstmt.setString(1, dto.getSub_date()); 
+			pstmt.setString(1, dto.getRsv_date());
+			pstmt.setString(2, dto.getRsv_content());
+			pstmt.setString(3, dto.getAddr_depart());
+			pstmt.setString(4, dto.getAddr_arrive());
+			pstmt.setInt(5, dto.getRsv_no());
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			System.out.println(e);
 		}
 	}
 	public int addRsv(Connection conn, ReserveDTO dto) {
-		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
+		/*
+		 * System.out.println(dto.getSub_date()); System.out.println(dto.getUser_no());
+		 * System.out.println(dto.getRsv_content());
+		 * System.out.println(dto.getRsv_date());
+		 * System.out.println(dto.getAddr_arrive());
+		 * System.out.println(dto.getAddr_depart());
+		 */
 		sql.append(" insert into reserve_2jo (                     ");
 		sql.append("                            sub_date           ");
 		sql.append("                           , user_no           ");
@@ -53,7 +58,7 @@ public class ReserveDAO {
 		
 		int key = 0;
 		ResultSet rs = null;
-		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());				
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString(), PreparedStatement.RETURN_GENERATED_KEYS);				
 			){
 			pstmt.setString(1, dto.getSub_date());
 			pstmt.setInt(2, dto.getUser_no());
@@ -63,9 +68,10 @@ public class ReserveDAO {
 			pstmt.setString(6, dto.getAddr_arrive());
 			pstmt.executeUpdate();
 			rs = pstmt.getGeneratedKeys();
-			
+
 			if(rs.next()) {
 				key = rs.getInt(1);
+				//System.out.println(key);
 			}
 			
 		}catch(SQLException e) {
@@ -75,6 +81,7 @@ public class ReserveDAO {
 		}
 		return key;
 	}
+	
 	public void detailRsv(Connection conn, int rsv_no) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select r1.rsv_no                              ");
