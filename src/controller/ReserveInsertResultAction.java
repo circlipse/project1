@@ -16,6 +16,7 @@ public class ReserveInsertResultAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		int user_no=Integer.parseInt(request.getParameter("user_no"));
 		 String rsv_date=request.getParameter("rsv_date");
          String sub_date=request.getParameter("sub_date");
          String addr_depart=request.getParameter("addr_depart");
@@ -45,6 +46,7 @@ public class ReserveInsertResultAction implements Action {
          dto.setBag_val_1(bag_val_1);
          dto.setBag_val_2(bag_val_2);
          dto.setRsv_content(rsv_content);
+         dto.setUser_no(user_no);
          
          int rsv_no = service.insertRsv(dto);
          request.setAttribute("rsv_no", rsv_no);

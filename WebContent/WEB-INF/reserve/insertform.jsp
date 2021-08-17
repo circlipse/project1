@@ -11,6 +11,10 @@
 <h2>예약</h2>
 <ul>
 	<li>
+		<label for="user_no">회원번호</label>
+		<input type="text" name="user_no" id="user_no">
+	</li>
+	<li>
 		<label for="rsv_date">예약일</label>
 		<input type="date" name="rsv_date" id="rsv_date" required>
 	</li>
