@@ -1,4 +1,4 @@
-package reserve.service;
+package service;
 
 public class ReserveService {
 	private static ReserveService rsService=new ReserveService();
@@ -7,5 +7,5 @@ public class ReserveService {
 		return rsService;
 	}
 	private ReserveService() {}
-	
+	 
 }

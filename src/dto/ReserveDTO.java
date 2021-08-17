@@ -1,4 +1,4 @@
-package reserve.dto;
+package dto;
 
 public class ReserveDTO {
 	private int rsv_no;
@@ -77,5 +77,5 @@ public class ReserveDTO {
 	}
 	public void setPrice(long price) {
 		this.price = price;
-	}
+	} 
 }
