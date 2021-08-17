@@ -78,5 +78,4 @@ public class ReserveDTO {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-	
 }
