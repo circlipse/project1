@@ -26,8 +26,7 @@ public class ReserveService {
             
             ReserveDAO dao=ReserveDAO.getInstance();
             dao.addRsv(conn, dto);
-            
-            
+            conn.commit();
          }catch(NamingException | SQLException e) {
             try {conn.rollback();} catch(SQLException e2) {}
          }finally {
