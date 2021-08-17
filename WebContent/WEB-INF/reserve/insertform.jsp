@@ -57,6 +57,8 @@
 <ul>
 	<li>배송시 당부 말씀</li>
 	<li><textarea cols="40" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
+	<li>
+	</li>
 </ul>
 </form>
 </body>
