@@ -1,4 +1,4 @@
-package user.controller;
+package controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,11 +18,7 @@ public class ListAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		
-		HttpSession session=request.getSession();
-		String id= (String) session.getAttribute("id");
-		
+		request.setCharacterEncoding("utf-8"); 
 		
 		UserService service = UserService.getInstance();
 		
@@ -36,8 +32,8 @@ public class ListAction implements Action {
 
 		return forward;
 
-	}
-
+	} 
+ 
 }
 //request.setCharacterEncoding("utf-8");
 //

@@ -22,7 +22,7 @@ public class ReserveDAO {
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 								
 			){
-			pstmt.setString(1, dto.getSub_date());
+			pstmt.setString(1, dto.getSub_date()); 
 			pstmt.setString(2, dto.getRsv_date());
 			pstmt.setString(3, dto.getRsv_content());
 			pstmt.setString(4, dto.getAddr_depart());

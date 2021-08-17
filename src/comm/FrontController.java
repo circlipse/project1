@@ -18,89 +18,90 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.jmx.snmp.Enumerated;
-
-import sun.rmi.server.Dispatcher;
-import user.controller.Action;
+import controller.Action;
 
 /**
  * Servlet implementation class FrontController
  */
-@WebServlet(urlPatterns = {"*.2jo"}
-		,initParams = {@WebInitParam(name="init",value = "WEB-INF/prop.properties")})
+@WebServlet(urlPatterns = { "*.2jo" }, initParams = { @WebInitParam(name = "init", value = "WEB-INF/prop.properties") })
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * 
-     * @see HttpServlet#HttpServlet()
-     */
-    public FrontController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * 
+	 * @see HttpServlet#HttpServlet()
 	 */
-    
-    
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public FrontController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doRep(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doRep(request, response);
 	}
 
 	private void doRep(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String path =request.getServletPath();
-		
-		Action act= hm.get(path);
-		Forward forward= act.execute(request, response);
-		
-		if(forward.isForward()) {
-			RequestDispatcher disp =request.getRequestDispatcher(forward.getPath());
+		String path = request.getServletPath();
+
+		Action act = hm.get(path);
+		Forward forward = act.execute(request, response);
+
+		if (forward.isForward()) {
+			RequestDispatcher disp = request.getRequestDispatcher(forward.getPath());
 			disp.forward(request, response);
-		}else {
+		} else {
 			response.sendRedirect(forward.getPath());
 		}
-		
+
 	}
 
-	private Map<String, Action> hm= Collections.synchronizedMap(new HashMap<String, Action>()); 
-	
+	private Map<String, Action> hm = Collections.synchronizedMap(new HashMap<String, Action>());
+
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		String param=config.getInitParameter("init");
-		
-		String realpath=config.getServletContext().getRealPath(param);
-		
-		Properties prop=new Properties();
+		String param = config.getInitParameter("init");
+
+		String realpath = config.getServletContext().getRealPath(param);
+
+		Properties prop = new Properties();
 		try {
+
 			prop.load(new FileReader(realpath));
 
 			Iterator ita = prop.keySet().iterator();
-			while(ita.hasNext()) {
-				String key=(String)ita.next();
-				String value=(String) prop.get(key);
-				
-				Class c=Class.forName(value);
-				Action act = (Action)c.newInstance();
-				
+			while (ita.hasNext()) {
+				String key = (String) ita.next();
+				String value = (String) prop.get(key);
+				System.out.println(key);
+				System.out.println(value);
+				Class c = Class.forName(value);
+				Action act = (Action) c.newInstance();
+
 				hm.put(key, act);
 			}
-			
-		}catch (Exception e) {
+
+		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e);
 		}
 	}
 

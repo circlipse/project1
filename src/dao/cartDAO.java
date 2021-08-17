@@ -20,7 +20,7 @@ public class cartDAO {
 			pstmt.setInt(1, dto.getBag_no());
 			pstmt.setInt(2, dto.getBag_val());
 			pstmt.setInt(3, dto.getRsv_no());
-			pstmt.setInt(4, dto.getBag_val());
+			pstmt.setInt(4, dto.getBag_val()); 
 			pstmt.executeUpdate();
 		} catch(SQLException e) {
 			System.out.println(e);

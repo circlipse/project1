@@ -1,4 +1,4 @@
-package user.controller;
+package controller;
 
 import java.io.IOException;
 
@@ -21,4 +21,5 @@ public class LoginAction implements Action {
 		return f;
 	}
 
-}
+} 
+ 

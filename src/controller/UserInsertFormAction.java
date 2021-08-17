@@ -1,4 +1,4 @@
-package user.controller;
+package controller;
 
 import java.io.IOException;
 
@@ -16,10 +16,10 @@ public class UserInsertFormAction implements Action {
 		// TODO Auto-generated method stub
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("/WEB-INF/user/insertform.jsp");
-
+		forward.setPath("/WEB-INF/user/insertform.jsp"); 
+   
 		return forward;
 
 	}
 
-}
+} 

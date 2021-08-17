@@ -1,4 +1,4 @@
-package user.controller;
+package controller;
 
 import java.io.IOException;
 
@@ -13,4 +13,5 @@ public interface Action {
 
 	public Forward execute(HttpServletRequest request , HttpServletResponse response)
 			throws ServletException, IOException;
-}
+} 
+ 

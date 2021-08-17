@@ -16,7 +16,7 @@ public class UserService {
 	private static UserService service = new UserService();
 	public static UserService getInstance() {
 		return service;
-	}
+	} 
 	private UserService() {}
 	
 	public List<UserDTO> getList() {

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import comm.Forward;
-import user.controller.Action;
+import controller.Action;
 
 public class ReserveInsertAction implements Action {
 

@@ -1,4 +1,4 @@
-package user.controller;
+package controller;
 
 import java.io.IOException;
 
@@ -26,11 +26,11 @@ public class UserInsertAction implements Action {
 		dto.setUser_id(user_id);
 		dto.setUser_pwd(user_pwd);
 		dto.setUser_name(user_name);
-		dto.setUser_phone(user_phone);
+		dto.setUser_phone(user_phone); 
 		
 		UserService service = UserService.getInstance();
 		
-		int result= service.join(dto);
+		int result= service.join(dto);  
 
 		request.setAttribute("result", result);
 		
