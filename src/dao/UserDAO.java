@@ -63,5 +63,97 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
+	public int userCheck(Connection conn, String id, String pwd) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select count(*) from user_2jo		");
+		sql.append(" where user_id = ? and user_pwd =? 	");
+//		System.out.println(sql);
+//		System.out.println(id);
+//		System.out.println(pwd);
+		ResultSet rs = null;
+		int result =0;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setString(1,id);
+			pstmt.setString(2,pwd);
+			
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result=rs.getInt(1);
+			}
+		}catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}
+		return result;
+	}
+	public UserDTO userDetail(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		List<UserDTO> list =new ArrayList<UserDTO>();
+		
+		sql.append(" select user_id, user_pwd, user_name, user_phone from user_2jo ");
+		sql.append(" where user_id=? ");
+		System.out.println("detail "+sql);
+		System.out.println("detail "+id);
+		ResultSet rs = null;
+		
+		UserDTO dto = null;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dto = new UserDTO();
+				
+				dto.setUser_id(rs.getString("user_id"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				
+			}
+		}catch (SQLException e) {
+			// TODO: handle exception
+			System.out.println(e);
+		}finally {
+			if (rs != null)try {rs.close();} catch (SQLException e) {}
+		}
+		return dto;
+	}
+	public int userDel(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" delete from user_2jo	");
+		sql.append(" where user_id = ?		");
+		
+		int result = 0;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setString(1, id);
+			
+			result=pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return result;
+	}
+	public int userModi(Connection conn, UserDTO dto, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" update user_2jo set  user_pwd =? ,user_name =?,user_phone=? ");
+		sql.append(" where user_id = ? ");
+		
+		int result = 0;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setString(1, dto.getUser_pwd());
+			pstmt.setString(2, dto.getUser_name());
+			pstmt.setString(3, dto.getUser_phone());
+			pstmt.setString(4, id);
+			
+			result=pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return result;
+	}
 }

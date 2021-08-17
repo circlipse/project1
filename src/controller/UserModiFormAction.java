@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import comm.Forward;
 
-public class UserInsertFormAction implements Action {
+public class UserModiFormAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
@@ -17,10 +17,9 @@ public class UserInsertFormAction implements Action {
 		Forward forward = new Forward();
 		forward.setForward(true);
 //		forward.setPath("/WEB-INF/user/insertform.jsp"); 
-		forward.setPath("/WEB-INF/user/main.jsp?page=insertform.jsp"); 
+		forward.setPath("/WEB-INF/user/main.jsp?page=usermodiform.jsp"); 
    
 		return forward;
-
 	}
 
-} 
+}
