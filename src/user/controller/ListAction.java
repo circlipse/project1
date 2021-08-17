@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import user.comm.Forward;
-import user.dto.UserDTO;
-import user.service.UserService;
+import comm.Forward;
+import dto.UserDTO;
+import service.UserService;
 
 public class ListAction implements Action {
 
@@ -22,24 +22,42 @@ public class ListAction implements Action {
 		
 		HttpSession session=request.getSession();
 		String id= (String) session.getAttribute("id");
-		Forward forward= new Forward();
+		
 		
 		UserService service = UserService.getInstance();
-		if(id==null) {
-			forward.setForward(false);
-			forward.setPath("login.2jo");
-		}else {
-			List<UserDTO> list= service.getList();
-
-			request.setAttribute("list", list);
-			
-			forward.setForward(true);
-			forward.setPath("/WEB-INF/user/main.jsp?page=list.jsp");
-
-		}
 		
+		List<UserDTO> list= service.getList();
+
+		request.setAttribute("list", list);
+		
+		Forward forward = new Forward();
+		forward.setForward(true);
+		forward.setPath("/WEB-INF/user/list.jsp");
+
 		return forward;
 
 	}
 
 }
+//request.setCharacterEncoding("utf-8");
+//
+//HttpSession session=request.getSession();
+//String id= (String) session.getAttribute("id");
+//Forward forward= new Forward();
+//
+//UserService service = UserService.getInstance();
+//System.out.println(id);
+//if(id==null) {
+//	forward.setForward(false);
+//	forward.setPath("login.2jo");
+//}else {
+//	List<UserDTO> list= service.getList();
+//
+//	request.setAttribute("list", list);
+//	
+//	forward.setForward(true);
+//	forward.setPath("/WEB-INF/user/main.jsp?page=list.jsp");
+//
+//}
+//
+//return forward;

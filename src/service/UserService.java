@@ -1,4 +1,4 @@
-package user.service;
+package service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -7,9 +7,9 @@ import java.util.List;
 
 import javax.naming.NamingException;
 
-import user.comm.DBConnection;
-import user.dao.UserDAO;
-import user.dto.UserDTO;
+import comm.DBConnection;
+import dao.UserDAO;
+import dto.UserDTO;
 
 public class UserService {
 	

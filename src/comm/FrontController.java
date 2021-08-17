@@ -1,4 +1,4 @@
-package user.comm;
+package comm;
 
 import java.io.FileReader;
 import java.io.IOException;

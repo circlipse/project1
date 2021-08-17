@@ -6,9 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import user.comm.Forward;
-import user.dto.UserDTO;
-import user.service.UserService;
+import comm.Forward;
+import dto.UserDTO;
+import service.UserService;
 
 public class UserInsertAction implements Action {
 

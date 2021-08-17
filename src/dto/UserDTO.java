@@ -1,4 +1,4 @@
-package user.dto;
+package dto;
 
 public class UserDTO {
 	private int user_no;

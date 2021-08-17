@@ -1,4 +1,4 @@
-package user.comm;
+package comm;
 
 public class Forward {
 	private boolean forward;
