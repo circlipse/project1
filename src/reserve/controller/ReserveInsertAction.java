@@ -15,7 +15,11 @@ public class ReserveInsertAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		return null;
+		
+		Forward forward=new Forward();
+		forward.setForward(true);
+		forward.setPath("WEB-INF/reserve/insertform.jsp");
+		return forward;
 	}
 
 }
