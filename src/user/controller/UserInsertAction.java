@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import user.comm.Forward;
+import user.dto.UserDTO;
+import user.service.UserService;
 
 public class UserInsertAction implements Action {
 
@@ -15,9 +17,30 @@ public class UserInsertAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String user_id = request.getParameter("user_id");
-		//String user_pwd   
+		String user_pwd = request.getParameter("user_pwd");
+		String user_name = request.getParameter("user_name");
+		String user_phone =request.getParameter("user_phone");
 		
-		return null;
+		UserDTO dto = new UserDTO();
+		
+		dto.setUser_id(user_id);
+		dto.setUser_pwd(user_pwd);
+		dto.setUser_name(user_name);
+		dto.setUser_phone(user_phone);
+		
+		UserService service = UserService.getInstance();
+		
+		int result= service.join(dto);
+
+		request.setAttribute("result", result);
+		
+		Forward forward =new Forward();
+		forward.setForward(true);
+		forward.setPath("/WEB-INF/user/insertresult.jsp");
+		
+		return forward;
+		
+		
 	}
 
 }
