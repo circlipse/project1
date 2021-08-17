@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body> 
+<body>  
 
 <c:set var="reviewlist" value="${requestScope.reviewlist }"></c:set>
 <c:set var="currpage" value="${requestScope.currpage}"></c:set>

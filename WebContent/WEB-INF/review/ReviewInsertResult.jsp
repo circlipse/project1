@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	 
 <%
 	int result=(Integer)request.getAttribute("result");
 
