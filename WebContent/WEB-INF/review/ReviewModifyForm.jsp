@@ -16,7 +16,7 @@
 <form method="post" action="reviewmodifyresult.2jo">
 
 	<label for="rev_no">번호</label>
-	<input type="text" name="rev_no" id="rev_no" value=<c:out value="${dto.rev_no }"></c:out>>
+	<input type="text" name="rev_no" id="rev_no" value=<c:out value="${dto.rev_no }"></c:out> readonly>
 	<br>
 	<label for="rev_title">제목</label>
 	<input type="text" name="rev_title" id="rev_title" value=<c:out value="${dto.rev_title }"></c:out>>
