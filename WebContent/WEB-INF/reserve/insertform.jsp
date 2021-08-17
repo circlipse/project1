@@ -23,7 +23,7 @@
 			<option value="airport">공항</option>
 			<option value="accommodation">숙소</option>
 		</select>
-		<input type="text" name="addr_detail_depart" id="addr_detail_depart"
+		<input type="text" name="addr_depart_detail" id="addr_depart_detail"
 			placeholder="짐 맡기는 위치">
 	</li>
 	<li>
@@ -32,8 +32,8 @@
 			<option value="airport">공항</option>
 			<option value="accommodation">숙소</option>
 		</select>
-		<input type="text" name="addr_detail_arrive" id="addr_detail_arrive"
-			placeholder="짐 찾아가는 곳">
+		<input type="text" name="addr_arrive_detail" id="addr_arrive_detail"
+			placeholder="짐 찾아가는 위치">
 	</li>
 </ul>
 <table>
@@ -58,6 +58,8 @@
 	<li>배송시 당부 말씀</li>
 	<li><textarea cols="40" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
 	<li>
+	<input type="submit" value="예약하기">
+	<input type="reset" value="취소">
 	</li>
 </ul>
 </form>
