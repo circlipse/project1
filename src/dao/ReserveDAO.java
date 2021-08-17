@@ -39,10 +39,9 @@ public class ReserveDAO {
 		}
 	}
 	public int addRsv(Connection conn, ReserveDTO dto) {
-		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
 		/*
-		 * StringBuilder sql=new StringBuilder(); System.out.println(dto.getSub_date());
-		 * System.out.println(dto.getUser_no());
+		 * System.out.println(dto.getSub_date()); System.out.println(dto.getUser_no());
 		 * System.out.println(dto.getRsv_content());
 		 * System.out.println(dto.getRsv_date());
 		 * System.out.println(dto.getAddr_arrive());
@@ -82,6 +81,7 @@ public class ReserveDAO {
 		}
 		return key;
 	}
+	
 	public void detailRsv(Connection conn, int rsv_no) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select r1.rsv_no                              ");
