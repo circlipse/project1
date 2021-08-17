@@ -19,8 +19,7 @@ public class ReserveInsertResultAction implements Action {
 		 String rsv_date=request.getParameter("rsv_date");
          String sub_date=request.getParameter("sub_date");
          String addr_depart=request.getParameter("addr_depart");
-         String addr_depart_detail=request.getParameter("addr_depart_detail");
-         String addr_arrive_detail=request.getParameter("addr_arrive_detail");
+        String addr_arrive=request.getParameter("addr_arrive");
          
          
          String bag_val_1=request.getParameter("bag_val_1");
@@ -41,8 +40,8 @@ public class ReserveInsertResultAction implements Action {
          ReserveDTO dto=new ReserveDTO();
          dto.setRsv_date(rsv_date);
          dto.setSub_date(sub_date);
-         dto.setAddr_depart(addr_depart_detail);
-         dto.setAddr_depart(addr_depart_detail);
+         dto.setAddr_depart(addr_depart);
+         dto.setAddr_depart(addr_arrive);
          
          service.insertRsv(dto);
          
