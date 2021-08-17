@@ -1,7 +1,7 @@
 package dto;
 
 public class ReviewDTO {
-	
+	 
 	private int rev_no;
 	private int rsv_no;
 	private int user_no;
