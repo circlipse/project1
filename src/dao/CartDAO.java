@@ -6,7 +6,13 @@ import java.sql.SQLException;
 
 import dto.ReserveDTO;
 
-public class cartDAO {
+public class CartDAO {
+        private static CartDAO dao = new CartDAO();
+	public static CartDAO getInstance() {
+		return dao;
+	}
+	private CartDAO() {}
+
 	public void modifyCart(Connection conn, ReserveDTO dto) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" update cart_2jo                     ");
