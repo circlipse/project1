@@ -38,4 +38,22 @@ public class UserService {
 		
 		return list;
 	}
+	public int join(UserDTO dto) {
+		// TODO Auto-generated method stub
+
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		int result=0;
+		try {
+			conn= dbconn.getConnection();
+			UserDAO dao = UserDAO.getinstance();
+			result = dao.userJoin(conn,dto);
+		}catch (SQLException|NamingException e) {
+			// TODO: handle exception
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return result;
+	}
 }
