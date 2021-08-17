@@ -8,13 +8,16 @@ import java.sql.SQLException;
 import dto.ReserveDTO;
 
 public class ReserveDAO {
-	private static ReserveDAO dao=new ReserveDAO();
-	   public static ReserveDAO getInstance()
-	   {
-	      return dao;
-	   }
-	   private ReserveDAO() {}
-	public void modifyReserve(Connection conn, ReserveDTO dto){
+	private static ReserveDAO dao = new ReserveDAO();
+
+	public static ReserveDAO getInstance() {
+		return dao;
+	}
+
+	private ReserveDAO() {
+	}
+
+	public void modifyReserve(Connection conn, ReserveDTO dto) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" update reserve_2jo         ");
 		sql.append(" set      rsv_date = ?      ");
@@ -22,24 +25,25 @@ public class ReserveDAO {
 		sql.append("        , addr_depart = ?   ");
 		sql.append("        , addr_arrive = ?   ");
 		sql.append(" where rsv_no = ?           ");
-		
-		try(
-			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-								
-			){
-			//pstmt.setString(1, dto.getSub_date()); 
+
+		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+
+		) {
+			// pstmt.setString(1, dto.getSub_date());
 			pstmt.setString(1, dto.getRsv_date());
 			pstmt.setString(2, dto.getRsv_content());
 			pstmt.setString(3, dto.getAddr_depart());
 			pstmt.setString(4, dto.getAddr_arrive());
 			pstmt.setInt(5, dto.getRsv_no());
 			pstmt.executeUpdate();
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			System.out.println(e);
 		}
 	}
+
 	public int addRsv(Connection conn, ReserveDTO dto) {
-		StringBuilder sql=new StringBuilder();
+		StringBuilder sql = new StringBuilder();
+		
 		/*
 		 * System.out.println(dto.getSub_date()); System.out.println(dto.getUser_no());
 		 * System.out.println(dto.getRsv_content());
@@ -47,6 +51,7 @@ public class ReserveDAO {
 		 * System.out.println(dto.getAddr_arrive());
 		 * System.out.println(dto.getAddr_depart());
 		 */
+		 
 		sql.append(" insert into reserve_2jo (                     ");
 		sql.append("                            sub_date           ");
 		sql.append("                           , user_no           ");
@@ -55,11 +60,11 @@ public class ReserveDAO {
 		sql.append("                           , addr_depart       ");
 		sql.append("                           , addr_arrive   )   ");
 		sql.append(" values (?,?,?,?,?,?)                          ");
-		
+
 		int key = 0;
 		ResultSet rs = null;
-		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString(), PreparedStatement.RETURN_GENERATED_KEYS);				
-			){
+		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString(),
+				PreparedStatement.RETURN_GENERATED_KEYS);) {
 			pstmt.setString(1, dto.getSub_date());
 			pstmt.setInt(2, dto.getUser_no());
 			pstmt.setString(3, dto.getRsv_date());
@@ -69,19 +74,23 @@ public class ReserveDAO {
 			pstmt.executeUpdate();
 			rs = pstmt.getGeneratedKeys();
 
-			if(rs.next()) {
+			if (rs.next()) {
 				key = rs.getInt(1);
-				//System.out.println(key);
+				// System.out.println(key);
 			}
-			
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			System.out.println(e);
-		} finally{
-			if(rs != null) try {rs.close();} catch(SQLException e) {}
+		} finally {
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
 		}
 		return key;
 	}
-	
+
 	public void detailRsv(Connection conn, int rsv_no) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select r1.rsv_no                              ");
@@ -100,24 +109,25 @@ public class ReserveDAO {
 		sql.append(" inner join cart_2jo c1                        ");
 		sql.append(" on r1.rsv_no = c1.rsv_no                      ");
 		sql.append(" where rsv_no = ?                              ");
-		
+
 		ResultSet rs = null;
-		try(
-			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-			){
+		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
 			pstmt.setInt(1, rsv_no);
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				ReserveDTO dto = new ReserveDTO();
 			}
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			System.out.println(e);
 		} finally {
-			if(rs != null) try {rs.close();} catch(SQLException e) {}
+			if (rs != null)
+				try {
+					rs.close();
+				} catch (SQLException e) {
+				}
 		}
-		
-		
-	} 
+
+	}
 
 }

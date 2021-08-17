@@ -16,6 +16,8 @@ public class ReserveInsertResultAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		
 		int user_no=Integer.parseInt(request.getParameter("user_no"));
 		 String rsv_date=request.getParameter("rsv_date");
          String sub_date=request.getParameter("sub_date");
@@ -23,15 +25,15 @@ public class ReserveInsertResultAction implements Action {
         String addr_arrive=request.getParameter("addr_arrive");
          
          
-         String bagval_1=request.getParameter("bag_val_1");
+         String bagval_1 = request.getParameter("bag_val_1");
          int bag_val_1=0;
-         if(bagval_1!=null)
+         if(bagval_1 != "")
          {
         	 bag_val_1=Integer.parseInt(bagval_1);
          }
-         String bagval_2=request.getParameter("bag_val_2");
-         int bag_val_2=0;
-         if(bagval_2!=null)
+         String bagval_2 = request.getParameter("bag_val_2");
+         int bag_val_2 = 0;
+         if(bagval_2 != "")
          {
         	 bag_val_2=Integer.parseInt(bagval_2);
          }
