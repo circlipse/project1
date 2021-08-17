@@ -19,6 +19,7 @@ public class ReserveDetailAction implements Action {
 		ReserveService service = ReserveService.getInstance();
 		ReserveDTO dto = new ReserveDTO();
 		dto = service.detailRsv(rsv_no);
+
 		
 		Forward forward = new Forward();
 		forward.setForward(true);

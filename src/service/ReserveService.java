@@ -52,19 +52,20 @@ public class ReserveService {
 		DBConnection dbconn=DBConnection.getdbInstance();
         Connection conn=null;
         
+        ReserveDTO dto = new ReserveDTO();
         try {
         	conn=dbconn.getConnection();
             conn.setAutoCommit(false);
             
             ReserveDAO dao=ReserveDAO.getInstance();
-            dao.detailRsv(conn, rsv_no);
+            dto = dao.detailRsv(conn, rsv_no);
             
         } catch(NamingException | SQLException e) {
         	try {conn.rollback();} catch(SQLException e2) {}
         }finally {
            if(conn!=null) try {conn.close();} catch(SQLException e) {}
         }
-		return null;
+		return dto;
 	}
 
 }
