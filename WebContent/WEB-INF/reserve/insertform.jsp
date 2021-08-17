@@ -39,7 +39,7 @@
 <table>
 	<caption align="top">가방</caption>
 	<thead>
-		<tr><th>종류</th><th>가격</th><th>수량</th>
+		<tr><th>종류</th><th>가격</th><th>수량</th><th></th>
 	</thead>
 	<tbody>
 		<tr>
