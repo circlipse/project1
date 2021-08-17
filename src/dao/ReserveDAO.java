@@ -7,7 +7,12 @@ import java.sql.SQLException;
 import dto.ReserveDTO;
 
 public class ReserveDAO {
-	
+	private static ReserveDAO dao=new ReserveDAO();
+	   public static ReserveDAO getInstance()
+	   {
+	      return dao;
+	   }
+	   private ReserveDAO() {}
 	public void modifyReserve(Connection conn, ReserveDTO dto){
 		StringBuilder sql = new StringBuilder();
 		sql.append(" update reserve_2jo         ");
