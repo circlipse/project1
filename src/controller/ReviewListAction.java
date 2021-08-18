@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import controller.Action;
 import comm.Forward;
 import dto.ReviewDTO;
+import dto.UserDTO;
 import service.ReviewService;
 import service.UserService;
  
@@ -22,7 +23,11 @@ public class ReviewListAction implements Action {
 			throws ServletException, IOException {
 		
 		 request.setCharacterEncoding("utf-8");	
-			
+		 
+
+		HttpSession session = request.getSession();
+		String id=(String)session.getAttribute("id");
+		
 		  String curr=request.getParameter("curr"); 
 		  
 		   int currpage=1;
