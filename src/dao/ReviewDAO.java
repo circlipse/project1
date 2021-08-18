@@ -135,7 +135,7 @@ public class ReviewDAO {
 		sql.append("                            ,rev_title              ");
 		sql.append("                            ,rev_content            ");
 		sql.append("                     		,rev_readno  )          ");
-		sql.append("    values       (? ,?, ?, 0 )                         ");
+		sql.append("    values       (? ,?, ?, 0 )                      ");
 		
 		int result=0;
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
@@ -246,12 +246,12 @@ public class ReviewDAO {
 	public List<SubReviewDTO> subdetail(Connection conn, int rev_no) {
 		
 		StringBuilder sql=new StringBuilder();
-		sql.append("  select                        ");
-		sql.append("            subno               ");
-		sql.append("           ,subcontent          ");
-		sql.append("           ,rev_no              ");
-		sql.append("  from subreview_2jo            ");
-		sql.append("  where rev_no = ?              ");
+		sql.append("  select                            ");
+		sql.append("            subno                   ");
+		sql.append("           ,subcontent              ");
+		sql.append("           ,rev_no                  ");
+		sql.append("  from subreview_2jo                ");
+		sql.append("  where rev_no = ?                  ");
 		
 		
 		ResultSet rs=null;
@@ -264,6 +264,7 @@ public class ReviewDAO {
 			while(rs.next()) {
 				SubReviewDTO dto=new SubReviewDTO();
 				dto.setSubno(rs.getInt("subno"));
+				//dto.setUser_id(rs.getString("user_id"));
 				dto.setSubcontent(rs.getString("subcontent"));
 				dto.setRev_no(rs.getInt("rev_no"));
 				list.add(dto);

@@ -15,34 +15,35 @@ function subdelete(subno, rev_no)
 	location.href="subdelete.2jo?subno="+subno+"&rev_no="+rev_no;
 }
 
-	$(document).ready(function () {
-		let no=${dto.rev_no};
-		
+$(document).ready(function () {
+	let no=${dto.rev_no};
+	
+	$.ajax({
+		url:'subdetail.2jo'    
+		,data:{'rev_no' : no}
+		,method:'post'
+		,dataType:'json'    
+		,success:function(data)
+		{
+			$.each(data, function (index, item) {
+				let result="<tr>";
+				     result+="<td>"+item.subcontent;
+				     
+				     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
+					 result+="</td></tr>";
 
-		$.ajax({
-			url:'subdetail.2jo'    
-			,data:{'rev_no' : no}
-			,method:'post'
-			,dataType:'json'    
-			,success:function(data)
-			{
-				$.each(data, function (index, item) {
-					let result="<tr>";
-					     result+="<td>"+item.subcontent;
-					     
-					     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
-					     result+="</td></tr>";
-					    
-						 
-				$('#result').append(result);
-				});
-				
-			}
-			,error:function(xhr){
-				console.log('error'+xhr);
-			}
-		});
+				    
+					 
+			$('#result').append(result);
+			});
+			
+		}
+		,error:function(xhr){
+			console.log('error'+xhr);
+		}
 	});
+});
+
 
 
 
@@ -74,8 +75,10 @@ function subdelete(subno, rev_no)
 	</tr>
 </table>
 
+<c:if test="${sessionScope.id==dto.user_id }">
 <a href="reviewmodify.2jo?rev_no=${dto.rev_no }">수정</a>
 <a href="reviewdelete.2jo?rev_no=${dto.rev_no }">삭제</a>
+</c:if>
 	
 <br>
 <br>
