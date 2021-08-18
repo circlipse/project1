@@ -14,7 +14,7 @@
 	function reserveModify(rsv_no)
 	{
 		console.log(rsv_no);
-		location.href="ReserveModify.jsp?rsv_no="+rsv_no;
+		location.href="reservemodify.2jo?rsv_no="+rsv_no;
 	}
 	function reserveDelete(rsv_no)
 	{
