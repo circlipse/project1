@@ -27,13 +27,47 @@ public class NoticeListAction implements Action {
 		
 		request.setAttribute("id", id);
 		
+		String curr = request.getParameter("curr");
+		int currpage = 1;
+		if (curr != null) {
+			currpage = Integer.parseInt(curr);
+		}
+
 		NoticeService service = NoticeService.getinstace();
+		
+		int totalcount = service.count();
+		System.out.println("totalcount: "+totalcount);
+		int pagesize = 10;
+		int totalpage = (int) Math.ceil((float) totalcount / pagesize);
+
+		int startrow = (currpage - 1) * pagesize + 1;
+		int endrow = startrow + pagesize - 1;
+
+		if (endrow > totalcount) {
+			endrow = totalcount;
+		}
+
+		int pageblock = 5;
+		int startblock = (currpage - 1) / pageblock * pageblock + 1;
+		int endblock = startblock + pageblock - 1;
+		if (endblock > totalpage) {
+			endblock = totalpage;
+		}
+
+		System.out.println(startrow);
+		System.out.println(endrow);
+		
 		
 		List<NoticeDTO> list = new ArrayList<NoticeDTO>();
 		
-		list = service.getList();
+		list = service.getList(startrow, endrow);
 
 		request.setAttribute("list", list);
+		request.setAttribute("currpage", currpage);
+		request.setAttribute("totalpage", totalpage);
+		request.setAttribute("startblock", startblock);
+		request.setAttribute("endblock", endblock);
+		request.setAttribute("datacount",list.size());
 		
 		Forward forward = new Forward();
 		forward.setForward(true);

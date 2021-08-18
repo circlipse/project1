@@ -13,26 +13,6 @@ public class CartDAO {
 		return dao;
 	}
 	private CartDAO() {}
-
-	public void modifyCart(Connection conn, ReserveDTO dto) {
-		StringBuilder sql = new StringBuilder();
-		sql.append(" update cart_2jo                     ");
-		sql.append(" set    bag_val = ?                ");
-		sql.append(" where rsv_no = ? and bag_no = ?     ");
-		
-		try(
-			PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
-			){
-			pstmt.setInt(1, dto.getBag_val_1());
-			pstmt.setInt(2, dto.getRsv_no());
-			pstmt.setInt(3, dto.getBag_no());
-			pstmt.executeUpdate();
-		} catch(SQLException e) {
-			System.out.println(e);
-		} 
-	}
-	
-	
 	
 	public void addRsv(Connection conn, int bag_no, int rsv_no, int val) {
 		StringBuilder sql = new StringBuilder();
@@ -83,7 +63,7 @@ public class CartDAO {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" delete from cart_2jo       ");
 		sql.append(" where rsv_no = ?           ");
-			
+
 		try(
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 			){
@@ -95,4 +75,23 @@ public class CartDAO {
 		}
 		
 	}
+	
+	public void modifyCart(Connection conn, int bag_no, int rsv_no, int bag_val) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" update cart_2jo                   ");
+		sql.append(" set    bag_val = ?                ");
+		sql.append(" where rsv_no = ? and bag_no = ?   ");
+		
+		try(
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());	
+			){
+			pstmt.setInt(1, bag_val);
+			pstmt.setInt(2, rsv_no);
+			pstmt.setInt(3, bag_no);
+			pstmt.executeUpdate();
+		} catch(SQLException e) {
+			System.out.println(e);
+		} 
+	}
+	
 }

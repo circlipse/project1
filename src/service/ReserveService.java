@@ -135,5 +135,45 @@ public class ReserveService {
 		return list;
 
 	}
+	public void modifyRsv(ReserveDTO dto, ReserveDTO dto2) {
+		DBConnection dbconn=DBConnection.getdbInstance();
+        Connection conn=null;
+        
+        try {
+        	conn=dbconn.getConnection();
+            conn.setAutoCommit(false);
+            
+            ReserveDAO rdao=ReserveDAO.getInstance();
+            rdao.modifyReserve(conn, dto);
+            
+            CartDAO cdao=CartDAO.getInstance();   
+            if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.delRsv(conn, dto.getRsv_no());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.delRsv(conn, dto.getRsv_no());
+            }
+            
+            
+            
+            if(dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            } else if(dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } 
+            
+            conn.commit();
+        } catch(NamingException | SQLException e) {
+        	try {conn.rollback();} catch(SQLException e2) {}
+        }finally {
+           if(conn!=null) try {conn.close();} catch(SQLException e) {}
+        }
+	}
 
 }

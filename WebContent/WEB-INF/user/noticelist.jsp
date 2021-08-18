@@ -18,7 +18,12 @@
 </script>
 </head>
 <body>
-<c:set var="list" value="${requestScope.list}"></c:set>
+	<c:set var="list" value="${requestScope.list}"></c:set>
+	<c:set var="currpage" value="${requestScope.currpage }"></c:set>
+	<c:set var="startblock" value="${requestScope.startblock}"></c:set>
+	<c:set var="endblock" value="${requestScope.endblock}"></c:set>
+	<c:set var="datacount" value="${requestScope.datacount}"></c:set>
+	<c:set var="totalpage" value="${requestScope.totalpage}"></c:set>
 	<c:set var="id" value="${sessionScope.id}" />
 	<table>
 		<thead>
@@ -40,9 +45,40 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<div>
+		<c:if test="${startblock>1}">
+			<a href="noticelist.2jo?curr=${currpage-1 }">이전</a>
+		</c:if>
+	</div>
+
+	<div>
+		<c:forEach var="index" begin="${startblock }" end="${endblock }">
+			<c:if test="${currpage==index }">
+				<c:out value="${index }"></c:out>
+			</c:if>
+			<c:if test="${currpage!=index }">
+				<a href="noticelist.2jo?curr=${index}">${index}</a>
+			</c:if>
+		</c:forEach>
+	</div>
+
+	<div>
+		<c:if test="${endblock<totalpage}">
+			<a href="noticelist.2jo?curr=${currpage+1 }">다음</a>
+		</c:if>
+	</div>
+	
+	
+	
+	
+	
 	<c:if test="${id eq 'admin' }">
 	<button id="noticeadd">글쓰기</button>
 	</c:if>
+	
+	
+	
+	
 	
 </body>
 </html>

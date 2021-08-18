@@ -17,7 +17,7 @@ public class NoticeService {
 		return service;
 	}
 	private NoticeService() {}
-	public List<NoticeDTO> getList() {
+	public List<NoticeDTO> getList(int startrow, int endrow) {
 		// TODO Auto-generated method stub
 		DBConnection dbconn = DBConnection.getdbInstance();
 		Connection conn =null;
@@ -26,7 +26,7 @@ public class NoticeService {
 		try {
 			conn = dbconn.getConnection();
 			NoticeDAO dao = NoticeDAO.getinstace();
-			list = dao.getList(conn);
+			list = dao.getList(conn,startrow, endrow);
 		}catch(SQLException|NamingException e) {
 			System.out.println(e);
 		}finally {
@@ -68,5 +68,74 @@ public class NoticeService {
 		}
 		
 		return dto;		
+	}
+	public int modify(int notice_no, String notice_title, String notice_content) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		int result = 0;
+		try {
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			result = dao.modify(conn,notice_no,notice_title,notice_content);
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return result;	
+	}
+	public int del(int notice_no) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		int result = 0;
+		try {
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			result = dao.del(conn,notice_no);
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return result;	
+	}
+	public int count() {
+		// TODO Auto-generated method stub
+		DBConnection dbconn =DBConnection.getdbInstance();
+		Connection conn=null;
+		int totalcount=0;
+		
+		try{
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			totalcount= dao.totalCount(conn);
+			
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		return totalcount;
+	}
+	public int readcount(int notice_no) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		int result = 0;
+		try {
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			result = dao.readcount(conn,notice_no);
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return result;
 	}
 }
