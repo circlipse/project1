@@ -21,7 +21,7 @@ public class ReserveDetailAction implements Action {
 		dto = service.detailRsv(rsv_no);
 		//System.out.println(rsv_no);
 		request.setAttribute("dto", dto);
-		
+		 
 		Forward forward = new Forward();
 		forward.setForward(true);
 		forward.setPath("WEB-INF/reserve/ReserveDetail.jsp");
