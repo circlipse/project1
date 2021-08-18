@@ -35,4 +35,21 @@ public class NoticeService {
 		
 		return list;
 	}
+	public int noticAdd(NoticeDTO dto) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		int result=0;
+		try {
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			result = dao.addNotice(conn,dto);
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return result;
+	}
 }

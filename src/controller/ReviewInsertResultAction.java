@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import controller.Action;
 import comm.Forward;
 import dto.ReviewDTO;
+import dto.UserDTO;
 import service.ReviewService;
 
 public class ReviewInsertResultAction implements Action {
@@ -31,7 +32,12 @@ public class ReviewInsertResultAction implements Action {
 		dto.setRev_title(rev_title);
 		dto.setId(id);
 		dto.setRev_content(rev_content);
-		service.reviewinsert(dto);
+		
+		UserDTO userdto =service.usernorsv(id);
+		
+		int userno = userdto.getUser_no();
+		System.out.println(userno);
+		service.reviewinsert(dto,userno);
 		
 		
 		Forward forward=new Forward();

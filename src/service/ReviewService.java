@@ -11,6 +11,7 @@ import comm.DBConnection;
 import dao.ReviewDAO;
 import dto.ReviewDTO;
 import dto.SubReviewDTO;
+import dto.UserDTO;
 
 
 public class ReviewService {
@@ -107,7 +108,7 @@ public class ReviewService {
 		return dto;
 	}
 
-	public ReviewDTO reviewinsert(ReviewDTO dto) {
+	public ReviewDTO reviewinsert(ReviewDTO dto, int userno) {
 		
 		DBConnection dbconn=DBConnection.getdbInstance();
 		Connection conn=null;
@@ -115,7 +116,7 @@ public class ReviewService {
 		try {
 			conn=dbconn.getConnection();
 			ReviewDAO dao=new ReviewDAO();
-			dao.ReviewInsert(conn, dto);
+			dao.ReviewInsert(conn, dto,userno);
 			
 		}catch(SQLException | NamingException e)
 		{
@@ -225,6 +226,27 @@ public class ReviewService {
 	}
 
 
+
+	public UserDTO usernorsv(String id) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn=DBConnection.getdbInstance();
+		Connection conn=null;
+		UserDTO userdto = new UserDTO();
+		try {
+			conn=dbconn.getConnection();
+			ReviewDAO dao=new ReviewDAO();
+			userdto= dao.usernorsv(conn, id);
+			
+		}catch(SQLException | NamingException e)
+		{
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();}catch(Exception e) {}
+		}
+		return userdto;
+		
+		
+	}
 	
 	
 

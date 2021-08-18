@@ -6,6 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$().ready(function() {
+
+		$('#noticeadd').click(function() {
+
+			location.href = "noticeaddform.2jo";
+		});
+	})
+</script>
 </head>
 <body>
 <c:set var="list" value="${requestScope.list}"></c:set>

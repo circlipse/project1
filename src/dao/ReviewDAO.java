@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dto.ReviewDTO;
-import dto.SubReviewDTO; 
+import dto.SubReviewDTO;
+import dto.UserDTO; 
 
 public class ReviewDAO {
 
@@ -114,20 +115,21 @@ public class ReviewDAO {
 		return dto;
 	}
 
-	public int ReviewInsert(Connection conn, ReviewDTO dto) {
+	public int ReviewInsert(Connection conn, ReviewDTO dto, int userno) {
 		
 		StringBuilder sql=new StringBuilder();
-		sql.append(" insert into     review_2jo (                       ");
-		sql.append("                            rev_title               ");
+		sql.append(" insert into     review_2jo ( user_no               ");
+		sql.append("                            ,rev_title              ");
 		sql.append("                            ,rev_content            ");
 		sql.append("                     		,rev_readno  )          ");
-		sql.append("    values       (?, ?, 0 )                         ");
+		sql.append("    values       (? ,?, ?, 0 )                         ");
 		
 		int result=0;
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 			){
-			pstmt.setString(1, dto.getRev_title());
-			pstmt.setString(2, dto.getRev_content());
+			pstmt.setInt(1, userno);
+			pstmt.setString(2, dto.getRev_title());
+			pstmt.setString(3, dto.getRev_content());
 			
 			result=pstmt.executeUpdate();
 			
@@ -282,10 +284,35 @@ public class ReviewDAO {
 		
 	}
 
+	public UserDTO usernorsv(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
+		sql.append("  select                       ");
+		sql.append("            user_no            ");
+		sql.append("  from user_2jo 	           ");
+		sql.append("  where user_id = ?           ");
+		
+		System.out.println("id는 "+id);
+		ResultSet rs=null;
+		UserDTO dto=new UserDTO();
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+				){
+				pstmt.setString(1, id);
+				rs=pstmt.executeQuery();
+				
+				if(rs.next()) {
+					dto.setUser_no(rs.getInt("user_no"));
+				}
+				
+			}catch(SQLException e) {
+				System.out.println(e);
+			}finally {
+				if(rs!=null) try {rs.close();} catch(SQLException e) {}
+			}
+			return dto;
+	}
 
-	
-	
-	
+
 		
 }
 	

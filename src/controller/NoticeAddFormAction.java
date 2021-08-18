@@ -9,35 +9,27 @@ import javax.servlet.http.HttpSession;
 
 import comm.Forward;
 
-public class MainAction implements Action {
+public class NoticeAddFormAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		
-		Forward forward = new Forward();
-		
-
 		request.setCharacterEncoding("utf-8");
 
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		forward.setForward(true);
-		if(id == null) {
-			forward.setPath("/WEB-INF/user/main.jsp?page=login.jsp");
-		}else {
-			forward.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+		Forward forward = new Forward();
+		if (id == null) {
+			forward.setForward(false);
+			forward.setPath("login.2jo");
+		} else {
+
+			forward.setForward(true);
+			forward.setPath("/WEB-INF/user/main.jsp?page=noticeform.jsp");
+
 		}
-		
-		
-		
-		
-		
-//		forward.setForward(true);
-//		forward.setPath("/WEB-INF/user/main.jsp?page=login.jsp");
-//		
+
 		return forward;
 	}
 

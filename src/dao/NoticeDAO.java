@@ -37,7 +37,25 @@ public class NoticeDAO {
 			System.out.println(e);
 		}
 		
-		return null;
+		return list;
+	}
+	public int addNotice(Connection conn, NoticeDTO dto) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" insert into notice_2jo (notice_title,notice_content,notice_readno) ");
+		sql.append(" values (?,?,0) ");
+		System.out.println(sql);
+		int result = 0;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setString(1, dto.getNotice_title());
+			pstmt.setString(2, dto.getNotice_content());
+			
+			result=pstmt.executeUpdate();
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return result;
 	}
 
 }

@@ -17,7 +17,8 @@ public class LoginResultAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
+		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		
@@ -25,6 +26,8 @@ public class LoginResultAction implements Action {
 		int result= service.checkUser(id,pwd);
 		
 		Forward f = new Forward();
+		f.setForward(true);
+		
 		System.out.println(result);
 		if(result > 0) {
 			HttpSession session =request.getSession();
@@ -32,11 +35,28 @@ public class LoginResultAction implements Action {
 			System.out.println("id는 "+id);
 			
 			session.setMaxInactiveInterval(60*5);
+			f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+		}else {
+			f.setPath("/WEB-INF/user/main.jsp?page=loginfail.jsp");
 		}
-		request.setAttribute("result", result);
 		
-		f.setForward(true);
-		f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+		
+		
+		
+		
+		
+//		System.out.println(result);
+//		if(result > 0) {
+//			HttpSession session =request.getSession();
+//			session.setAttribute("id", id);
+//			System.out.println("id는 "+id);
+//			
+//			session.setMaxInactiveInterval(60*5);
+//		}
+//		request.setAttribute("result", result);
+//		
+//		f.setForward(true);
+//		f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
 		
 		
 		return f;
