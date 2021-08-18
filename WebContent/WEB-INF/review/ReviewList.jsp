@@ -26,6 +26,7 @@
 	<tr>
 	<td><c:out value="${item.rev_no}"></c:out></td>
 	<td><a href="reviewdetail.2jo?rev_no=${item.rev_no }"><c:out value="${item.rev_title }"></c:out></a></td>
+	<td><c:out value="${item.user_id }"></c:out></td>
 	<td><c:out value="${item.rev_readno}"></c:out></td>
 	</tr>
 	</c:forEach>
