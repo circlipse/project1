@@ -83,15 +83,19 @@ public class ReviewDAO {
 	public ReviewDTO ReviewDetail(Connection conn, int rev_no) {
 		
 		StringBuilder sql=new StringBuilder();
-		sql.append(" select                       ");
-		sql.append("          rev_no              ");
-		sql.append("         ,rev_title           ");
-		sql.append("         ,rev_content         ");
-		sql.append("         ,rev_readno          ");
-		sql.append("  from review_2jo             ");
-		sql.append(" where rev_no = ?             ");
+		sql.append(" select                                   ");
+		sql.append("          re.rev_no                       ");
+		sql.append("         ,re.rev_title                    ");
+		sql.append("         ,us.user_id                      ");
+		sql.append("         ,re.rev_content                  ");
+		sql.append("         ,re.rev_readno                   ");
+		sql.append("  from user_2jo us                        ");
+		sql.append("  inner join review_2jo re on us.user_no  ");
+		sql.append("  = re.user_no                            ");
+		sql.append(" where rev_no = ?                        ");
 		
 		ReviewDTO dto=new ReviewDTO();
+		
 		ResultSet rs=null;
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 			)
@@ -103,13 +107,13 @@ public class ReviewDAO {
 			{
 				dto.setRev_no(rs.getInt("rev_no"));
 				dto.setRev_title(rs.getString("rev_title"));
+				dto.setUser_id(rs.getString("user_id"));
 				dto.setRev_content(rs.getString("rev_content"));
 				dto.setRev_readno(rs.getInt("rev_readno"));
 			}
 		}
 		catch(SQLException e) {
 			System.out.println(e);
-			
 		}
 		
 		return dto;

@@ -5,22 +5,23 @@ public class ReviewDTO {
 	private int rev_no;
 	private int rsv_no;
 	private int user_no;
+	private String user_id;
 	private String rev_title;
 	private String rev_content;
 	private int rev_readno;
-	private String id;
 	
 	
-	public ReviewDTO(int rev_no, int rsv_no, int user_no, String rev_title, String rev_content, int rev_readno,
-			String id) {
+
+	public ReviewDTO(int rev_no, int rsv_no, int user_no, String user_id, String rev_title, String rev_content,
+			int rev_readno) {
 		super();
 		this.rev_no = rev_no;
 		this.rsv_no = rsv_no;
 		this.user_no = user_no;
+		this.user_id = user_id;
 		this.rev_title = rev_title;
 		this.rev_content = rev_content;
 		this.rev_readno = rev_readno;
-		this.id = id;
 	}
 
 
@@ -59,6 +60,16 @@ public class ReviewDTO {
 	}
 
 
+	public String getUser_id() {
+		return user_id;
+	}
+
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+
+
 	public String getRev_title() {
 		return rev_title;
 	}
@@ -87,19 +98,6 @@ public class ReviewDTO {
 	public void setRev_readno(int rev_readno) {
 		this.rev_readno = rev_readno;
 	}
-
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-	  
-	
-	
 
 
 	

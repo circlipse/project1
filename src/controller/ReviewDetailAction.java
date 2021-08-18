@@ -19,6 +19,7 @@ public class ReviewDetailAction implements Action {
 		
 		int rev_no=Integer.parseInt(request.getParameter("rev_no"));
 		
+		
 		ReviewService service=ReviewService.getInstance();
 		
 		//조회수

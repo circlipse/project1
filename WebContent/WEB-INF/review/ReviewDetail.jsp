@@ -31,7 +31,8 @@ function subdelete(subno, rev_no)
 					     result+="<td>"+item.subcontent;
 					     
 					     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
-						 result+="</td></tr>";
+					     result+="</td></tr>";
+					    
 						 
 				$('#result').append(result);
 				});
@@ -66,7 +67,7 @@ function subdelete(subno, rev_no)
 		<td>제목</td><td><c:out value="${dto.rev_title }"></c:out></td>
 	</tr>
 	<tr>
-		<td>작성자</td><td><c:out value="${dto.id }"></c:out></td>
+		<td>작성자</td><td><c:out value="${dto.user_id }"></c:out></td>
 	</tr>
 	<tr>
 		<td>내용</td><td><c:out value="${dto.rev_content }"></c:out></td>
