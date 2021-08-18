@@ -13,7 +13,7 @@ import service.ReviewService;
 public class ReviewDeleteAction implements Action {
 
 	@Override
-	public comm.Forward execute(HttpServletRequest request, HttpServletResponse response)
+	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
 		int rev_no=Integer.parseInt(request.getParameter("rev_no"));
@@ -24,7 +24,7 @@ public class ReviewDeleteAction implements Action {
 		Forward forward=new Forward();
 		forward.setForward(true);  
 		forward.setPath("reviewlist.2jo");
-		
+		 
 		return forward;
 	}
 

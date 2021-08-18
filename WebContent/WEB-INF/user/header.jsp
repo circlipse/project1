@@ -6,19 +6,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$().ready(function(){
+	
+	$('#notice').click(function(){
+		
+		location.href="noticelist.2jo";
+	});
+	$('#reserve').click(function(){
+		
+		location.href="reserveinsert.2jo";
+	});
+	$('#review').click(function(){
+		
+		location.href="reviewlist.2jo";
+	});
+});
+</script>
 </head>
 <body>
 
-	<%-- <div id="wrap">
-	<c:if test="${sessionScope.id==null }">
-		<a href="login.do">로그인</a>
-		<a href="join.do">회원가입</a>
-	</c:if>
-	<c:if test="${sessionScope.id!=null }">
-		<a href="logout.do">로그아웃</a>
-		<a href="info.do">내정보</a>
-	</c:if> --%>
-	
+	<div id="wrap">
+	<button id="notice">공지사항</button>
+	<button id="reserve">예약</button>
+	<button id="review">리뷰</button>
 	</div>
+	
 </body>
 </html>
