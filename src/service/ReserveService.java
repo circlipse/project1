@@ -37,7 +37,7 @@ public class ReserveService {
             } else if(dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
             	cdao.addRsv(conn, 1, rsv_no, dto.getBag_val_1());
             	cdao.addRsv(conn, 2, rsv_no, dto.getBag_val_2());
-            }
+            } 
             
             conn.commit();
          }catch(NamingException | SQLException e) {
