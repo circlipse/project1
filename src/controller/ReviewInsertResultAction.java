@@ -30,7 +30,6 @@ public class ReviewInsertResultAction implements Action {
 		
 		ReviewDTO dto=new ReviewDTO();
 		dto.setRev_title(rev_title);
-		dto.setId(id);
 		dto.setRev_content(rev_content);
 		
 		UserDTO userdto =service.usernorsv(id);

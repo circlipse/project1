@@ -6,11 +6,13 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.Action;
 import comm.Forward;
 import dto.ReviewDTO;
 import service.ReviewService;
+import service.UserService;
  
 
 public class ReviewListAction implements Action {
