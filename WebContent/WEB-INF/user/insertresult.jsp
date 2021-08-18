@@ -13,7 +13,7 @@
 
 	<c:choose>
 
-		<c:when test="${result >=0}">
+		<c:when test="${result >0}">
 			<script>
 				alert('가입완료');
 				location.href = "list.2jo";

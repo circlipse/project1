@@ -21,6 +21,7 @@ public class ReserveInsertAction implements Action {
 		String id = (String) session.getAttribute("id");
 		
 		Forward forward = new Forward();
+		System.out.println(id);
 		if (id == null) {
 			forward.setForward(false);
 			forward.setPath("login.2jo");

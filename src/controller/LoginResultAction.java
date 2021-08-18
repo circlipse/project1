@@ -19,9 +19,7 @@ public class LoginResultAction implements Action {
 		// TODO Auto-generated method stub
 		
 		String id = request.getParameter("id");
-		System.out.println(id);
 		String pwd = request.getParameter("pwd");
-		System.out.println(pwd);
 		
 		UserService service = UserService.getInstance();
 		int result= service.checkUser(id,pwd);
@@ -31,10 +29,11 @@ public class LoginResultAction implements Action {
 		if(result > 0) {
 			HttpSession session =request.getSession();
 			session.setAttribute("id", id);
+			System.out.println("id는 "+id);
 			
 			session.setMaxInactiveInterval(60*5);
 		}
-		
+		request.setAttribute("result", result);
 		
 		f.setForward(true);
 		f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");

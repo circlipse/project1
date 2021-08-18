@@ -13,12 +13,17 @@ $().ready(function(){
 	$('#userdetail').click(function(){
 		
 		location.href="userdetail.2jo";
+	});	
+	$('#logout').click(function(){
+		
+		location.href="logout.2jo";
 	});
 })
 </script>
 </head>
 <body>
 	<c:set var="id" value="${sessionScope.id}"/>
+	<c:set var="result" value="${requestScope.result}"/>
 	
 	<c:choose>
 
@@ -27,6 +32,7 @@ $().ready(function(){
 		<tr><td><c:out value="${sessionScope.id}" /></td><td>님 반갑습니다.</td> </tr>
 		</table>
 		<button id="userdetail">마이페이지</button>
+		<button id="logout">로그아웃</button>
 		</c:when>
 
 		<c:otherwise>
