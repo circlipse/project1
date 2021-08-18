@@ -91,7 +91,7 @@ public class ReserveDAO {
 		return key;
 	}
 
-	public void detailRsv(Connection conn, int rsv_no) {
+	public ReserveDTO detailRsv(Connection conn, int rsv_no) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" select r1.rsv_no                              ");
 		sql.append("        , r1.user_no                           ");
@@ -110,24 +110,31 @@ public class ReserveDAO {
 		sql.append(" on r1.rsv_no = c1.rsv_no                      ");
 		sql.append(" where rsv_no = ?                              ");
 
+		ReserveDTO dto = new ReserveDTO();
 		ResultSet rs = null;
 		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
 			pstmt.setInt(1, rsv_no);
 			rs = pstmt.executeQuery();
 
-			if (rs.next()) {
-				ReserveDTO dto = new ReserveDTO();
+			if(rs.next()) {
+				dto.setRsv_no(rs.getInt("r1.rsv_no"));
+				dto.setUser_no(rs.getInt("r1.user_no"));
+				dto.setSub_date(rs.getString("sub_date"));
+				dto.setRsv_date(rs.getString("rsv_date"));
+				dto.setRsv_content(rs.getString("rsv_content"));
+				dto.setAddr_depart(rs.getString("addr_depart"));
+				dto.setAddr_arrive(rs.getString("addr_arrive"));
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_phone(rs.getString("user_phone"));
+				dto.setBag_no(rs.getInt("bag_no"));
+				dto.setBag_val(rs.getInt("bag_val"));
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
 		} finally {
-			if (rs != null)
-				try {
-					rs.close();
-				} catch (SQLException e) {
-				}
+			if (rs != null) try {rs.close();} catch (SQLException e) {}
 		}
-
+		return dto;
 	}
 
 }

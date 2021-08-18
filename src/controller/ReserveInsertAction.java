@@ -17,7 +17,7 @@ public class ReserveInsertAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/reserve/insertform.jsp");
+		forward.setPath("WEB-INF/reserve/ReserveInsertForm.jsp");
 		return forward;
 	}
 
