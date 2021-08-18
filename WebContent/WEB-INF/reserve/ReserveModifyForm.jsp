@@ -9,7 +9,8 @@
 </head>
 <body>
 <form method="post" action="reservemodifyresult.2jo">
-<c:set var="dto" value="${requestScope.dto }"/>
+	<c:set var="dto" value="${requestScope.dto }"/>
+	<c:set var="dto2" value="${requestScope.dto2 }"/>
 <table>
 <tbody>
 	<tr>
@@ -43,11 +44,11 @@
 	<tr>
 		<td rowspan="2">예약 종류</td>
 		<td>캐리어
-		<input type="text" id="bag_val_1" name="bag_val_1" value="${dto.bag_val_1 }"></td>
+		<input type="text" id="bag_val_1" name="bag_val_1" value="${dto2.bag_val_1 }"></td>
 	</tr>
 	<tr>
 		<td>배낭
-		<input type="text" id="bag_val_2" name="bag_val_2" value="${dto.bag_val_2 }"></td>
+		<input type="text" id="bag_val_2" name="bag_val_2" value="${dto2.bag_val_2 }"></td>
 	</tr>
 	<tr>
 		<td>배송시 당부 말씀</td>
