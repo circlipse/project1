@@ -19,12 +19,18 @@ public class ReviewDAO {
 		  sql.append("   select *                                     ");
 		  sql.append("   from (                                       ");
 		  sql.append("          select                                ");
-		  sql.append("                @rownum:=@rownum+1 rnum, rv.*   ");
-		  sql.append("          from review_2jo rv,                   ");
+		  sql.append("                @rownum:=@rownum+1 rnum,        ");
+		  sql.append("                 rv.rev_no                      ");
+		  sql.append("                ,rv.rev_title                   ");
+		  sql.append("                ,us.user_id                     ");
+		  sql.append("                ,rv.rev_readno                  ");
+		  sql.append("          from review_2jo rv                    ");
+		  sql.append("      inner join user_2jo us on rv.user_no      ");
+		  sql.append("      =us.user_no,                              ");
 		  sql.append("                  (                             ");
 		  sql.append("                    select @ROWNUM := 0) R      ");
-		  sql.append("                    where 1=1) LIST             ");
-     	  sql.append(" where rnum >= ? and rnum <=?               ");
+		  sql.append("                    where 1=1  ) LIST           ");
+     	  sql.append(" where rnum >= ? and rnum <=?                   ");
 		
 		ResultSet rs=null;
 		List<ReviewDTO> arr=new ArrayList<ReviewDTO>();
@@ -42,6 +48,7 @@ public class ReviewDAO {
 				ReviewDTO dto=new ReviewDTO();
 				dto.setRev_no(rs.getInt("rev_no"));
 				dto.setRev_title(rs.getString("rev_title"));
+				dto.setUser_id(rs.getString("user_id"));
 				dto.setRev_readno(rs.getInt("rev_readno"));
 				
 				arr.add(dto);
