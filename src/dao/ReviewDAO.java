@@ -1,5 +1,5 @@
 package dao;
- 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dto.ReviewDTO;
+import dto.SubReviewDTO; 
 
 public class ReviewDAO {
 
@@ -203,7 +204,85 @@ public class ReviewDAO {
 	    
 		return totalcount;
 	}
+
+	public void insertsub(Connection conn, SubReviewDTO dto) {
 		
+		StringBuilder sql=new StringBuilder();
+		sql.append(" insert into  subreview_2jo (               ");
+		sql.append("                     		 subcontent     ");
+		sql.append("                     		,rev_no    )    ");
+		sql.append(" values( ?, ? ) ");
+		
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			)
+		{
+			pstmt.setString(1, dto.getSubcontent());
+			pstmt.setInt(2, dto.getRev_no());
+			
+			pstmt.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+
+	public List<SubReviewDTO> subdetail(Connection conn, int rev_no) {
+		
+		StringBuilder sql=new StringBuilder();
+		sql.append("  select                        ");
+		sql.append("            subno               ");
+		sql.append("           ,subcontent          ");
+		sql.append("           ,rev_no              ");
+		sql.append("  from subreview_2jo            ");
+		sql.append("  where rev_no = ?              ");
+		
+		
+		ResultSet rs=null;
+		List<SubReviewDTO> list=new ArrayList<SubReviewDTO>();
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			){
+			pstmt.setInt(1, rev_no);
+			rs=pstmt.executeQuery();
+			
+			while(rs.next()) {
+				SubReviewDTO dto=new SubReviewDTO();
+				dto.setSubno(rs.getInt("subno"));
+				dto.setSubcontent(rs.getString("subcontent"));
+				dto.setRev_no(rs.getInt("rev_no"));
+				list.add(dto);
+			}
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {}
+		}
+		return list;
+
+	}
+
+	public void deletesub(Connection conn, int subno, int rev_no) {
+		
+		StringBuilder sql=new StringBuilder();
+		sql.append(" delete from subreview_2jo       ");
+		sql.append(" where  subno=?                  ");
+		
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			)
+		{
+			pstmt.setInt(1, subno);
+			pstmt.executeUpdate();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+
+
 	
 	
 	
