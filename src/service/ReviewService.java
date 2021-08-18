@@ -127,6 +127,8 @@ public class ReviewService {
 		return dto;
 		
 	}
+	
+
 
 	public void reviewmodify(ReviewDTO dto) {
 		DBConnection dbconn=DBConnection.getdbInstance();

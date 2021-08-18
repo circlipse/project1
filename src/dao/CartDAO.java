@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dto.ReserveDTO;
+
 
 public class CartDAO {
         private static CartDAO dao = new CartDAO();
@@ -59,15 +59,22 @@ public class CartDAO {
 		}
 		return bag_val;
 	}
-	public void delRsv(Connection conn, int rsv_no) {
+	public void delRsv(Connection conn, int rsv_no, int bag_no, int bag_val) {
 		StringBuilder sql = new StringBuilder();
 		sql.append(" delete from cart_2jo       ");
 		sql.append(" where rsv_no = ?           ");
+		if(bag_val == 0) {
+			sql.append(" and bag_no = ?         ");
+		}
+		
 
 		try(
 			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 			){
 			pstmt.setInt(1, rsv_no);
+			if(bag_val == 0) {
+				pstmt.setInt(2, bag_no);
+			}
 			pstmt.executeUpdate();
 			
 		} catch(SQLException e) {

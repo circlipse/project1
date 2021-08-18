@@ -12,7 +12,7 @@
  * d
  */
 	function reserveModify(rsv_no)
-	{
+	{ 
 		console.log(rsv_no);
 		location.href="reservemodify.2jo?rsv_no="+rsv_no;
 	}

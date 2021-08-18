@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import controller.Action;
 import comm.Forward;
 import dto.SubReviewDTO;
+import dto.UserDTO;
 import service.ReviewService;
 
 public class SubReviewInsertAction implements Action {
@@ -17,12 +18,10 @@ public class SubReviewInsertAction implements Action {
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
 		
-		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
 		
 		int rev_no=Integer.parseInt(request.getParameter("rev_no"));
+
 		String subcontent=request.getParameter("subcontent");
 		
 		SubReviewDTO dto=new SubReviewDTO();
@@ -31,6 +30,7 @@ public class SubReviewInsertAction implements Action {
 		
 		ReviewService service=ReviewService.getInstance();
 		service.insertsub(dto);
+		
 		
 		Forward forward=new Forward();
 		forward.setForward(false);
