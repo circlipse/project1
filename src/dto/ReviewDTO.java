@@ -1,5 +1,5 @@
 package dto;
-
+ 
 public class ReviewDTO {
 	 
 	private int rev_no;
