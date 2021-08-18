@@ -103,7 +103,7 @@ public class ReserveService {
             rdao.delRsv(conn, rsv_no);
             
             CartDAO cdao=CartDAO.getInstance();
-            cdao.delRsv(conn, rsv_no);
+            cdao.delRsv(conn, rsv_no, 1, 1);
             
             conn.commit();
         } catch(NamingException | SQLException e) {
@@ -151,21 +151,43 @@ public class ReserveService {
             	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
             } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
             	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.delRsv(conn, dto.getRsv_no());
+            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
             } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
-            	cdao.delRsv(conn, dto.getRsv_no());
-            }
-            
-            
-            
-            if(dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            } else if(dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
             	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
             	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
             	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
+            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
+            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
+            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
+            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
             } 
+            
+
             
             conn.commit();
         } catch(NamingException | SQLException e) {
