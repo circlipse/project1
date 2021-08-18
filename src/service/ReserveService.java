@@ -2,6 +2,8 @@ package service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.NamingException;
 
@@ -109,6 +111,28 @@ public class ReserveService {
         }finally {
         	if(conn!=null) try {conn.close();} catch(SQLException e) {}
         }
+	}
+	public List<ReserveDTO> getRsvList(String id) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn=DBConnection.getdbInstance();
+        Connection conn=null;
+        
+        List<ReserveDTO> list=new ArrayList<ReserveDTO>();
+        try {
+        	conn=dbconn.getConnection();
+            conn.setAutoCommit(false);
+            
+            ReserveDAO dao=ReserveDAO.getInstance();
+            list = dao.getRsvList(conn, id);
+            
+            conn.commit();
+        } catch(NamingException | SQLException e) {
+        	try {conn.rollback();} catch(SQLException e2) {}
+        }finally {
+           if(conn!=null) try {conn.close();} catch(SQLException e) {}
+        }
+		return list;
+
 	}
 
 }

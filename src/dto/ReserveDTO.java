@@ -16,6 +16,7 @@ public class ReserveDTO {
 	private long price;
 	private String user_name;
 	private String user_phone;
+	private int rnum;
 	public int getRsv_no() {
 		return rsv_no;
 	}
@@ -106,6 +107,13 @@ public class ReserveDTO {
 	public void setUser_phone(String user_phone) {
 		this.user_phone = user_phone;
 	}
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+	
 
 
 
