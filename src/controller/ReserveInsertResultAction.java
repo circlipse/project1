@@ -51,11 +51,12 @@ public class ReserveInsertResultAction implements Action {
          dto.setUser_no(user_no);
          
          int rsv_no = service.insertRsv(dto);
-         request.setAttribute("rsv_no", rsv_no);
+         //System.out.println("에약번호" + rsv_no);
+         
          
          Forward forward=new Forward();
          forward.setForward(false);
-         forward.setPath("reservedetail.2jo");
+         forward.setPath("reservedetail.2jo?rsv_no="+rsv_no);
          return forward;
 
 	}
