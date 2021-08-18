@@ -52,4 +52,21 @@ public class NoticeService {
 		
 		return result;
 	}
+	public NoticeDTO detail(int notice_no) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn =null;
+		NoticeDTO dto = null;
+		try {
+			conn = dbconn.getConnection();
+			NoticeDAO dao = NoticeDAO.getinstace();
+			dto = dao.detail(conn,notice_no);
+		}catch(SQLException|NamingException e) {
+			System.out.println(e);
+		}finally {
+			if (conn != null)try {conn.close();} catch (SQLException e) {}
+		}
+		
+		return dto;		
+	}
 }

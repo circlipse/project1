@@ -19,29 +19,7 @@ public class ReserveDAO {
 	private ReserveDAO() {
 	}
 
-	public void modifyReserve(Connection conn, ReserveDTO dto) {
-		StringBuilder sql = new StringBuilder();
-		sql.append(" update reserve_2jo         ");
-		sql.append(" set      rsv_date = ?      ");
-		sql.append("        , rsv_content = ?   ");
-		sql.append("        , addr_depart = ?   ");
-		sql.append("        , addr_arrive = ?   ");
-		sql.append(" where rsv_no = ?           ");
 
-		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-
-		) {
-			// pstmt.setString(1, dto.getSub_date());
-			pstmt.setString(1, dto.getRsv_date());
-			pstmt.setString(2, dto.getRsv_content());
-			pstmt.setString(3, dto.getAddr_depart());
-			pstmt.setString(4, dto.getAddr_arrive());
-			pstmt.setInt(5, dto.getRsv_no());
-			pstmt.executeUpdate();
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
-	}
 
 	public int addRsv(Connection conn, ReserveDTO dto) {
 		StringBuilder sql = new StringBuilder();
@@ -167,7 +145,7 @@ public class ReserveDAO {
 		  sql.append("              where user_id = ?                                             ");
 		  sql.append("              order by re.rsv_date asc) rv,                                 ");
 		  sql.append("              (select @rownum := 0 ) R                                      ");
-		  sql.append("              where 1=1                                                     ");
+		  sql.append("       where 1=1                                                            ");
 		  sql.append("       order by rnum)   LIST                                                "); 
 		
 		ResultSet rs=null;
@@ -195,6 +173,31 @@ public class ReserveDAO {
 		
 		return arr;
 		
+	}
+	
+	public void modifyReserve(Connection conn, ReserveDTO dto) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" update reserve_2jo         ");
+		sql.append(" set      rsv_date = ?      ");
+		sql.append("        , sub_date = ?      ");
+		sql.append("        , addr_depart = ?   ");
+		sql.append("        , addr_arrive = ?   ");
+		sql.append("        , rsv_content = ?   ");
+		sql.append(" where rsv_no = ?           ");
+
+		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+
+		) {
+			pstmt.setString(1, dto.getRsv_date());
+			pstmt.setString(2, dto.getSub_date());
+			pstmt.setString(3, dto.getAddr_depart());
+			pstmt.setString(4, dto.getAddr_arrive());
+			pstmt.setString(5, dto.getRsv_content());
+			pstmt.setInt(6, dto.getRsv_no());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
 	}
 
 
