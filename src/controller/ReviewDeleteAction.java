@@ -24,7 +24,7 @@ public class ReviewDeleteAction implements Action {
 		Forward forward=new Forward();
 		forward.setForward(true);  
 		forward.setPath("reviewlist.2jo");
-		
+		 
 		return forward;
 	}
 
