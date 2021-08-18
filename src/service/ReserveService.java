@@ -29,11 +29,12 @@ public class ReserveService {
             conn.setAutoCommit(false);
             
             ReserveDAO dao=ReserveDAO.getInstance();
+            CartDAO cdao = CartDAO.getInstance();
+            
             if(dto.getBag_val_1() != 0 || dto.getBag_val_2() != 0) {
             rsv_no = dao.addRsv(conn, dto);            
             }
 
-            CartDAO cdao = CartDAO.getInstance();
             if(dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
             	cdao.addRsv(conn, 1, rsv_no, dto.getBag_val_1());
             } else if(dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {

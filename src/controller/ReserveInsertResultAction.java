@@ -39,6 +39,8 @@ public class ReserveInsertResultAction implements Action {
          }
          String rsv_content=request.getParameter("rsv_content");
          
+         
+         
          ReserveService service=ReserveService.getInstance();
          ReserveDTO dto=new ReserveDTO();
          dto.setRsv_date(rsv_date);
@@ -49,6 +51,8 @@ public class ReserveInsertResultAction implements Action {
          dto.setBag_val_2(bag_val_2);
          dto.setRsv_content(rsv_content);
          dto.setUser_no(user_no);
+         
+         
          
          int rsv_no = service.insertRsv(dto);
          //System.out.println("에약번호" + rsv_no);
