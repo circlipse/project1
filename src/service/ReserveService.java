@@ -38,7 +38,7 @@ public class ReserveService {
             	cdao.addRsv(conn, 1, rsv_no, dto.getBag_val_1());
             	cdao.addRsv(conn, 2, rsv_no, dto.getBag_val_2());
             } 
-            
+             
             conn.commit();
          }catch(NamingException | SQLException e) {
             try {conn.rollback();} catch(SQLException e2) {}
