@@ -6,6 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	function reserveList(rsv_no)
+	{
+		console.log(rsv_no);
+		location.href="reservedetail.2jo?rsv_no="+rsv_no;
+	}
+</script>
 </head>
 <body>
 <c:set var="list" value="${requestScope.list }"></c:set>
@@ -20,7 +27,8 @@
 	<td><c:out value="${item.rnum }"/></td>
 	<td><c:out value="${item.rsv_no }"/></td>
 	<td><c:out value="${item.rsv_date }"/></td>
-	<td><a href="">예약변경</a><a href="">예약취소</a></td>
+	<td><input type="button" id="detail" value="예약 상세보기"
+		onclick="reserveList(${item.rsv_no })"></td>
 	</tr>
 </c:forEach>
 </tbody>
