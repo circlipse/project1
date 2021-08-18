@@ -19,14 +19,13 @@
 	function reserveDelete(rsv_no)
 	{
 		console.log(rsv_no);
-		location.href="ReserveDelete.jsp?rsv_no="+rsv_no;
+		location.href="reservedelete.2jo?rsv_no="+rsv_no;
 	}
 </script>
 </head>
 <body>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
 	<c:set var="dto2" value="${requestScope.dto2 }"></c:set>
-<h2>예약 확인</h2>	
 <table>
 <tbody>
 	<tr>
