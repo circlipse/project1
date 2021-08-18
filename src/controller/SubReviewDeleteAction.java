@@ -11,7 +11,7 @@ import comm.Forward;
 import service.ReviewService;
 
 public class SubReviewDeleteAction implements Action {
-   
+    
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -25,7 +25,7 @@ public class SubReviewDeleteAction implements Action {
 		Forward forward=new Forward();
 		forward.setForward(false);    
 		forward.setPath("reviewdetail.2jo?rev_no="+rev_no);
-		
+		 
 		return forward;
 	}
 
