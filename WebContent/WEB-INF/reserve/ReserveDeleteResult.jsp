@@ -5,10 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script>
+	alert("예약이 취소되었습니다.");
+	location.href="";
+</script>
 </head>
 <body>
-alert('삭제 성공');
 
 </body>
 </html>

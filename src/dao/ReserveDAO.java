@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import dto.ReserveDTO;
 
@@ -151,6 +153,46 @@ public class ReserveDAO {
 		} catch(SQLException e) {
 			System.out.println(e);
 		}
+		
+	}
+
+	public List<ReserveDTO> getRsvList(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql=new StringBuilder();
+		  sql.append(" select *                                                           ");
+		  sql.append(" from ( select @rownum:=@rownum+1 rnum, rv.rsv_no, rv.rsv_date      ");
+		  sql.append("     from                                                           ");
+		  sql.append("     (select re.*, us.user_id                                       ");
+		  sql.append("         from user_2jo us                                           ");
+		  sql.append("         inner join reserve_2jo re on us.user_no = re.user_no ) rv, ");
+		  sql.append("      (select @rownum := 0 ) R                                      ");
+		  sql.append("       where 1=1 and user_id=?                                      ");
+		  sql.append("       order by rnum  ) LIST                                        "); 
+		
+		ResultSet rs=null;
+		List<ReserveDTO> arr=new ArrayList<ReserveDTO>();
+		try(
+			PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			)
+		{
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();	
+			while(rs.next())
+			{
+				ReserveDTO dto=new ReserveDTO();
+				dto.setRnum(rs.getInt("rnum"));
+				dto.setRsv_no(rs.getInt("rsv_no"));
+				dto.setRsv_date(rs.getString("rsv_date"));
+				arr.add(dto);
+			}
+		}
+		catch(SQLException e) {
+			System.out.println(e);
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e) {}
+		}
+		
+		return arr;
 		
 	}
 
