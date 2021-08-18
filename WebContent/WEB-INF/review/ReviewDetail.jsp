@@ -3,10 +3,51 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+function subdelete(subno, rev_no)
+{
+	location.href="subdelete.2jo?subno="+subno+"&rev_no="+rev_no;
+}
+
+	$(document).ready(function () {
+		let no=${dto.rev_no};
+		
+
+		$.ajax({
+			url:'subdetail.2jo'    
+			,data:{'rev_no' : no}
+			,method:'post'
+			,dataType:'json'    
+			,success:function(data)
+			{
+				$.each(data, function (index, item) {
+					let result="<tr>";
+					     result+="<td>"+item.subcontent;
+					     
+					     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
+						 result+="</td></tr>";
+						 
+				$('#result').append(result);
+				});
+				
+			}
+			,error:function(xhr){
+				console.log('error'+xhr);
+			}
+		});
+	});
+
+
+
+
+</script>
+
 
 </head>
 
@@ -33,11 +74,17 @@
 <br>
 <br>
 <label>-댓글-</label>
-<form method="post" action="subadd.2jo">  <!-- properties에 추가 -->
-	<input type="hidden" name="num" value="${dto.rev_no }">  
-	<textarea rows="3" cols="20" name="content" required></textarea><br>
+<form method="post" action="subinsert.2jo">  
+	<input type="hidden" name="rev_no" value="${dto.rev_no }">  
+	<textarea rows="3" cols="20" name="subcontent" required></textarea><br>
 	<!-- (+추가) login 이후 id(or사용자 이름)  -->
 	<input type="submit" value="추가">
 </form>
+
+<table id="result"></table>
+
+<br><br>
+
+<a href="reviewlist.2jo">목록으로</a> 
 </body>
 </html>

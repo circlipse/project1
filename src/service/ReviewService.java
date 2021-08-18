@@ -10,8 +10,9 @@ import javax.naming.NamingException;
 import comm.DBConnection;
 import dao.ReviewDAO;
 import dto.ReviewDTO;
+import dto.SubReviewDTO;
 
- 
+
 public class ReviewService {
 
 	private static ReviewService instance = new ReviewService();
@@ -155,6 +156,64 @@ public class ReviewService {
 			conn=dbconn.getConnection();
 			ReviewDAO dao=new ReviewDAO();
 			dao.ReviewDelete(conn, rev_no);
+			
+		}catch(SQLException | NamingException e)
+		{
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();}catch(Exception e) {}
+		}
+		
+	}
+
+	public List<SubReviewDTO> subDetail(int rev_no) {
+		// TODO Auto-generated method stub
+		
+		DBConnection dbconn=DBConnection.getdbInstance();
+		Connection conn=null;
+		
+		List<SubReviewDTO> sublist=new ArrayList<SubReviewDTO>();
+		try {
+			conn=dbconn.getConnection();
+			ReviewDAO dao=new ReviewDAO();
+			sublist=dao.subdetail(conn, rev_no);
+			
+		}catch(SQLException | NamingException e)
+		{
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();}catch(Exception e) {}
+		}
+		
+		return sublist;
+	}
+
+	public void insertsub(SubReviewDTO dto) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn=DBConnection.getdbInstance();
+		Connection conn=null;
+		
+		try {
+			conn=dbconn.getConnection();
+			ReviewDAO dao=new ReviewDAO();
+			dao.insertsub(conn, dto);
+			
+		}catch(SQLException | NamingException e)
+		{
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();}catch(Exception e) {}
+		}
+	}
+
+	public void subDelete(int subno, int rev_no) {
+		DBConnection dbconn=DBConnection.getdbInstance();
+		Connection conn=null;
+		
+		try {
+			conn=dbconn.getConnection();
+			ReviewDAO dao=new ReviewDAO();
+			dao.deletesub(conn, subno, rev_no);
 			
 		}catch(SQLException | NamingException e)
 		{
