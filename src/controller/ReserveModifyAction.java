@@ -19,8 +19,11 @@ public class ReserveModifyAction implements Action {
 		int rsv_no=Integer.parseInt(request.getParameter("rsv_no"));
 		ReserveService service=ReserveService.getInstance();
 		ReserveDTO dto=service.detailRsv(rsv_no);
-		
 		request.setAttribute("dto", dto);
+		
+		ReserveDTO dto2 = new ReserveDTO();
+		dto2 = service.getBagVal(rsv_no);
+		request.setAttribute("dto2", dto2);
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
