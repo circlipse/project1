@@ -108,7 +108,7 @@ public class ReserveDAO {
 		sql.append(" on r1.user_no = u1.user_no                    ");
 		sql.append(" inner join cart_2jo c1                        ");
 		sql.append(" on r1.rsv_no = c1.rsv_no                      ");
-		sql.append(" where rsv_no = ?                              ");
+		sql.append(" where r1.rsv_no = ?                           ");
 
 		ReserveDTO dto = new ReserveDTO();
 		ResultSet rs = null;

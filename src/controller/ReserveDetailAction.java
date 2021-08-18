@@ -14,12 +14,12 @@ public class ReserveDetailAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int rsv_no = (int)request.getAttribute("rsv_no");
+		//System.out.println("확인");
+		int rsv_no = Integer.parseInt(request.getParameter("rsv_no"));
 		ReserveService service = ReserveService.getInstance();
 		ReserveDTO dto = new ReserveDTO();
 		dto = service.detailRsv(rsv_no);
-
+		//System.out.println(rsv_no);
 		request.setAttribute("dto", dto);
 		
 		Forward forward = new Forward();
