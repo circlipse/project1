@@ -20,7 +20,7 @@
 	<td><c:out value="${item.rnum }"/></td>
 	<td><c:out value="${item.rsv_no }"/></td>
 	<td><c:out value="${item.rsv_date }"/></td>
-	<td><a href="">예약변경</a><a href="">예약취소</a></td>
+	<td><a href="">예약 상세 보기</a></td>
 	</tr>
 </c:forEach>
 </tbody>

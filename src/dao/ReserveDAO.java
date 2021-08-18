@@ -159,15 +159,16 @@ public class ReserveDAO {
 	public List<ReserveDTO> getRsvList(Connection conn, String id) {
 		// TODO Auto-generated method stub
 		StringBuilder sql=new StringBuilder();
-		  sql.append(" select *                                                           ");
-		  sql.append(" from ( select @rownum:=@rownum+1 rnum, rv.rsv_no, rv.rsv_date      ");
-		  sql.append("     from                                                           ");
-		  sql.append("     (select re.*, us.user_id                                       ");
-		  sql.append("         from user_2jo us                                           ");
-		  sql.append("         inner join reserve_2jo re on us.user_no = re.user_no ) rv, ");
-		  sql.append("      (select @rownum := 0 ) R                                      ");
-		  sql.append("       where 1=1 and user_id=?                                      ");
-		  sql.append("       order by rnum  ) LIST                                        "); 
+		  sql.append(" select *                                                                   ");
+		  sql.append(" from ( select @rownum:=@rownum+1 rnum, rv.rsv_no, rv.rsv_date              ");
+		  sql.append("        from (select re.* ,us.user_id                                       ");
+		  sql.append("              from user_2jo us                                              ");
+		  sql.append("              inner join reserve_2jo re on us.user_no = re.user_no          ");
+		  sql.append("              where user_id = ?                                             ");
+		  sql.append("              order by re.rsv_date asc) rv,                                 ");
+		  sql.append("              (select @rownum := 0 ) R                                      ");
+		  sql.append("              where 1=1                                                     ");
+		  sql.append("       order by rnum)   LIST                                                "); 
 		
 		ResultSet rs=null;
 		List<ReserveDTO> arr=new ArrayList<ReserveDTO>();
