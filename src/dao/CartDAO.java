@@ -79,4 +79,20 @@ public class CartDAO {
 		}
 		return bag_val;
 	}
+	public void delRsv(Connection conn, int rsv_no) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" delete from cart_2jo       ");
+		sql.append(" where rsv_no = ?           ");
+			
+		try(
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+			){
+			pstmt.setInt(1, rsv_no);
+			pstmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			System.out.println(e);
+		}
+		
+	}
 }

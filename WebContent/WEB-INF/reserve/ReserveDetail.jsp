@@ -14,12 +14,12 @@
 	function reserveModify(rsv_no)
 	{
 		console.log(rsv_no);
-		location.href="ReserveModify.jsp?no="+rsv_no;
+		location.href="ReserveModify.jsp?rsv_no="+rsv_no;
 	}
 	function reserveDelete(rsv_no)
 	{
 		console.log(rsv_no);
-		location.href="ReserveDelete.jsp?no="+rsv_no;
+		location.href="ReserveDelete.jsp?rsv_no="+rsv_no;
 	}
 </script>
 </head>

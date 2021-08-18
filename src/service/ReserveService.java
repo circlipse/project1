@@ -62,6 +62,7 @@ public class ReserveService {
             ReserveDAO dao=ReserveDAO.getInstance();
             dto = dao.detailRsv(conn, rsv_no);
             
+            conn.commit();
         } catch(NamingException | SQLException e) {
         	try {conn.rollback();} catch(SQLException e2) {}
         }finally {
@@ -80,12 +81,34 @@ public class ReserveService {
             CartDAO dao=CartDAO.getInstance();
             dto.setBag_val_1(dao.getBagVal(conn, rsv_no, 1));
             dto.setBag_val_2(dao.getBagVal(conn, rsv_no, 2));
+            
+            conn.commit();
         } catch(NamingException | SQLException e) {
         	try {conn.rollback();} catch(SQLException e2) {}
         }finally {
         	if(conn!=null) try {conn.close();} catch(SQLException e) {}
         }
         return dto;
+	}
+	public void delRsv(int rsv_no) {
+		DBConnection dbconn=DBConnection.getdbInstance();
+        Connection conn=null;
+        try {
+        	conn=dbconn.getConnection();
+            conn.setAutoCommit(false);
+            
+            ReserveDAO rdao=ReserveDAO.getInstance();
+            rdao.delRsv(conn, rsv_no);
+            
+            CartDAO cdao=CartDAO.getInstance();
+            cdao.delRsv(conn, rsv_no);
+            
+            conn.commit();
+        } catch(NamingException | SQLException e) {
+        	try {conn.rollback();} catch(SQLException e2) {}
+        }finally {
+        	if(conn!=null) try {conn.close();} catch(SQLException e) {}
+        }
 	}
 
 }

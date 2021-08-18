@@ -137,5 +137,22 @@ public class ReserveDAO {
 		return dto;
 	}
 
+	public void delRsv(Connection conn, int rsv_no) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" delete from reserve_2jo       ");
+		sql.append(" where rsv_no = ?              ");
+			
+		try(
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+			){
+			pstmt.setInt(1, rsv_no);
+			pstmt.executeUpdate();
+			
+		} catch(SQLException e) {
+			System.out.println(e);
+		}
+		
+	}
+
 
 }
