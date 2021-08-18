@@ -19,6 +19,7 @@ public class NoticeAddAction implements Action {
 		// TODO Auto-generated method stub
 
 		request.setCharacterEncoding("utf-8");
+		
 		String notice_title = request.getParameter("notice_title");
 		String notice_content = request.getParameter("notice_content");
 		

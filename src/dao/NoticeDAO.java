@@ -57,5 +57,29 @@ public class NoticeDAO {
 		}
 		return result;
 	}
+	public NoticeDTO detail(Connection conn, int notice_no) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select notice_no, notice_title, notice_content from notice_2jo where notice_no= ? ");
+		System.out.println(sql);
+		
+		NoticeDTO dto =new NoticeDTO();
+		ResultSet rs = null;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());){
+			pstmt.setInt(1, notice_no);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+
+				dto.setNotice_no(rs.getInt("notice_no"));
+				dto.setNotice_title(rs.getString("notice_title"));
+				dto.setNotice_content(rs.getString("notice_content"));
+				
+			}
+		}catch(SQLException e) {
+			System.out.println(e);
+		}
+		return dto;
+	}
 
 }

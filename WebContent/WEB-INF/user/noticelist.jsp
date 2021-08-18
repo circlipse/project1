@@ -19,7 +19,7 @@
 </head>
 <body>
 <c:set var="list" value="${requestScope.list}"></c:set>
-	
+	<c:set var="id" value="${sessionScope.id}" />
 	<table>
 		<thead>
 			<tr>
@@ -33,13 +33,16 @@
 		<c:forEach var="item" items="${list }">
 				<tr>
 					<td><c:out value="${item.notice_no }"></c:out></td>
-					<td><c:out value="${item.notice_title }"></c:out></td>
+					<td><a href="noticedetail.2jo?notice_no=${item.notice_no }"><c:out value="${item.notice_title }"></c:out></a></td>
 					<td><c:out value="${item.notice_readno }"></c:out></td>
 					<td>관리자</td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	<c:if test="${id eq 'admin' }">
 	<button id="noticeadd">글쓰기</button>
+	</c:if>
+	
 </body>
 </html>

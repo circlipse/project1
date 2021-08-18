@@ -1,4 +1,4 @@
-package dao;  
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,9 +18,8 @@ public class ReviewDAO {
 		StringBuilder sql=new StringBuilder();
 		  sql.append("   select *                                     ");
 		  sql.append("   from (                                       ");
-		  sql.append("          select S.* ,                          ");
-		  sql.append("                @rownum:=@rownum+1 rnum         ");
-		  sql.append("          from ( select                         ");
+		  sql.append("          select                                ");
+		  sql.append("                @rownum:=@rownum+1 rnum,        ");
 		  sql.append("                 rv.rev_no                      ");
 		  sql.append("                ,rv.rev_title                   ");
 		  sql.append("                ,us.user_id                     ");
@@ -29,9 +28,8 @@ public class ReviewDAO {
 		  sql.append("      inner join user_2jo us on rv.user_no      ");
 		  sql.append("      =us.user_no,                              ");
 		  sql.append("                  (                             ");
-		  sql.append("                    select @ROWNUM := 0 ) R     ");
-		  sql.append("                    where 1=1  ) S              ");
-		  sql.append("                    order by rev_no  ) as A     ");
+		  sql.append("                    select @ROWNUM := 0) R      ");
+		  sql.append("                    where 1=1  ) LIST           ");
      	  sql.append(" where rnum >= ? and rnum <=?                   ");
 		
 		ResultSet rs=null;
