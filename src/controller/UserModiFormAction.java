@@ -14,6 +14,7 @@ public class UserModiFormAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		Forward forward = new Forward();
 		forward.setForward(true);
 //		forward.setPath("/WEB-INF/user/insertform.jsp"); 

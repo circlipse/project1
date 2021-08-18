@@ -26,6 +26,8 @@ public class LoginResultAction implements Action {
 		UserService service = UserService.getInstance();
 		int result= service.checkUser(id,pwd);
 		
+		Forward f = new Forward();
+		System.out.println(result);
 		if(result > 0) {
 			HttpSession session =request.getSession();
 			session.setAttribute("id", id);
@@ -33,7 +35,7 @@ public class LoginResultAction implements Action {
 			session.setMaxInactiveInterval(60*5);
 		}
 		
-		Forward f = new Forward();
+		
 		f.setForward(true);
 		f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
 		

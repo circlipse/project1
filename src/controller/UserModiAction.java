@@ -17,6 +17,7 @@ public class UserModiAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		HttpSession session =request.getSession();
 		String id = (String) session.getAttribute("id");
 		

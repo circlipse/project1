@@ -16,6 +16,7 @@ public class UserInsertAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		String user_id = request.getParameter("user_id");
 		String user_pwd = request.getParameter("user_pwd");
 		String user_name = request.getParameter("user_name");

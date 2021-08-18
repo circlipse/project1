@@ -20,10 +20,25 @@ $().ready(function(){
 <body>
 	<c:set var="id" value="${sessionScope.id}"/>
 	
-	<table >
+	<c:choose>
+
+		<c:when test="${result >0}">
+			<table >
 		<tr><td><c:out value="${sessionScope.id}" /></td><td>님 반갑습니다.</td> </tr>
-	</table>
-		
-	<button id="userdetail">마이페이지</button>
+		</table>
+		<button id="userdetail">마이페이지</button>
+		</c:when>
+
+		<c:otherwise>
+			<script>
+				alert('로그인실패');
+				location.href = "login.2jo";
+			</script>
+		</c:otherwise>
+
+
+	</c:choose>
+	
+	
 </body>
 </html>
