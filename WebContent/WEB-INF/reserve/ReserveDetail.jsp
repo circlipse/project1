@@ -9,6 +9,7 @@
 </head>
 <body>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
+	<c:set var="dto2" value="${requestScope.dto2 }"></c:set>
 <h2>예약 확인</h2>	
 <table>
 <tbody>
@@ -41,13 +42,13 @@
 		<td><c:out value="${dto.addr_arrive }"></c:out></td>
 	</tr>
 	<tr>
-		<td>예약 종류</td>
+		<td rowspan="2">예약 종류</td>
 		<td>캐리어</td>
-		<td><c:out value="${dto.bag_val_1 }"></c:out></td>
+		<td><c:out value="${dto2.bag_val_1 }"></c:out></td>
 	</tr>
 	<tr>
 		<td>배낭</td>
-		<td><c:out value="${dto.bag_val_2 }"></c:out></td>
+		<td><c:out value="${dto2.bag_val_2 }"></c:out></td>
 	</tr>
 	<tr>
 		<td>배송시 당부 말씀</td>

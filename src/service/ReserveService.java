@@ -69,5 +69,23 @@ public class ReserveService {
         }
 		return dto;
 	}
+	public ReserveDTO getBagVal(int rsv_no) {
+		DBConnection dbconn=DBConnection.getdbInstance();
+        Connection conn=null;
+		ReserveDTO dto = new ReserveDTO();       
+        try {
+        	conn=dbconn.getConnection();
+            conn.setAutoCommit(false);
+            
+            CartDAO dao=CartDAO.getInstance();
+            dto.setBag_val_1(dao.getBagVal(conn, rsv_no, 1));
+            dto.setBag_val_2(dao.getBagVal(conn, rsv_no, 2));
+        } catch(NamingException | SQLException e) {
+        	try {conn.rollback();} catch(SQLException e2) {}
+        }finally {
+        	if(conn!=null) try {conn.close();} catch(SQLException e) {}
+        }
+        return dto;
+	}
 
 }
