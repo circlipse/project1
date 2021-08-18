@@ -52,12 +52,14 @@
 	</tr>
 	<tr>
 		<td>배송시 당부 말씀</td>
-		<td><textarea cols="30" rows="5"><c:out value="${dto.rsv_content }"/></textarea></td>
+		<td><textarea cols="30" rows="5" name="rsv_content"><c:out value="${dto.rsv_content }"/></textarea></td>
 	</tr>
 </tbody>
 </table>
 	<input type="submit" value="변경완료">
 	<input type="reset" value="취소">
+	<input type="hidden" name="old_bag_val_1" value="${dto2.bag_val_1}">
+	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </form>
 </body>
 </html>
