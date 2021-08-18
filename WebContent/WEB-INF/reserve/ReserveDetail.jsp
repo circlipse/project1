@@ -6,6 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	function reserveModify(rsv_no)
+	{
+		console.log(rsv_no);
+		location.href="ReserveModify.jsp?no="+rsv_no;
+	}
+	function reserveDelete(rsv_no)
+	{
+		console.log(rsv_no);
+		location.href="ReserveDelete.jsp?no="+rsv_no;
+	}
+</script>
 </head>
 <body>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
@@ -55,7 +68,7 @@
 	</tr>
 </tbody>
 </table>
-	<input type="button" value="예약 변경">
-	<input type="button" value="예약 취소">
+	<input type="button" id="modify" value="예약 변경" onclick="reserveModify(${dto.rsv_no})">
+	<input type="button" id="delete" value="예약 취소" onclick="reserveDelete(${dto.rsv_no })">
 </body>
 </html>
