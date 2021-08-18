@@ -8,9 +8,11 @@ public class ReviewDTO {
 	private String rev_title;
 	private String rev_content;
 	private int rev_readno;
-	  
+	private String id;
 	
-	public ReviewDTO(int rev_no, int rsv_no, int user_no, String rev_title, String rev_content, int rev_readno) {
+	
+	public ReviewDTO(int rev_no, int rsv_no, int user_no, String rev_title, String rev_content, int rev_readno,
+			String id) {
 		super();
 		this.rev_no = rev_no;
 		this.rsv_no = rsv_no;
@@ -18,11 +20,12 @@ public class ReviewDTO {
 		this.rev_title = rev_title;
 		this.rev_content = rev_content;
 		this.rev_readno = rev_readno;
+		this.id = id;
 	}
 
 
 	public ReviewDTO() {
-
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -84,6 +87,19 @@ public class ReviewDTO {
 	public void setRev_readno(int rev_readno) {
 		this.rev_readno = rev_readno;
 	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	  
+	
+	
 
 
 	

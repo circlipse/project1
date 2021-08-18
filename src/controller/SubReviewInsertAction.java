@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.Action;
 import comm.Forward;
@@ -17,6 +18,9 @@ public class SubReviewInsertAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
 		
 		int rev_no=Integer.parseInt(request.getParameter("rev_no"));
 		String subcontent=request.getParameter("subcontent");

@@ -53,6 +53,8 @@ function subdelete(subno, rev_no)
 
 
 <body>
+
+
 	<c:set var="dto" value="${requestScope.dto }"/>
 	
 <!-- 	<table class="table table-striped"> -->
@@ -62,6 +64,9 @@ function subdelete(subno, rev_no)
 	</tr>
 	<tr>
 		<td>제목</td><td><c:out value="${dto.rev_title }"></c:out></td>
+	</tr>
+	<tr>
+		<td>작성자</td><td><c:out value="${dto.id }"></c:out></td>
 	</tr>
 	<tr>
 		<td>내용</td><td><c:out value="${dto.rev_content }"></c:out></td>

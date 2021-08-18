@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<% String id=(String)session.getAttribute("id"); %>
 
 <form method="post" action="reviewinsertresult.2jo"> 
 <ul>
@@ -17,11 +18,16 @@
 	</li>
 	
 	<li>
+	<label for="rev_content">작성자</label>
+	<input type="text" id="id" name="id" value=<%=id %> readonly>
+	</li>
+	
+	<li>
 	<label for="rev_content">내용</label>
 	<textarea id="rev_content" name="rev_content" required></textarea>
 	</li>
-
 	
+
 	<li>
 	<input type="submit" value="등록">
 	<input type="reset" value="취소">
