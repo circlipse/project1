@@ -31,12 +31,12 @@ public class ReserveService {
             //item table의 bag_no를 먼저 입력해야함(참조 무결성에 따라 부모키에 해당하는 값만 넣을 수 있음)
             CartDAO cdao = CartDAO.getInstance();
             if(dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.addRsv(conn, dto.getBag_no(), rsv_no, dto.getBag_val_1());
+            	cdao.addRsv(conn, 1, rsv_no, dto.getBag_val_1());
             } else if(dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
-            	cdao.addRsv(conn, dto.getBag_no(), rsv_no, dto.getBag_val_2());
+            	cdao.addRsv(conn, 2, rsv_no, dto.getBag_val_2());
             } else if(dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
-            	cdao.addRsv(conn, dto.getBag_no(), rsv_no, dto.getBag_val_1());
-            	cdao.addRsv(conn, dto.getBag_no(), rsv_no, dto.getBag_val_2());
+            	cdao.addRsv(conn, 1, rsv_no, dto.getBag_val_1());
+            	cdao.addRsv(conn, 2, rsv_no, dto.getBag_val_2());
             }
             
             conn.commit();
