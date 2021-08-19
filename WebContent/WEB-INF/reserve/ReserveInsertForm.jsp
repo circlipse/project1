@@ -5,7 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 </head>
+
 <body>
 <form method="post" action="reserveinsertresult.2jo">
 <h2>예약</h2>
@@ -32,24 +34,14 @@
 			placeholder="짐 찾아가는 위치">
 	</li>
 </ul>
-<table>
-	<caption align="top">가방</caption>
-	<thead>
-		<tr><th>종류</th><th>가격</th><th>수량</th><th></th>
-	</thead>
-	<tbody>
-		<tr>
-		<td>캐리어</td>
-		<td>15,000</td>
-		<td><input type="number" id="bag_val_1" name="bag_val_1" min="0" max="20" required></td>
-		</tr>
-		<tr>
-		<td>백팩</td>
-		<td>10,000</td>
-		<td><input type="number" id="bag_val_2" name="bag_val_2" min="0" max="20" required></td>
-		</tr>
-	</tbody>
-</table>
+	<label>가방 종류
+        <select class="bag" name="bag">
+        <option value="">------</option>
+          <option value="캐리어" id="bag">캐리어</option>
+          <option value="백팩" id="bag">백팩</option>
+        </select>
+      </label>
+      <div class="result"></div>
 <ul>
 	<li>배송시 당부 말씀</li>
 	<li><textarea cols="40" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
@@ -59,5 +51,6 @@
 	</li>
 </ul>
 </form>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
 </body>
 </html>
