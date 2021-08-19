@@ -30,7 +30,7 @@ public class ReviewDetailAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);  
-		forward.setPath("WEB-INF/review/ReviewDetail.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=review/ReviewDetail.jsp");
 		
 		return forward;
 		

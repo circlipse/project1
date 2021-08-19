@@ -27,7 +27,7 @@ public class ReviewInsertAction implements Action {
 		}
 		else {
 			forward.setForward(true);
-			forward.setPath("WEB-INF/review/ReviewInsertForm.jsp");
+			forward.setPath("/WEB-INF/main.jsp?page=review/ReviewInsertForm.jsp");
 		}
 			
 		return forward;

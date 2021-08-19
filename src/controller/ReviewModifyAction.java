@@ -26,7 +26,7 @@ public class ReviewModifyAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/review/ReviewModifyForm.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=review/ReviewModifyForm.jsp");
 		
 		return forward;
 	}

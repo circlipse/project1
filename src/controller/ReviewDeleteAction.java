@@ -23,8 +23,8 @@ public class ReviewDeleteAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);  
-		forward.setPath("reviewlist.2jo");
-		 
+		forward.setPath("WEB-INF/review/ReviewDeleteResult.jsp");
+		
 		return forward;
 	}
 

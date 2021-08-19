@@ -71,8 +71,8 @@ public class ReviewListAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/review/ReviewList.jsp");
-		
+		forward.setPath("/WEB-INF/main.jsp?page=review/ReviewList.jsp");
+
 		return forward;
 		
 	}
