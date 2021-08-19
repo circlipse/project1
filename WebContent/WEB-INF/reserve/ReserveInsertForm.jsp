@@ -41,12 +41,12 @@
 		<tr>
 		<td>캐리어</td>
 		<td>15,000</td>
-		<td><input type="number" id="bag_val_1" name="bag_val_1"></td>
+		<td><input type="number" id="bag_val_1" name="bag_val_1" min="0" max="20" required></td>
 		</tr>
 		<tr>
 		<td>백팩</td>
 		<td>10,000</td>
-		<td><input type="number" id="bag_val_2" name="bag_val_2"></td>
+		<td><input type="number" id="bag_val_2" name="bag_val_2" min="0" max="20" required></td>
 		</tr>
 	</tbody>
 </table>
