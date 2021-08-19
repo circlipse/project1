@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
+footer입니다
 </div>
 </body>
 </html>
