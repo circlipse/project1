@@ -125,4 +125,25 @@ public class UserService {
 		
 		return result;
 	}
+	
+	public UserDTO selectUser(String inputid){
+		
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn = null;
+		UserDTO dto = new UserDTO();
+		
+		try {
+			conn = dbconn.getConnection();
+			UserDAO dao = UserDAO.getinstance();
+			dto = dao.selectUser(conn, inputid);	
+			
+		}catch(SQLException | NamingException e) {
+			System.out.println(e);
+			
+		}finally {
+			if(conn!=null) try {conn.close();} catch(SQLException e) {}
+		}
+		return dto;
+		
+	}
 }

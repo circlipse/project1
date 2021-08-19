@@ -17,7 +17,7 @@ public class UserInsertAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
-		String user_id = request.getParameter("user_id");
+		String user_id = request.getParameter("id");
 		String user_pwd = request.getParameter("user_pwd");
 		String user_name = request.getParameter("user_name");
 		String user_phone =request.getParameter("user_phone");

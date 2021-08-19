@@ -12,7 +12,7 @@ $().ready(function(){
 	
 	$('#useradd').click(function(){
 		
-		location.href="insert.2jo";
+		location.href="userinsert.2jo";
 	});
 })
 </script>
