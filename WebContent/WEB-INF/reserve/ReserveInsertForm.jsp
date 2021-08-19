@@ -41,7 +41,8 @@
           <option value="백팩" id="bag">백팩</option>
         </select>
       </label>
-      <div class="result"></div>
+      <div class="result1"></div>
+      <div class="result2"></div>
 <ul>
 	<li>배송시 당부 말씀</li>
 	<li><textarea cols="40" rows="10" name="rsv_content" id="rsv_content"></textarea></li>

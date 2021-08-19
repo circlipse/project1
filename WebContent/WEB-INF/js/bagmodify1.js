@@ -18,16 +18,15 @@
 	selectElement.addEventListener('change', (event) =>{
 			
 		let vtd1 = document.createElement('td');
-		if((event.target.value).valueof==('캐리어').valueof){
+		let txt1 = document.createTextNode(event.target.value);
+		
+		if(event.target.value=='캐리어'){
 			vtd1.setAttribute('id', 'bagg1');
-			console.log('a');
+			
 		} else{
 			vtd1.setAttribute('id', 'bagg2');
-			console.log('b');
+			
 		}
-		console.log(event.target.value);
-		console.log(typeof(event.target.value));
-		let txt1 = document.createTextNode(event.target.value);
 		
 		let val = document.createElement('input');
 		val.setAttribute('type', 'number');
@@ -39,7 +38,7 @@
 	    let button = document.createElement('button');
 	    button.setAttribute('type', 'button')
 	    button.setAttribute('id', 'delete');
-	    if((event.target.value).valueof==('캐리어').valueof){
+	    if(event.target.value=='캐리어'){
 	    button.setAttribute('onclick', 'del1()');
 	    } else{
 	    button.setAttribute('onclick', 'del2()');
@@ -51,7 +50,7 @@
 	    vtd1.append(val);
 	    vtd1.append(button);
 	    
-	    if((event.target.value).valueof==('캐리어').valueof){
+	    if(event.target.value=='캐리어'){
 	    document.querySelector('.result1').appendChild(vtd1);
 	    } else{
 	    document.querySelector('.result2').appendChild(vtd1);
@@ -61,7 +60,7 @@
 	        document.querySelector(".bag").disabled = true;
 	    }
 		
-	    if((event.target.value).valueof==("캐리어").valueof){
+	    if(event.target.value=="캐리어"){
 	    	val.setAttribute('name', 'bag_val_1');
 	    } else{
 	    	val.setAttribute('name', 'bag_val_2');
