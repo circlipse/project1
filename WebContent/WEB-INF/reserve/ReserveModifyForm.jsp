@@ -42,7 +42,7 @@
 		<td><input type="text" id="addr_arrive" name="addr_arrive" value="${dto.addr_arrive }"></td>
 	</tr>
 	<tr>
-		<td rowspan="4">예약 종류</td>
+		<td rowspan="5">예약 종류</td>
 		<td>
 		<label>가방 종류
         <select class="bag" name="bag">
@@ -54,7 +54,7 @@
       	</td>
 	</tr>
 	<tr>
-		<td id="bagg1" class="캐리어">캐리어
+					<td id="bagg1" class="캐리어">캐리어
 		<input type="number" min="1" max="20" id="val" name="bag_val_1" value="${dto2.bag_val_1 }">
 		<button type="button" id="delete" onclick="del1();">삭제</button></td>
 	</tr>
@@ -63,7 +63,8 @@
 		<input type="number" min="1" max="20" id="val" name="bag_val_2" value="${dto2.bag_val_2 }">
 		<button type="button" id="delete" onclick="del2();">삭제</button></td>
 	</tr>
-	<tr class="result"></tr>
+	<tr class="result1"></tr>
+	<tr class="result2"></tr>
 	<tr>
 		<td>배송시 당부 말씀</td>
 		<td><textarea cols="30" rows="5" name="rsv_content"><c:out value="${dto.rsv_content }"/></textarea></td>
