@@ -8,23 +8,17 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-		function idCheck(){
-			window.open("idCheckForm.2jo", "idwin", "width=400, height=350"); 
-		}
-
-
+	function idCheck() {
+		window.open("idCheckForm.2jo", "idwin", "width=400, height=350");
+	}
 </script>
 </head>
 <body>
-	<form name="userjoin" method="post" action="insertresult.2jo"
-		onsubmit="return overlapck(inputid,useid)">
+	<form name="userjoin" method="post" action="insertresult.2jo">
 		<ul>
-			<li>
-				<label >아이디</label> 
-				<input type="text" name="id" id="id" size="15" readonly>
-						<input type="button" value="ID중복확인" onclick="idCheck()">
-				
-			</li>
+			<li><label>아이디</label> <input type="text" name="id" id="id"
+				size="15" readonly> <input type="button" value="ID중복확인"
+				onclick="idCheck()"></li>
 			<li><label for="user_pwd">패스워드</label> <input type="text"
 				name="user_pwd" id="user_pwd" required="required"></li>
 			<li><label for="user_name">이름</label> <input type="text"
