@@ -91,6 +91,7 @@ public class UserDAO {
 	public UserDTO userDetail(Connection conn, String id) {
 		// TODO Auto-generated method stub
 		StringBuilder sql = new StringBuilder();
+		List<UserDTO> list =new ArrayList<UserDTO>();
 		
 		sql.append(" select user_id, user_pwd, user_name, user_phone from user_2jo ");
 		sql.append(" where user_id=? ");
