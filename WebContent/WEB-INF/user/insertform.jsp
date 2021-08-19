@@ -25,9 +25,6 @@
 			
 	});
 	 function checkSubmit(inputid,useid) {
-			console.log('확인'+inputid);
-			console.log('중복숫자'+useid);
-
 		    let id = document.getElementById('id').value;
 		    
 			if(inputid!=id || useid!=0){
