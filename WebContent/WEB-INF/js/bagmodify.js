@@ -2,21 +2,32 @@
 	document.querySelector(".bag").disabled = true;
 	
 	function del() {
-	    var del_val = document.getElementById("bagg");
-	    del_val.remove();
+	    var del_val = document.getElementById(num);
+	    del_val.removeChild();
 	    document.querySelector(".bag").disabled = false;
 	}
-	
+	var num ="";
 	const selectElement = document.querySelector('.bag');
 	selectElement.addEventListener('change', (event) =>{
-		if(event.target.value != (new String(document.getElementByClassName('캐리어').innerText)).valueOf()
-				|| event.target.value != (new String(document.getElementByClassName('백팩').innerText)).valueOf()){
-		console.log(document.getElementByClassName('bagg').innerText);
-		console.log(typeof(new String(document.getElementByClassName('bagg').TEXT_NODE)));
 		
-		let vtd1 = document.createElement('td');
-		vtd1.setAttribute('id', 'bagg');
 		let txt1 = document.createTextNode(event.target.value);
+			if(event.target.value=="캐리어"){
+				num == 'bagg1';
+			} else if(event.target.value=="백팩"){
+				num == 'bagg2';
+			}
+		
+		if(event.target.value != document.getElementsByClassName('캐리어').innerText.substr(0, 2)
+			&& event.target.value != document.getElementsByClassName('백팩').innerText.substr(0, 2)){
+		
+			
+		console.log(document.getElementsByClassName('캐리어').innerText);
+		console.log(typeof(document.getElementsByClassName('캐리어').innerText));
+		
+			
+		let vtd1 = document.createElement('td');
+		vtd1.setAttribute('id', num);
+
 		
 		let val = document.createElement('input');
 		val.setAttribute('type', 'number');
