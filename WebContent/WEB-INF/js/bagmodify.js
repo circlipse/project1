@@ -1,9 +1,9 @@
 
 	document.querySelector(".bag").disabled = true;
 	
-
+	var num ="";
 	function del() {
-	    var del_val = document.getElementById("bagg");
+	    var del_val = document.getElementById("bagg"+num);
 	    del_val.remove();
 	    document.querySelector(".bag").disabled = false;
 	}
@@ -11,11 +11,16 @@
 	const selectElement = document.querySelector('.bag');
 	selectElement.addEventListener('change', (event) =>{
 		
-
+		let txt1 = document.createTextNode(event.target.value);
+		if(event.target.value=="캐리어"){
+			num == 1;
+		} else if(event.target.value=="백팩"){
+			num == 2;
+		}
 		
 		let vtd1 = document.createElement('td');
-		vtd1.setAttribute('id', 'bagg');
-		let txt1 = document.createTextNode(event.target.value);
+		vtd1.setAttribute('id', 'bagg'+num);
+		
 		
 		let val = document.createElement('input');
 		val.setAttribute('type', 'number');
@@ -45,4 +50,3 @@
 	    	val.setAttribute('name', 'bag_val_2');
 	    }
 	});
-	
