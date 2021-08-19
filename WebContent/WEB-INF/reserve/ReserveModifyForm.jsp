@@ -56,12 +56,12 @@
 	<tr>
 		<td id="bagg1" class="캐리어">캐리어
 		<input type="number" min="1" max="20" id="val" name="bag_val_1" value="${dto2.bag_val_1 }">
-		<button type="button" id="delete" onclick="del();">삭제</button></td>
+		<button type="button" id="delete" onclick="del1();">삭제</button></td>
 	</tr>
 	<tr>
 		<td id="bagg2" class="백팩">백팩
 		<input type="number" min="1" max="20" id="val" name="bag_val_2" value="${dto2.bag_val_2 }">
-		<button type="button" id="delete" onclick="del();">삭제</button></td>
+		<button type="button" id="delete" onclick="del2();">삭제</button></td>
 	</tr>
 	<tr class="result"></tr>
 	<tr>
@@ -75,6 +75,6 @@
 	<input type="hidden" name="old_bag_val_1" value="${dto2.bag_val_1}">
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify1.js"%></script>
 </body>
 </html>

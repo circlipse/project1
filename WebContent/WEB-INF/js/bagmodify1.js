@@ -1,33 +1,33 @@
 
 	document.querySelector(".bag").disabled = true;
 	
-	function del() {
-	    var del_val = document.getElementById(num);
-	    del_val.removeChild();
+	function del1() {
+	    var del_val = document.getElementById('bagg1');
+	    del_val.remove(document.getElementsByTagName("tr"));
 	    document.querySelector(".bag").disabled = false;
 	}
-	var num ="";
+	
+	function del2() {
+	    var del_val = document.getElementById('bagg2');
+	    del_val.remove(document.getElementsByTagName("tr"));
+	    document.querySelector(".bag").disabled = false;
+	}
+	
+	
 	const selectElement = document.querySelector('.bag');
 	selectElement.addEventListener('change', (event) =>{
 		
-		let txt1 = document.createTextNode(event.target.value);
-			if(event.target.value=="캐리어"){
-				num == 'bagg1';
-			} else if(event.target.value=="백팩"){
-				num == 'bagg2';
-			}
-		
-		if(event.target.value != document.getElementsByClassName('캐리어').innerText.substr(0, 2)
-			&& event.target.value != document.getElementsByClassName('백팩').innerText.substr(0, 2)){
-		
-			
-		console.log(document.getElementsByClassName('캐리어').innerText);
-		console.log(typeof(document.getElementsByClassName('캐리어').innerText));
+
 		
 			
 		let vtd1 = document.createElement('td');
-		vtd1.setAttribute('id', num);
-
+		if(event.target.value=='캐리어'){
+			vtd1.setAttribute('id', 'bagg1');
+		} else if(event.target.value=='백팩'){
+			vtd1.setAttribute('id', 'bagg2');
+		}
+		
+		let txt1 = document.createTextNode(event.target.value);
 		
 		let val = document.createElement('input');
 		val.setAttribute('type', 'number');
@@ -39,7 +39,11 @@
 	    let button = document.createElement('button');
 	    button.setAttribute('type', 'button')
 	    button.setAttribute('id', 'delete');
-	    button.setAttribute('onclick', 'del()');
+	    if(event.target.value=='캐리어'){
+	    button.setAttribute('onclick', 'del1()');
+	    } else if(event.target.value=='백팩'){
+	    button.setAttribute('onclick', 'del2()');
+	    } 
 	    let buttontxt = document.createTextNode('삭제');
 		
 	    button.append(buttontxt);
@@ -57,5 +61,5 @@
 	    } else if(event.target.value=="백팩"){
 	    	val.setAttribute('name', 'bag_val_2');
 	    }
-		}
+		
 	});

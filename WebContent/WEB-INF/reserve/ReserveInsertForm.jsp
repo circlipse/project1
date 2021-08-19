@@ -36,7 +36,7 @@
 </ul>
 	<label>가방 종류
         <select class="bag" name="bag">
-        <option value="">------</option>
+        <option value="" disabled selected>------</option>
           <option value="캐리어" id="bag">캐리어</option>
           <option value="백팩" id="bag">백팩</option>
         </select>
@@ -51,6 +51,6 @@
 	</li>
 </ul>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert1.js"%></script>
 </body>
 </html>
