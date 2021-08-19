@@ -27,19 +27,25 @@ public class ReserveInsertResultAction implements Action {
          
          String bagval_1 = request.getParameter("bag_val_1");
          int bag_val_1=0;
-         if(bagval_1 != "")
+         if(bagval_1 != null)
          {
         	 bag_val_1=Integer.parseInt(bagval_1);
          }
          String bagval_2 = request.getParameter("bag_val_2");
          int bag_val_2 = 0;
-         if(bagval_2 != "")
+         if(bagval_2 != null)
          {
         	 bag_val_2=Integer.parseInt(bagval_2);
          }
          String rsv_content=request.getParameter("rsv_content");
          
-         
+         System.out.println(user_no);
+         System.out.println(rsv_date);
+         System.out.println(sub_date);
+         System.out.println(addr_depart);
+         System.out.println(addr_arrive);
+         System.out.println(bagval_1);
+         System.out.println(bagval_2);
          
          ReserveService service=ReserveService.getInstance();
          ReserveDTO dto=new ReserveDTO();
