@@ -6,17 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
-<div id="wrap">
-	<header>
+<div id="main">
+	<header id="header">
 		<jsp:include page="header.jsp"></jsp:include>
 	</header>
-	<section>
+
+	<section id="section">
 		<c:set var="contentpage" value="${param.page }"></c:set>
 		<jsp:include page="${contentpage }"></jsp:include>
 	</section>
-	<footer>
+	
+	<footer id="footer">
 	<jsp:include page="footer.jsp"></jsp:include>
 	</footer>
 </div>
