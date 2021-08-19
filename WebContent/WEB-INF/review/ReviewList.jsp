@@ -19,6 +19,7 @@
 <c:set var="startblock" value="${requestScope.startblock }"></c:set>
 <c:set var="endblock" value="${requestScope.endblock }"></c:set>
 <c:set var="totalpage" value="${requestScope.totalpage }"></c:set>
+<c:set var="startrow" value="${requestScope.startrow }"></c:set>
 
 <form>
 <table>
@@ -26,9 +27,11 @@
 	</thead>
 	
 	<tbody>
+	<c:set var="rev_no" value="${startrow -1 }"></c:set>
 	<c:forEach var="item" items="${reviewlist }">
+	<c:set var="rev_no" value="${rev_no +1 }"></c:set>
 	<tr>
-	<td><c:out value="${item.rev_no}"></c:out></td>
+	<td><c:out value="${rev_no }"></c:out></td>
 	<td><a href="reviewdetail.2jo?rev_no=${item.rev_no }"><c:out value="${item.rev_title }"></c:out></a></td>
 	<td><c:out value="${item.user_id }"></c:out></td>
 	<td><c:out value="${item.rev_readno}"></c:out></td>

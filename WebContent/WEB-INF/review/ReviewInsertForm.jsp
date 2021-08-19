@@ -5,6 +5,7 @@
 <head> 
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/reviewinsert.css">
 </head>
 
 <body>
@@ -22,15 +23,15 @@
 	<input type="text" id="id" name="id" value=<%=id %> readonly>
 	</li>
 	
-	<li>
+	<li id="con">
 	<label for="rev_content">내용</label>
-	<textarea id="rev_content" name="rev_content" required></textarea>
+	<textarea id="rev_content" name="rev_content" rows="15" cols="100" required></textarea>
 	</li>
 	
 
-	<li>
-	<input type="submit" value="등록">
-	<input type="reset" value="취소">
+	<li id="put">
+	<input type="submit" id="submit" value="등록">
+	<input type="reset" id="reset" value="취소">
 	</li>
 </ul>
 

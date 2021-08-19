@@ -67,6 +67,7 @@ public class ReviewListAction implements Action {
 		request.setAttribute("startblock", startblock);
 		request.setAttribute("endblock", endblock);
 		request.setAttribute("totalpage", totalpage);
+		request.setAttribute("startrow", startrow);
 
 		
 		Forward forward=new Forward();
