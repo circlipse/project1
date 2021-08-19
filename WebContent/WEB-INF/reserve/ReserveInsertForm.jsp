@@ -51,6 +51,6 @@
 	</li>
 </ul>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert1.js"%></script>
 </body>
 </html>

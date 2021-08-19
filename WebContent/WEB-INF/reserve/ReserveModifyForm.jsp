@@ -42,13 +42,26 @@
 		<td><input type="text" id="addr_arrive" name="addr_arrive" value="${dto.addr_arrive }"></td>
 	</tr>
 	<tr>
-		<td rowspan="2">예약 종류</td>
-		<td>캐리어
-		<input type="text" id="bag_val_1" name="bag_val_1" value="${dto2.bag_val_1 }"></td>
+		<td rowspan="3">예약 종류</td>
+		<td>
+		<label>가방 종류
+        <select class="bag" name="bag">
+          <option value="" disabled selected>------</option>
+          <option value="캐리어" id="bag">캐리어</option>
+          <option value="백팩" id="bag">백팩</option>
+        </select>
+      	</label>
+      	</td>
 	</tr>
 	<tr>
-		<td>배낭
-		<input type="text" id="bag_val_2" name="bag_val_2" value="${dto2.bag_val_2 }"></td>
+		<td id="bagg">캐리어
+		<input type="number" id="bag_val_1" name="bag_val_1" value="${dto2.bag_val_1 }">
+		<button id="delete" onclick="del();">삭제</button></td>
+	</tr>
+	<tr>
+		<td id="bagg">백팩
+		<input type="number" id="bag_val_2" name="bag_val_2" value="${dto2.bag_val_2 }">
+		<button id="delete" onclick="del();">삭제</button></td>
 	</tr>
 	<tr>
 		<td>배송시 당부 말씀</td>
@@ -61,5 +74,6 @@
 	<input type="hidden" name="old_bag_val_1" value="${dto2.bag_val_1}">
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </form>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify.js"%></script>
 </body>
 </html>
