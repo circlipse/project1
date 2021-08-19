@@ -6,32 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-	$().ready(function() {
-
-		$('#overlap').click(function() {
-			let inputid = $('#id').val();
-			
-			if(!inputid){
-				alert("아이디를 입력해주세요");
-				return false;
-			}else{
-				location.href="useroverlap.2jo?inputid="+inputid;
-			}
-			
-		});
-		
-			
-	});
-	 function checkSubmit(inputid,useid) {
-		    let id = document.getElementById('id').value;
-		    
-			if(inputid!=id || useid!=0){
-				alert('아이디 중복확인을 해주세요.');
-				return false;
-			}} ;
-</script>
+<link rel="stylesheet" href="css/insertform.css">
 </head>
 <body>
 <c:set var="useid" value="${requestScope.useid}"></c:set> 
@@ -69,7 +44,6 @@
 			<input type="text" name="user_phone" id="user_phone" required="required">
 		</li>
 		
-		<img src="/img/insert_reg" id="insert_reg" />
 		
 		<li id="insert">
 			<input type="submit" id="insert" value="회원가입">
