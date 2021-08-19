@@ -8,22 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import comm.Forward;
 
-public class UserInsertFormAction implements Action {
+public class idCheckFormAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
 		
-
 		Forward forward = new Forward();
 		forward.setForward(true);
-//		forward.setPath("/WEB-INF/user/insertform.jsp"); 
-		forward.setPath("/WEB-INF/main.jsp?page=user/insertform.jsp"); 
-   
+		forward.setPath("/WEB-INF/user/idCheckForm.jsp");
 		return forward;
-
 	}
 
-} 
+}
