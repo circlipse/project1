@@ -1,26 +1,22 @@
 
 	document.querySelector(".bag").disabled = true;
 	
-	var num ="";
 	function del() {
-	    var del_val = document.getElementById("bagg"+num);
+	    var del_val = document.getElementById("bagg");
 	    del_val.remove();
 	    document.querySelector(".bag").disabled = false;
 	}
 	
 	const selectElement = document.querySelector('.bag');
 	selectElement.addEventListener('change', (event) =>{
-		
-		let txt1 = document.createTextNode(event.target.value);
-		if(event.target.value=="캐리어"){
-			num == 1;
-		} else if(event.target.value=="백팩"){
-			num == 2;
-		}
+		if(event.target.value != (new String(document.getElementByClassName('캐리어').innerText)).valueOf()
+				|| event.target.value != (new String(document.getElementByClassName('백팩').innerText)).valueOf()){
+		console.log(document.getElementByClassName('bagg').innerText);
+		console.log(typeof(new String(document.getElementByClassName('bagg').TEXT_NODE)));
 		
 		let vtd1 = document.createElement('td');
-		vtd1.setAttribute('id', 'bagg'+num);
-		
+		vtd1.setAttribute('id', 'bagg');
+		let txt1 = document.createTextNode(event.target.value);
 		
 		let val = document.createElement('input');
 		val.setAttribute('type', 'number');
@@ -30,6 +26,7 @@
 	    val.setAttribute('value', '1');
 	    
 	    let button = document.createElement('button');
+	    button.setAttribute('type', 'button')
 	    button.setAttribute('id', 'delete');
 	    button.setAttribute('onclick', 'del()');
 	    let buttontxt = document.createTextNode('삭제');
@@ -40,7 +37,7 @@
 	    vtd1.append(button);
 	    
 	    document.querySelector('.result').appendChild(vtd1);
-	    if (document.getElementsByTagName("td").length > 21) {
+	    if (document.getElementsByTagName("td").length > 19) {
 	        document.querySelector(".bag").disabled = true;
 	    }
 		
@@ -49,4 +46,5 @@
 	    } else if(event.target.value=="백팩"){
 	    	val.setAttribute('name', 'bag_val_2');
 	    }
+		}
 	});

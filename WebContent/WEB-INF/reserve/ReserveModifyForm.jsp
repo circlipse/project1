@@ -53,17 +53,17 @@
       	</label>
       	</td>
 	</tr>
-	<tr>
-		<td id="bagg1">캐리어
-		<input type="number" min="1" max="20" id="val" name="bag_val_1" value="${dto2.bag_val_1 }">
-		<button id="delete" onclick="del();">삭제</button></td>
-	</tr>
-	<tr>
-		<td id="bagg2">백팩
-		<input type="number" min="1" max="20" id="val" name="bag_val_2" value="${dto2.bag_val_2 }">
-		<button id="delete" onclick="del();">삭제</button></td>
-	</tr>
 	<tr class="result"></tr>
+	<tr>
+		<td id="bagg" class="캐리어">캐리어
+		<input type="number" min="1" max="20" id="val" name="bag_val_1" value="${dto2.bag_val_1 }">
+		<button type="button" id="delete" onclick="del();">삭제</button></td>
+	</tr>
+	<tr>
+		<td id="bagg" class="캐리어">백팩
+		<input type="number" min="1" max="20" id="val" name="bag_val_2" value="${dto2.bag_val_2 }">
+		<button type="button" id="delete" onclick="del();">삭제</button></td>
+	</tr>
 	<tr>
 		<td>배송시 당부 말씀</td>
 		<td><textarea cols="30" rows="5" name="rsv_content"><c:out value="${dto.rsv_content }"/></textarea></td>
