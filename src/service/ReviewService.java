@@ -249,6 +249,25 @@ public class ReviewService {
 		
 		
 	}
+
+	public String getUserid(int subno) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn=DBConnection.getdbInstance();
+		Connection conn=null;
+		String user_id =null;
+		try {
+			conn=dbconn.getConnection();
+			ReviewDAO dao=new ReviewDAO();
+			user_id=dao.getUserid(conn, subno);
+			
+		}catch(SQLException | NamingException e)
+		{
+			System.out.println(e);
+		}finally {
+			if(conn!=null) try {conn.close();}catch(Exception e) {}
+		}
+		return user_id;
+	}
 	
 	
 

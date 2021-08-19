@@ -326,6 +326,40 @@ public class ReviewDAO {
 			return dto;
 	}
 
+	public String getUserid(Connection conn, int subno) {
+		// TODO Auto-generated method stub
+
+		StringBuilder sql=new StringBuilder();
+		sql.append(" select                         ");
+		sql.append("          u.user_id             ");
+		sql.append("  from user_2jo u               ");
+		sql.append("  inner join review_2jo re  	");
+		sql.append(" on u.user_no = re.user_no		");
+		sql.append("  inner join subreview_2jo s 	");
+		sql.append("  ON re.rev_no = s.rev_no       ");
+		sql.append(" where s.subno = ?              ");
+		System.out.println(sql);
+		String user_id=null;
+		
+		ResultSet rs=null;
+		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
+			)
+		{
+			pstmt.setInt(1, subno);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				user_id=rs.getString("u.user_id");
+			}
+		}
+		catch(SQLException e) {
+			System.out.println(e);
+		}
+		
+		return user_id;
+	}
+
 
 		
 }
