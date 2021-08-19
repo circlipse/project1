@@ -8,32 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <c:set var="rev_no" value="${requestScope.rev_no}"></c:set>
-<c:set var="id" value="${sessionScope.id}"></c:set>
-	
-	
-	<c:choose>
-
-		<c:when test="${id ==null}">
-			<script>
+	<script>
 		alert('로그인이 필요합니다.');
-		location.href = "reviewdetail.2jo?rev_no="+${rev_no};
+		location.href = "reviewdetail.2jo?rev_no=" + ${rev_no};
 	</script>
-		</c:when>
-
-		<c:otherwise>
-			<script>
-		alert('작성자가 아닙니다.');
-		location.href = "reviewdetail.2jo?rev_no="+${rev_no};
-	</script>
-		</c:otherwise>
-
-
-	</c:choose>
-	
-	
-	
-	
 </body>
 </html>

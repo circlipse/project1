@@ -69,6 +69,7 @@ public class SubReviewDetailAction extends HttpServlet {
 			subobject.put("subno", dto.getSubno());
 			subobject.put("subcontent", dto.getSubcontent());
 			subobject.put("rev_no", dto.getRev_no());
+			subobject.put("user_id", dto.getUser_id());
 			
 			arr.add(subobject);
 			

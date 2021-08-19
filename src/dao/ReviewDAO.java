@@ -225,14 +225,16 @@ public class ReviewDAO {
 		StringBuilder sql=new StringBuilder();
 		sql.append(" insert into  subreview_2jo (               ");
 		sql.append("                     		 subcontent     ");
-		sql.append("                     		,rev_no    )    ");
-		sql.append(" values( ?, ? ) ");
+		sql.append("                     		,rev_no        ");
+		sql.append("                     		,user_id    )    ");
+		sql.append(" values( ?, ?, ?) ");
 		
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());
 			)
 		{
 			pstmt.setString(1, dto.getSubcontent());
 			pstmt.setInt(2, dto.getRev_no());
+			pstmt.setString(3, dto.getUser_id());
 			
 			pstmt.executeUpdate();
 		}
@@ -250,6 +252,7 @@ public class ReviewDAO {
 		sql.append("            subno                   ");
 		sql.append("           ,subcontent              ");
 		sql.append("           ,rev_no                  ");
+		sql.append("           ,user_id                  ");
 		sql.append("  from subreview_2jo                ");
 		sql.append("  where rev_no = ?                  ");
 		
@@ -264,7 +267,7 @@ public class ReviewDAO {
 			while(rs.next()) {
 				SubReviewDTO dto=new SubReviewDTO();
 				dto.setSubno(rs.getInt("subno"));
-				//dto.setUser_id(rs.getString("user_id"));
+				dto.setUser_id(rs.getString("user_id"));
 				dto.setSubcontent(rs.getString("subcontent"));
 				dto.setRev_no(rs.getInt("rev_no"));
 				list.add(dto);
@@ -330,14 +333,10 @@ public class ReviewDAO {
 		// TODO Auto-generated method stub
 
 		StringBuilder sql=new StringBuilder();
-		sql.append(" select                         ");
-		sql.append("          u.user_id             ");
-		sql.append("  from user_2jo u               ");
-		sql.append("  inner join review_2jo re  	");
-		sql.append(" on u.user_no = re.user_no		");
-		sql.append("  inner join subreview_2jo s 	");
-		sql.append("  ON re.rev_no = s.rev_no       ");
-		sql.append(" where s.subno = ?              ");
+		sql.append(" select                     ");
+		sql.append("          user_id           ");
+		sql.append("  from subreview_2jo 		");
+		sql.append(" where subno = ?            ");
 		System.out.println(sql);
 		String user_id=null;
 		
@@ -350,7 +349,7 @@ public class ReviewDAO {
 			
 			if(rs.next())
 			{
-				user_id=rs.getString("u.user_id");
+				user_id=rs.getString("user_id");
 			}
 		}
 		catch(SQLException e) {

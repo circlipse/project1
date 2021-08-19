@@ -27,13 +27,12 @@ $(document).ready(function () {
 		{
 			$.each(data, function (index, item) {
 				let result="<tr>";
-				     result+="<td>"+item.subcontent;
+			     result+="<td>"+item.user_id+"</td>";
+			     result+="<td>"+item.subcontent;
 				     
 				     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
 					 result+="</td></tr>";
 
-				    
-					 
 			$('#result').append(result);
 			});
 			
@@ -43,21 +42,14 @@ $(document).ready(function () {
 		}
 	});
 });
-
-
-
-
-
 </script>
-
-
 </head>
-
-
 <body>
 
 
 	<c:set var="dto" value="${requestScope.dto }"/>
+	
+	<c:set var="id" value="${sessionScope.id }"/>
 	
 <!-- 	<table class="table table-striped"> -->
 <table>
@@ -85,8 +77,8 @@ $(document).ready(function () {
 <label>-댓글-</label>
 <form method="post" action="subinsert.2jo">  
 	<input type="hidden" name="rev_no" value="${dto.rev_no }">  
+		<input type="text" name ="user_id" value="${id }" readonly="readonly"><br>
 	<textarea rows="3" cols="20" name="subcontent" required></textarea><br>
-	<!-- (+추가) login 이후 id(or사용자 이름)  -->
 	<input type="submit" value="추가">
 </form>
 
