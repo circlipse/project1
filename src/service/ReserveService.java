@@ -146,48 +146,22 @@ public class ReserveService {
             rdao.modifyReserve(conn, dto);
             
             CartDAO cdao=CartDAO.getInstance();   
-            if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            if(dto2.getBag_val_1() != 0 && dto.getBag_val_1() != 0) {
             	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
+            } else if(dto2.getBag_val_1() != 0 && dto.getBag_val_1() == 0) {
             	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
-            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
-            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
+            } else if(dto2.getBag_val_1() == 0 && dto.getBag_val_1() != 0) {
             	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
-            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
-            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.modifyCart(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
-            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
-            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
-            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() != 0) {
-            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() != 0) {
-            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() != 0 && dto.getBag_val_2() == 0) {
-            	cdao.addRsv(conn, 1, dto.getRsv_no(), dto.getBag_val_1());
-            } else if(dto2.getBag_val_1() == 0 && dto2.getBag_val_2() != 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
-            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
-            } else if(dto2.getBag_val_1() != 0 && dto2.getBag_val_2() == 0 && dto.getBag_val_1() == 0 && dto.getBag_val_2() == 0) {
-            	cdao.delRsv(conn, dto.getRsv_no(), 1, dto.getBag_val_1());
-            } 
+            }
             
-
+            
+            if(dto2.getBag_val_2() != 0 && dto.getBag_val_2() != 0) {
+            	cdao.modifyCart(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            } else if(dto2.getBag_val_2() != 0 && dto.getBag_val_2() == 0) {
+            	cdao.delRsv(conn, dto.getRsv_no(), 2, dto.getBag_val_2());
+            } else if(dto2.getBag_val_2() == 0 && dto.getBag_val_2() != 0) {
+            	cdao.addRsv(conn, 2, dto.getRsv_no(), dto.getBag_val_2());
+            }
             
             conn.commit();
         } catch(NamingException | SQLException e) {

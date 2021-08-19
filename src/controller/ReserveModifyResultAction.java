@@ -25,8 +25,18 @@ public class ReserveModifyResultAction implements Action {
 		String sub_date = request.getParameter("sub_date");
 		String addr_depart = request.getParameter("addr_depart");
 		String addr_arrive = request.getParameter("addr_arrive");
-		int bag_val_1 = Integer.parseInt(request.getParameter("bag_val_1"));
-		int bag_val_2 = Integer.parseInt(request.getParameter("bag_val_2"));
+		
+		String bagval_1 = request.getParameter("bag_val_1");
+		String bagval_2 = request.getParameter("bag_val_2");
+		int bag_val_1 = 0;
+		int bag_val_2 = 0;
+		if(bagval_1 != null) {
+			bag_val_1 = Integer.parseInt(bagval_1);
+		}
+		if(bagval_2 != null) {
+			bag_val_2 = Integer.parseInt(bagval_2);
+		}
+		
 		String rsv_content = request.getParameter("rsv_content");
 		int old_bag_val_1 = Integer.parseInt(request.getParameter("old_bag_val_1"));
 		int old_bag_val_2 = Integer.parseInt(request.getParameter("old_bag_val_2"));
