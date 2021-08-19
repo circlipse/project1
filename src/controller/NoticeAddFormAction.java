@@ -26,11 +26,11 @@ public class NoticeAddFormAction implements Action {
 		} else {
 			if(id.equals("admin")) {
 			forward.setForward(true);
-			forward.setPath("/WEB-INF/user/main.jsp?page=noticeform.jsp");
+			forward.setPath("/WEB-INF/main.jsp?page=user/noticeform.jsp");
 			}
 			else {
 				forward.setForward(true);
-				forward.setPath("/WEB-INF/user/main.jsp?page=noticedenied.jsp");
+				forward.setPath("/WEB-INF/main.jsp?page=user/noticedenied.jsp");
 			}
 		}
 

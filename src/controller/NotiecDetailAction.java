@@ -30,7 +30,7 @@ public class NotiecDetailAction implements Action {
 		
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("/WEB-INF/user/main.jsp?page=noticedetail.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=user/noticedetail.jsp");
 		return forward;
 		
 	}

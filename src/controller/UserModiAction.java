@@ -40,7 +40,7 @@ public class UserModiAction implements Action {
 		Forward forward =new Forward();
 		forward.setForward(true);
 //		forward.setPath("/WEB-INF/user/insertresult.jsp");
-		forward.setPath("/WEB-INF/user/main.jsp?page=usermodiresult.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=user/usermodiresult.jsp");
 		
 		return forward;
 	}

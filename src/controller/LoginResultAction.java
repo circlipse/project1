@@ -35,9 +35,9 @@ public class LoginResultAction implements Action {
 			System.out.println("id는 "+id);
 			
 			session.setMaxInactiveInterval(60*5);
-			f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+			f.setPath("/WEB-INF/main.jsp?page=user/loginresult.jsp");
 		}else {
-			f.setPath("/WEB-INF/user/main.jsp?page=loginfail.jsp");
+			f.setPath("/WEB-INF/main.jsp?page=user/loginfail.jsp");
 		}
 		
 		

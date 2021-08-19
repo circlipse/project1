@@ -18,7 +18,7 @@ public class UserInsertFormAction implements Action {
 		Forward forward = new Forward();
 		forward.setForward(true);
 //		forward.setPath("/WEB-INF/user/insertform.jsp"); 
-		forward.setPath("/WEB-INF/user/main.jsp?page=insertform.jsp"); 
+		forward.setPath("/WEB-INF/main.jsp?page=user/insertform.jsp"); 
    
 		return forward;
 

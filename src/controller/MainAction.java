@@ -26,9 +26,9 @@ public class MainAction implements Action {
 		String id = (String) session.getAttribute("id");
 		forward.setForward(true);
 		if(id == null) {
-			forward.setPath("/WEB-INF/user/main.jsp?page=login.jsp");
+			forward.setPath("/WEB-INF/main.jsp?page=user/login.jsp");
 		}else {
-			forward.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+			forward.setPath("/WEB-INF/main.jsp?page=user/loginresult.jsp");
 		}
 		
 		

@@ -36,7 +36,7 @@ public class NoticeAddAction implements Action {
 		request.setAttribute("result", result);
 		Forward forward =new Forward();
 		forward.setForward(true);
-		forward.setPath("/WEB-INF/user/main.jsp?page=noticeaddresult.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=user/noticeaddresult.jsp");
 		
 		return forward;
 	}

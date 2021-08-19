@@ -28,7 +28,7 @@ public class NoticeModifyAction implements Action {
 		
 		Forward f= new Forward();
 		f.setForward(true);
-		f.setPath("/WEB-INF/user/main.jsp?page=noticemodifyresult.jsp");
+		f.setPath("/WEB-INF/main.jsp?page=user/noticemodifyresult.jsp");
 		return f;
 	}
 

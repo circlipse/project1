@@ -71,7 +71,7 @@ public class NoticeListAction implements Action {
 		
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("/WEB-INF/user/main.jsp?page=noticelist.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=user/noticelist.jsp");
 		
 		return forward;
 	}

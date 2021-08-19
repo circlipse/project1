@@ -26,7 +26,7 @@ public class NoticDeleteAction implements Action {
 		
 		Forward f= new Forward();
 		f.setForward(true);
-		f.setPath("/WEB-INF/user/main.jsp?page=noticedelresult.jsp");
+		f.setPath("/WEB-INF/main.jsp?page=user/noticedelresult.jsp");
 		return f;
 	}
 
