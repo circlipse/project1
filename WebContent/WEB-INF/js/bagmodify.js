@@ -10,7 +10,7 @@
 	
 	const selectElement = document.querySelector('.bag');
 	selectElement.addEventListener('change', (event) =>{
-		  
+		
 
 		
 		let vtd1 = document.createElement('td');
