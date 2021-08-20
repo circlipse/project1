@@ -22,7 +22,7 @@ public class DetailAction implements Action {
 		String id = (String) session.getAttribute("id");
 		
 		UserService service=UserService.getInstance();
-		
+		System.out.println("디테일"+id);
 		
 		UserDTO dto= service.userDetail(id);
 		request.setAttribute("dto", dto);

@@ -23,9 +23,9 @@
 </script>
 </head>
 <body>
-<form>
 	<c:set var="id" value="${sessionScope.id}" />
 	<c:set var="result" value="${requestScope.result}" />
+	<form>
 
 	<table>
 				<tr>
@@ -35,32 +35,33 @@
 			</table>
 			
 			<div id="btn">
-			<button id="userdetail">마이페이지</button>
-			<button id="logout">로그아웃</button>
+			<input type="button" value="마이페이지" id="userdetail">
+			<input type="button" value="로그아웃" id="logout">
 			</div>
+			
 </form>
-	<%-- <c:choose>
+	<%-- <c:if test="${id !=null}">
+		<c:choose>
+			<c:when test="${result >0}">
+				<table>
+					<tr>
+						<td><c:out value="${sessionScope.id}" /></td>
+						<td>님 반갑습니다.</td>
+					</tr>
+				</table>
+				<button id="userdetail">마이페이지</button>
+				<button id="logout">로그아웃</button>
+			</c:when>
 
-		<c:when test="${result >0}">
-			<table>
-				<tr>
-					<td><c:out value="${sessionScope.id}" /></td>
-					<td>님 반갑습니다.</td>
-				</tr>
-			</table>
-			<button id="userdetail">마이페이지</button>
-			<button id="logout">로그아웃</button>
-		</c:when>
+			<c:otherwise>
+				<script>
+					alert('로그인이 되지 않았습니다.');
+					location.href = "login.2jo";
+				</script>
+			</c:otherwise>
 
-		<c:otherwise>
-			<script>
-				alert('로그인이 되지 않았습니다.');
-				location.href = "login.2jo";
-			</script>
-		</c:otherwise>
-
-
-	</c:choose> --%>
+		</c:choose>
+	</c:if> --%>
 
 
 </body>

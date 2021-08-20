@@ -24,6 +24,7 @@ public class MainAction implements Action {
 
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
+		System.out.println("세션아이디:"+id);
 		forward.setForward(true);
 		if(id == null) {
 			forward.setPath("/WEB-INF/main.jsp?page=user/login.jsp");

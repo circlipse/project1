@@ -71,6 +71,7 @@ public class FrontController extends HttpServlet {
 			response.sendRedirect(forward.getPath());
 		}
 
+		
 	}
 
 	private Map<String, Action> hm = Collections.synchronizedMap(new HashMap<String, Action>());

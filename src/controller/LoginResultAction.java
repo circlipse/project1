@@ -28,12 +28,12 @@ public class LoginResultAction implements Action {
 		Forward f = new Forward();
 		f.setForward(true);
 		
-		System.out.println(result);
+		//System.out.println(result);
 		if(result > 0) {
 			HttpSession session =request.getSession();
 			session.setAttribute("id", id);
-			System.out.println("id는 "+id);
-			
+			//System.out.println("id는 "+id);
+			request.setAttribute("result", result);
 			session.setMaxInactiveInterval(60*5);
 			f.setPath("/WEB-INF/main.jsp?page=user/loginresult.jsp");
 		}else {
