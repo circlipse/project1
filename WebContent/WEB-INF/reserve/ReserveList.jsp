@@ -13,6 +13,7 @@
 		location.href="reservedetail.2jo?rsv_no="+rsv_no;
 	}
 </script>
+<link rel="stylesheet" href="css/reservelist.css">
 </head>
 <body>
 <c:set var="list" value="${requestScope.list }"></c:set>

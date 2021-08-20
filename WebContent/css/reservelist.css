@@ -2,35 +2,34 @@
 
 .wrap{
 	width:1000px;
-	overflow:auto;
 	position:relative;
 }
-.wrap .table{
+.wrap table{
 	position:absolute;
 	width:inherit;
 }
 table{
-	width:100%;
+	width:80%;
 	text-align:center;
 	font-size : 25px;
 }
 
 thead th:nth-child(1) {
-  width: 30%;
-}
-
-thead th:nth-child(2) {
-  width: 20%;
-}
-
-thead th:nth-child(3) {
   width: 15%;
 }
 
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3) {
+  width: 30%;
+}
+
 thead th:nth-child(4) {
-  width: 35%;
+  width: 30%;
 }
 th, td {
   padding-top : 15px;
-  padding-right : 20px;
+
 }
