@@ -15,7 +15,8 @@ public class NoticeModifyAction implements Action {
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
+		request.setCharacterEncoding("utf-8");
 		int notice_no = Integer.parseInt(request.getParameter("notice_no"));
 		String notice_title = request.getParameter("notice_title");
 		String notice_content = request.getParameter("notice_content");

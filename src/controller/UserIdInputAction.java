@@ -7,31 +7,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import comm.Forward;
-import dto.UserDTO;
-import service.UserService;
 
-public class OverlapAction implements Action {
+public class UserIdInputAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		String use = request.getParameter("useid");
 		String inputid = request.getParameter("inputid");
-		
-		UserService service = UserService.getInstance();
-		UserDTO dto = new UserDTO();
-//		dto = service.selectUser(inputid);
+
 		int useid = -1;
-		
-		if (dto.getUser_id() == null) {
-			useid = 0;
-		} else {
-			useid = 1;
+
+		if (use != null) {
+			useid = Integer.parseInt(use);
 		}
- 
+
+		request.setAttribute("useid", useid);
+		request.setAttribute("inputid", inputid);
+
 		Forward forward = new Forward();
-		forward.setForward(false);
-		forward.setPath("useridinput.2jo?useid=" + useid + "&inputid=" + inputid);
+		forward.setForward(true);
+		forward.setPath("/WEB-INF/main.jsp?page=user/insertform.jsp");
+
 		return forward;
 	}
 
