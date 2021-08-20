@@ -22,6 +22,7 @@ $().ready(function(){
 
 </head>
 <body>
+<c:set var="referer" value="${requestScope.referer }"/>
 <form action="loginresult.2jo" method="post">
 	<ul id="ip">
 		<li>
@@ -42,7 +43,7 @@ $().ready(function(){
 		아직 회원이 아니십니까?
 		<a href="userinsert.2jo">회원가입</a>
 		</div>
-
+<input type="hidden" name="referer" value="${referer}">
 </form>
 
 </body>

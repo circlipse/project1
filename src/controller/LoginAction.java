@@ -13,8 +13,9 @@ public class LoginAction implements Action {
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+		String referer = request.getParameter("referer");
+		request.setAttribute("referer", referer);	
+
 		Forward f= new Forward();
 		f.setForward(true);
 		f.setPath("/WEB-INF/main.jsp?page=user/login.jsp");
