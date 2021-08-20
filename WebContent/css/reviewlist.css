@@ -67,12 +67,13 @@ th, td {
 	display : flex;
 	justify-content: center;
  	margin-right : -700px;
-	background-color : lavenderblush;
+	background-color : #ffe0b2;
 	align-items: center;
 	text-align: center;
 	border-radius: 15px;
 	font-size : 25px;
 	color : tomato;
+	
 
 }
 
