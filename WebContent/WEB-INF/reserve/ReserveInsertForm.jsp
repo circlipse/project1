@@ -20,6 +20,7 @@
 		<input type="date" name="rsv_date" id="rsv_date" required>
 	</li>
 	<li>
+		<label for="sub_date">예약시간</label>
 		<input type="time" name="sub_date" id="sub_date" required>
 	</li>
 	<li>
@@ -35,7 +36,7 @@
 	<li>
         <label>가방 종류</label>
         <select class="bag" name="bag">
-        <option value="" disabled selected>------</option>
+        <option value="" disabled selected>--- 선택 ---</option>
         <option value="캐리어" id="bag">캐리어</option>
         <option value="백팩" id="bag">백팩</option>
         </select>

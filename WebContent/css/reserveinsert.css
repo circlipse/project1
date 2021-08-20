@@ -6,6 +6,7 @@ form {
 ul li,
 div li {
   list-style: none;
+  margin-bottom:15px;
 }
 ul li label {
   background-color: beige;
@@ -15,4 +16,7 @@ ul li label {
 }
 #rsv {
   margin-left: 40px;
+}
+div li{
+	margin-left:60px;
 }
