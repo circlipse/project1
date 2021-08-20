@@ -71,7 +71,7 @@ public class ReserveInsertResultAction implements Action {
  			forward.setPath("login.2jo");
  		 } else {
  			forward.setForward(false);
- 			forward.setPath("reservedetail.2jo?rsv_no="+rsv_no);
+ 			forward.setPath("reserveinsertdetail.2jo?rsv_no="+rsv_no);
  			session.setAttribute("id", id);
  		}
          return forward;
