@@ -39,7 +39,7 @@
 		<c:forEach var="item" items="${list }">
 				<tr>
 					<td><c:out value="${item.notice_no }"></c:out></td>
-					<td><a href="noticedetail.2jo?notice_no=${item.notice_no }&fullpath=${fullpath }"><c:out value="${item.notice_title }"></c:out></a></td>
+					<td><a href="noticedetail.2jo?notice_no=${item.notice_no }"><c:out value="${item.notice_title }"></c:out></a></td>
 					<td><c:out value="${item.notice_readno }"></c:out></td>
 					<td>관리자</td>
 				</tr>

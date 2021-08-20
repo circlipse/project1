@@ -28,7 +28,7 @@ public class NoticeDAO {
 		sql.append(" FROM (SELECT notice_no, notice_title, notice_readno FROM notice_2jo rv	");
 		sql.append(" ,(SELECT @ROWNUM := 0) R					");
 		sql.append(" WHERE 1=1  ) S								");
-		sql.append(" ORDER BY notice_no) AS A					");
+		sql.append(" ORDER BY notice_no DESC) AS A					");
 		sql.append(" WHERE rnum >= ? AND rnum <=?				");
 		
 		System.out.println(sql);
@@ -55,7 +55,7 @@ public class NoticeDAO {
 		return list;
 	}
 
-	public int addNotice(Connection conn, NoticeDTO dto) {
+	public int addNotice(Connection conn, NoticeDTO dto, String fileRealName) {
 		// TODO Auto-generated method stub
 		StringBuilder sql = new StringBuilder();
 		sql.append(" insert into notice_2jo (notice_title,notice_content,notice_readno,notice_img) ");
@@ -65,7 +65,7 @@ public class NoticeDAO {
 		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
 			pstmt.setString(1, dto.getNotice_title());
 			pstmt.setString(2, dto.getNotice_content());
-			pstmt.setString(3, dto.getNotice_img());
+			pstmt.setString(3, fileRealName);
 			System.out.println( dto.getNotice_title());
 			result = pstmt.executeUpdate();
 

@@ -35,7 +35,7 @@ public class NoticeService {
 		
 		return list;
 	}
-	public int noticAdd(NoticeDTO dto) {
+	public int noticAdd(NoticeDTO dto, String fileRealName) {
 		// TODO Auto-generated method stub
 		DBConnection dbconn = DBConnection.getdbInstance();
 		Connection conn =null;
@@ -43,7 +43,7 @@ public class NoticeService {
 		try {
 			conn = dbconn.getConnection();
 			NoticeDAO dao = NoticeDAO.getinstace();
-			result = dao.addNotice(conn,dto);
+			result = dao.addNotice(conn,dto,fileRealName);
 		}catch(SQLException|NamingException e) {
 			System.out.println(e);
 		}finally {

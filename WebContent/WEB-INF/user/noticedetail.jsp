@@ -22,7 +22,6 @@ function del(notice_no)
 <body>
 	<c:set var="dto" value="${requestScope.dto }"/>
 	<c:set var="id" value="${sessionScope.id}" />
-	<c:out value="${dto.notice_img }"></c:out>
 	
 <%
 NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
@@ -37,22 +36,16 @@ NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 				<td>내용</td>
 				<td><c:out value="${dto.notice_content }"></c:out></td>
 			</tr>
-			<%-- <c:if test="${dto.notice_img !=null}"> --%>
 			<%
 			if(dto.getNotice_img() !=null){
 			%> 
 			<tr>
-				<td><img src="/WEB-INF/board/imgg.png" width=512 height=384/></td>
+				<td><img src="uploadImage/<%=dto.getNotice_img() %>" width=512 height=384/></td>
 				
 			</tr>
 			<%	
 			}
 			%>
-			
-			
-			
-			<%-- </c:if> --%>
-			
 			
 		</tbody>
 	</table>
