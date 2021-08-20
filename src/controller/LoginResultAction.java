@@ -44,6 +44,21 @@ public class LoginResultAction implements Action {
 		
 		
 		
+		
+//		System.out.println(result);
+//		if(result > 0) {
+//			HttpSession session =request.getSession();
+//			session.setAttribute("id", id);
+//			System.out.println("id는 "+id);
+//			
+//			session.setMaxInactiveInterval(60*5);
+//		}
+//		request.setAttribute("result", result);
+//		
+//		f.setForward(true);
+//		f.setPath("/WEB-INF/user/main.jsp?page=loginresult.jsp");
+		
+		
 		return f;
 	}
 

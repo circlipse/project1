@@ -6,35 +6,44 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/login.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+
+<!--  <script>
 $().ready(function(){
 	
 	$('#useradd').click(function(){
 		
-		location.href="userinsert.2jo";
+		location.href="insert.2jo";
 	});
 })
 </script>
+-->
 
 </head>
 <body>
 <form action="loginresult.2jo" method="post">
-	<ul>
+	<ul id="ip">
 		<li>
 			<label for="id">아이디</label>
 			<input type="text" name="id" id="id">
 		</li>
 		<li>
 			<label for="pwd">패스워드</label>
-			<input type="text" name="pwd" id="pwd">
+			<input type="password" name="pwd" id="pwd">
 		</li>
-		<li>
-			<input type="submit" value="로그인">
+
+		<li id="login">
+			<input type="submit" id="login" value="로그인">
 		</li>
-			
 	</ul>
+
+		<div id="userinsert">
+		아직 회원이 아니십니까?
+		<a href="userinsert.2jo">회원가입</a>
+		</div>
+
 </form>
-<button id="useradd">회원가입</button>
+
 </body>
 </html>

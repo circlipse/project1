@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/loginresult.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 	$().ready(function() {
@@ -22,6 +23,7 @@
 </script>
 </head>
 <body>
+<form>
 	<c:set var="id" value="${sessionScope.id}" />
 	<c:set var="result" value="${requestScope.result}" />
 
@@ -31,10 +33,12 @@
 					<td>님 반갑습니다.</td>
 				</tr>
 			</table>
+			
+			<div id="btn">
 			<button id="userdetail">마이페이지</button>
 			<button id="logout">로그아웃</button>
-		
-
+			</div>
+</form>
 	<%-- <c:choose>
 
 		<c:when test="${result >0}">

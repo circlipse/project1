@@ -29,7 +29,7 @@ public class DetailAction implements Action {
 		
 		Forward forward= new Forward();
 		forward.setForward(true);
-		forward.setPath("/WEB-INF/user/main.jsp?page=userdetail.jsp");
+		forward.setPath("/WEB-INF/main.jsp?page=user/userdetail.jsp");
 		
 		return forward;
 		

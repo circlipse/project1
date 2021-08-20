@@ -16,14 +16,14 @@
 		<c:when test="${result >0}">
 			<script>
 				alert('가입완료');
-				location.href = "main.2jo";
+				location.href = "list.2jo";
 			</script>
 		</c:when>
 
 		<c:otherwise>
 			<script>
 				alert('가입실패');
-				location.href = "userinsert.2jo";
+				location.href = "insert.2jo";
 			</script>
 		</c:otherwise>
 

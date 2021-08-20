@@ -19,9 +19,9 @@ public class ReserveInsertResultAction implements Action {
 		request.setCharacterEncoding("utf-8");
 		
 		int user_no=Integer.parseInt(request.getParameter("user_no"));
-		String rsv_date=request.getParameter("rsv_date");
-        String sub_date=request.getParameter("sub_date");
-        String addr_depart=request.getParameter("addr_depart");
+		 String rsv_date=request.getParameter("rsv_date");
+         String sub_date=request.getParameter("sub_date");
+         String addr_depart=request.getParameter("addr_depart");
         String addr_arrive=request.getParameter("addr_arrive");
          
          
@@ -39,13 +39,13 @@ public class ReserveInsertResultAction implements Action {
          }
          String rsv_content=request.getParameter("rsv_content");
          
-//         System.out.println(user_no);
-//         System.out.println(rsv_date);
-//         System.out.println(sub_date);
-//         System.out.println(addr_depart);
-//         System.out.println(addr_arrive);
-//         System.out.println(bagval_1);
-//         System.out.println(bagval_2);
+         System.out.println(user_no);
+         System.out.println(rsv_date);
+         System.out.println(sub_date);
+         System.out.println(addr_depart);
+         System.out.println(addr_arrive);
+         System.out.println(bagval_1);
+         System.out.println(bagval_2);
          
          ReserveService service=ReserveService.getInstance();
          ReserveDTO dto=new ReserveDTO();
