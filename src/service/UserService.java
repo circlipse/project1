@@ -125,4 +125,44 @@ public class UserService {
 		
 		return result;
 	}
+	
+	public UserDTO selectUser(String inputid){
+		
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn = null;
+		UserDTO dto = new UserDTO();
+		
+		try {
+			conn = dbconn.getConnection();
+			UserDAO dao = UserDAO.getinstance();
+			dto = dao.selectUser(conn, inputid);	
+			
+		}catch(SQLException | NamingException e) {
+			System.out.println(e);
+			
+		}finally {
+			if(conn!=null) try {conn.close();} catch(SQLException e) {}
+		}
+		return dto;
+		
+	}
+	public int overlapId(String id) {
+		// TODO Auto-generated method stub
+		DBConnection dbconn = DBConnection.getdbInstance();
+		Connection conn = null;
+		
+		int result = 0;
+		
+		try {
+			conn = dbconn.getConnection();
+			UserDAO dao = UserDAO.getinstance();
+			result =dao.overlapId(conn,id);
+		}catch(SQLException | NamingException e) {
+			System.out.println(e);
+			
+		}finally {
+			if(conn!=null) try {conn.close();} catch(SQLException e) {}
+		}
+		return result;
+	}
 }

@@ -156,4 +156,61 @@ public class UserDAO {
 		}
 		return result;
 	}
+	public UserDTO selectUser(Connection conn, String inputid) {
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select 				");
+		sql.append("		user_id			");
+		sql.append(" from user_2jo 			");
+		sql.append(" where user_id = ?		");
+		
+		
+		UserDTO dto = new UserDTO();
+		ResultSet rs = null;
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+			){
+			pstmt.setString(1, inputid);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setUser_id(rs.getString("user_id"));
+			}	
+			
+		}catch(SQLException e) {
+			System.out.println(e);
+			
+		}finally {
+			if(rs!=null) try {rs.close();} catch(SQLException e){}
+		}
+			
+		return dto;
+	}
+	public int overlapId(Connection conn, String id) {
+		// TODO Auto-generated method stub
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select 				");
+		sql.append("		count(user_id)	");
+		sql.append(" from user_2jo 			");
+		sql.append(" where user_id = ?		");
+		ResultSet rs =null;
+		int result =0;
+		
+		try(PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+				){
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					result = rs.getInt(1);
+				}	
+				
+			}catch(SQLException e) {
+				System.out.println(e);
+				
+			}finally {
+				if(rs!=null) try {rs.close();} catch(SQLException e){}
+			}
+				
+			return result;
+	}
 }
