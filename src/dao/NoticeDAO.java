@@ -58,14 +58,15 @@ public class NoticeDAO {
 	public int addNotice(Connection conn, NoticeDTO dto) {
 		// TODO Auto-generated method stub
 		StringBuilder sql = new StringBuilder();
-		sql.append(" insert into notice_2jo (notice_title,notice_content,notice_readno) ");
-		sql.append(" values (?,?,0) ");
+		sql.append(" insert into notice_2jo (notice_title,notice_content,notice_readno,notice_img) ");
+		sql.append(" values (?,?,0,?) ");
 		System.out.println(sql);
 		int result = 0;
 		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
 			pstmt.setString(1, dto.getNotice_title());
 			pstmt.setString(2, dto.getNotice_content());
-
+			pstmt.setString(3, dto.getNotice_img());
+			System.out.println( dto.getNotice_title());
 			result = pstmt.executeUpdate();
 
 		} catch (SQLException e) {
@@ -77,7 +78,9 @@ public class NoticeDAO {
 	public NoticeDTO detail(Connection conn, int notice_no) {
 		// TODO Auto-generated method stub
 		StringBuilder sql = new StringBuilder();
-		sql.append(" select notice_no, notice_title, notice_content from notice_2jo where notice_no= ? ");
+		sql.append(" select notice_no, notice_title, notice_content ");
+		sql.append(" , notice_img ");
+		sql.append(" from notice_2jo where notice_no= ? ");
 		System.out.println(sql);
 
 		NoticeDTO dto = new NoticeDTO();
@@ -91,7 +94,8 @@ public class NoticeDAO {
 				dto.setNotice_no(rs.getInt("notice_no"));
 				dto.setNotice_title(rs.getString("notice_title"));
 				dto.setNotice_content(rs.getString("notice_content"));
-
+				dto.setNotice_img(rs.getString("notice_img"));
+				
 			}
 		} catch (SQLException e) {
 			System.out.println(e);

@@ -24,7 +24,7 @@ public class NoticeListAction implements Action {
 
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		
+
 		request.setAttribute("id", id);
 		
 		String curr = request.getParameter("curr");
@@ -62,6 +62,11 @@ public class NoticeListAction implements Action {
 		
 		list = service.getList(startrow, endrow);
 
+		String fullpath = request.getParameter("fullpath");
+		
+		request.setAttribute("fullpath", fullpath);
+		System.out.println("소스:"+fullpath);
+		
 		request.setAttribute("list", list);
 		request.setAttribute("currpage", currpage);
 		request.setAttribute("totalpage", totalpage);

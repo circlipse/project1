@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.File" %>
+<%@ page import="java.util.Enumeration" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@ page import="com.oreilly.servlet.MultipartRequest"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="noticeadd.2jo">
+<form method="post" action="noticeadd.2jo" encType = "multipart/form-data" >
 	<ul>
 		<li>
 			<label for="notice_title">제목</label>
@@ -18,11 +22,16 @@
 			<textarea rows="3" cols="20" name="notice_content" id="notice_content" required="required"></textarea>
 		</li>
 		
+			
+		
 		<li>
 			<input type="submit" value="글쓰기">
 			<input type="reset" value="취소">
 		</li>
 	</ul>
+	<div>
+	<input type="file" name="fileName">
+	</div>
 </form>
 
 </body>

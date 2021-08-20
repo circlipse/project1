@@ -15,7 +15,6 @@
 <link rel="stylesheet" href="css/insertform.css">
 </head>
 <body>
-<<<<<<< HEAD
 	<form name="userjoin" method="post" action="insertresult.2jo">
 		<ul>
 			<li><label>아이디</label> <input type="text" name="id" id="id"

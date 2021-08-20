@@ -30,7 +30,7 @@ public class DetailAction implements Action {
 		Forward forward= new Forward();
 		forward.setForward(true);
 		forward.setPath("/WEB-INF/main.jsp?page=user/userdetail.jsp");
-		
+		//forward.setPath("WEB-INF/mypage.jsp?page_r=user/userdetail.jsp");
 		return forward;
 		
 	}

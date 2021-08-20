@@ -5,6 +5,8 @@ public class NoticeDTO {
 	private String notice_title;
 	private String notice_content;
 	private int notice_readno;
+	private String notice_img;
+	
 	public int getNotice_no() {
 		return notice_no;
 	}
@@ -28,6 +30,12 @@ public class NoticeDTO {
 	}
 	public void setNotice_readno(int notice_readno) {
 		this.notice_readno = notice_readno;
+	}
+	public String getNotice_img() {
+		return notice_img;
+	}
+	public void setNotice_img(String notice_img) {
+		this.notice_img = notice_img;
 	}
 	
 }

@@ -26,6 +26,13 @@ public class NotiecDetailAction implements Action {
 		dto = service.detail(notice_no);
 		int result = service.readcount(notice_no);
 		
+		
+
+		String fullpath = request.getParameter("fullpath");
+		request.setAttribute("fullpath", fullpath);
+		
+		
+		
 		request.setAttribute("dto", dto);
 		
 		Forward forward = new Forward();

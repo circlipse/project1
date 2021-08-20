@@ -14,6 +14,7 @@
 		$('#userdetail').click(function() {
 
 			location.href = "userdetail.2jo";
+			//location.href = "reservelist.2jo";
 		});
 		$('#logout').click(function() {
 

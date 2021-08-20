@@ -9,15 +9,17 @@
 </head>
 <body>
 <c:set var="result" value="${requestScope.result}"></c:set>
-
+<c:set var="Notice_img" value="${requestScope.Notice_img}"></c:set>
+<c:out value="${Notice_img}"></c:out>
 
 	<c:choose>
 
 		<c:when test="${result >=0}">
 			<script>
 				alert('등록완료');
-				location.href = "noticelist.2jo";
+				location.href = "noticelist.2jo?fullpath=<c:out value='${Notice_img}'/>";
 			</script>
+			
 		</c:when>
 
 		<c:otherwise>

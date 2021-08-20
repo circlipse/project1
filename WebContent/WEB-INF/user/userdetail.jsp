@@ -17,6 +17,9 @@ $().ready(function(){
 	$('#usermodi').click(function(){
 		
 		location.href="usermodi.2jo";
+	});$('#resevedetail').click(function(){
+		
+		location.href="reservelist.2jo";
 	});
 })
 </script>
@@ -31,6 +34,7 @@ $().ready(function(){
 	
 <button id="userdel">탈퇴</button>
 <button id="usermodi">정보수정</button>
+<button id="resevedetail">예약현황</button>
 	
 </body>
 </html>

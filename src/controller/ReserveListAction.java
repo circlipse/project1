@@ -35,7 +35,7 @@ public class ReserveListAction implements Action {
 			forward.setPath("login.2jo");
 		} else {
 			forward.setForward(true);
-			forward.setPath("WEB-INF/reserve/ReserveList.jsp");		
+			forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveList.jsp");		
 		}
 		return forward;
 
