@@ -8,8 +8,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/reviewlist.css">
-
-
 </head>
 <body>  
 
@@ -20,7 +18,6 @@
 <c:set var="endblock" value="${requestScope.endblock }"></c:set>
 <c:set var="totalpage" value="${requestScope.totalpage }"></c:set>
 <c:set var="startrow" value="${requestScope.startrow }"></c:set>
-
 <form>
 <table>
 	<thead><tr><th>글번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
