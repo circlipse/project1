@@ -60,11 +60,12 @@
   <a href="reviewlist.2jo?curr=${currpage+1 }">다음</a>
 </c:if>
 </div>
-
-<div id="write">
-<a href="reviewinsert.2jo" >글쓰기</a>
-</div>
+	<div id="write">
+	<a href="reviewinsert.2jo" >글쓰기</a>
+	</div>
 
 </form>
+
+
 </body>
 </html>
