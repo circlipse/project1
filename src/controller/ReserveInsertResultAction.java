@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import comm.Forward;
 import dto.ReserveDTO;
@@ -17,6 +18,8 @@ public class ReserveInsertResultAction implements Action {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
 		
 		int user_no=Integer.parseInt(request.getParameter("user_no"));
 		 String rsv_date=request.getParameter("rsv_date");
@@ -58,15 +61,19 @@ public class ReserveInsertResultAction implements Action {
          dto.setRsv_content(rsv_content);
          dto.setUser_no(user_no);
          
-         
-         
          int rsv_no = service.insertRsv(dto);
          //System.out.println("에약번호" + rsv_no);
          
          
          Forward forward=new Forward();
-         forward.setForward(false);
-         forward.setPath("reservedetail.2jo?rsv_no="+rsv_no);
+         if (id == null) {
+ 			forward.setForward(false);
+ 			forward.setPath("login.2jo");
+ 		 } else {
+ 			forward.setForward(false);
+ 			forward.setPath("reservedetail.2jo?rsv_no="+rsv_no);
+ 			session.setAttribute("id", id);
+ 		}
          return forward;
 
 	}

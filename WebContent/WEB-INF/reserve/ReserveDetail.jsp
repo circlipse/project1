@@ -24,6 +24,7 @@
 </script>
 </head>
 <body>
+	<c:set var="id" value="${sessionScope.id }"></c:set>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
 	<c:set var="dto2" value="${requestScope.dto2 }"></c:set>
 <table>
