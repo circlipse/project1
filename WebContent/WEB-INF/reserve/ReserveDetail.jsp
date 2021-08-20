@@ -28,6 +28,7 @@
 	<c:set var="id" value="${sessionScope.id }"></c:set>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
 	<c:set var="dto2" value="${requestScope.dto2 }"></c:set>
+<h2>예약 상세 내역</h2>
 <div class="wrap">
 <table>
 <thead>

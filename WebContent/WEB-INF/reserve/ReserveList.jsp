@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>무빙백</title>
 <script>
 	function reserveList(rsv_no)
 	{
@@ -17,8 +17,8 @@
 </head>
 <body>
 <c:set var="list" value="${requestScope.list }"></c:set>
-<div class="wrap">
 <h2>예약현황</h2>
+<div class="wrap">
 <table>
 <thead>
 	<tr><th>No.</th><th>예약번호</th><th>예약일</th><th>예약변경/취소</th></tr>
@@ -29,7 +29,7 @@
 	<td><c:out value="${item.rnum }"/></td>
 	<td><c:out value="${item.rsv_no }"/></td>
 	<td><c:out value="${item.rsv_date }"/></td>
-	<td><input type="button" id="detail" value="예약 상세보기"
+	<td><input type="button" class="detail" value="예약 상세보기"
 		onclick="reserveList(${item.rsv_no })"></td>
 	</tr>
 </c:forEach>

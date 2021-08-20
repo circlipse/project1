@@ -3,31 +3,44 @@
 .wrap{
 	width:1000px;
 	position:relative;
+ 	text-align:center; 
 }
-.wrap table{
-	position:absolute;
-	width:inherit;
-}
+
 table{
-	width:80%;
+	display:inline-block;
+	width:800px;
 	text-align:center;
 	font-size : 25px;
 }
+.detail{
+	width : 120px;
+	background-color : #ffe0b2;
+	align-items: center;
+	text-align: center;
+	padding:5px;
+	border-radius: 15px;
+	font-size : 15px;
+	border: 1px solid white;
+	font-family: 'Jua', sans-serif;
+}
+.detail:hover {
+	cursor : pointer;
+}
 
 thead th:nth-child(1) {
-  width: 15%;
+  width: 120px;
 }
 
 thead th:nth-child(2) {
-  width: 25%;
+  width: 200px;
 }
 
 thead th:nth-child(3) {
-  width: 30%;
+  width: 240px;
 }
 
 thead th:nth-child(4) {
-  width: 30%;
+  width: 240px;
 }
 th, td {
   padding-top : 15px;
