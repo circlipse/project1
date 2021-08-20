@@ -20,9 +20,12 @@
 		<jsp:include page="${contentpage }"></jsp:include>
 	</section>
 	
+</div>
+	<div id="push">
+	</div>
 	<footer id="footer">
 	<jsp:include page="footer.jsp"></jsp:include>
 	</footer>
-</div>
+
 </body>
 </html>

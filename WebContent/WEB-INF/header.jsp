@@ -15,6 +15,11 @@ $().ready(function(){
 		
 		location.href="noticelist.2jo";
 	});
+	
+	$('#fee').click(function(){
+		location.href="feelist.2jo";	
+	});
+	
 	$('#reserve').click(function(){
 		
 		location.href="reserveinsert.2jo";
@@ -33,6 +38,7 @@ $().ready(function(){
 	</a>
 	   <div id="nav">
 		<span id="notice">공지사항</span>
+		<span id="fee">요금안내</span>
 		<span id="reserve">예약</span>
 		<span id="review">리뷰</span>
 	   </div>

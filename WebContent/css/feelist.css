@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+form{
+	display : flex;
+	width : auto;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#fee{
+	width : 800px;
+	height : 450px;
+}
+
+#warning{
+	width : 800px;
+}

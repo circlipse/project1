@@ -8,19 +8,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import comm.Forward;
 
-public class LoginAction implements Action {
+public class FeeListAction implements Action {
 
 	@Override
 	public Forward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String referer = request.getParameter("referer");
-		request.setAttribute("referer", referer);	
+		// TODO Auto-generated method stub
+		
+		request.setCharacterEncoding("utf-8");
 
-		Forward f= new Forward();
-		f.setForward(true);
-		f.setPath("/WEB-INF/main.jsp?page=user/login.jsp");
-		return f;
+		Forward forward=new Forward();
+		forward.setForward(true);
+		forward.setPath("/WEB-INF/main.jsp?page=/WEB-INF/feeList.jsp");
+		
+		return forward;
 	}
 
-} 
- 
+}

@@ -1,0 +1,24 @@
+@charset "UTF-8";
+form {
+  margin: 0 auto;
+  width: 400px;
+}
+ul li,
+div li {
+  list-style: none;
+  margin-bottom:15px;
+}
+ul li label {
+  background-color: beige;
+}
+.bag {
+  margin-left: 30px;
+}
+#rsv {
+  margin-left: 40px;
+}
+div li{
+	margin-left:60px;
+}
+
+label

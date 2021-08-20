@@ -37,7 +37,7 @@ public class ReserveInsertDetailAction implements Action {
 			forward.setPath("login.2jo");
 		} else {
 			forward.setForward(true);
-			forward.setPath("WEB-INF/reserve/ReserveInsertDetail.jsp");
+			forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveInsertDetail.jsp");
 			session.setAttribute("id", id);
 		}
 		return forward;

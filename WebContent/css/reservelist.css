@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.wrap{
+	width:1000px;
+	position:relative;
+}
+.wrap table{
+	position:absolute;
+	width:inherit;
+}
+table{
+	width:80%;
+	text-align:center;
+	font-size : 25px;
+}
+
+thead th:nth-child(1) {
+  width: 15%;
+}
+
+thead th:nth-child(2) {
+  width: 25%;
+}
+
+thead th:nth-child(3) {
+  width: 30%;
+}
+
+thead th:nth-child(4) {
+  width: 30%;
+}
+th, td {
+  padding-top : 15px;
+
+}

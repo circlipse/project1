@@ -26,12 +26,14 @@
 <body>
 	<c:set var="id" value="${sessionScope.id}" />
 	<c:set var="result" value="${requestScope.result}" />
+	
 	<form>
-
-	<table>
-				<tr>
-					<td><c:out value="${sessionScope.id}" /></td>
-					<td>님 반갑습니다.</td>
+	<img src="img/jeju.jpg" id="jeju"/>
+		 <div id="loginresult">
+			<table>
+			<tr>
+				<td><c:out value="${sessionScope.id}" /></td>
+				<td>님 반갑습니다.</td>
 				</tr>
 			</table>
 			
@@ -39,6 +41,7 @@
 			<input type="button" value="마이페이지" id="userdetail">
 			<input type="button" value="로그아웃" id="logout">
 			</div>
+		  </div>
 			
 </form>
 	<%-- <c:if test="${id !=null}">

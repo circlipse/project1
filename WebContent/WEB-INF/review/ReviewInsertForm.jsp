@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head> 
@@ -9,7 +10,8 @@
 </head>
 
 <body>
-<% String id=(String)session.getAttribute("id"); %>
+
+<c:set var="id" value="${sessionScope.id }"/>	
 
 <form method="post" action="reviewinsertresult.2jo"> 
 <ul>
@@ -20,8 +22,9 @@
 	
 	<li>
 	<label for="rev_content">작성자</label>
-	<input type="text" id="id" name="id" value=<%=id %> readonly>
+	<input type="text" id="id" name="id" value="${id }" readonly>
 	</li>
+	
 	
 	<li id="con">
 	<label for="rev_content">내용</label>

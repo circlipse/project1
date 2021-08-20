@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
+html{
+	height : 100%;
+}
 
 body{
   font-family: 'Jua', sans-serif;
@@ -10,8 +13,29 @@ body{
   align-items: center;
   justify-content: center;
   width : 1000px;
+  height : 100%;
   margin : 0px auto;
+}
 
+#main{
+   min-height: 100%;
+   margin: 0 auto 20px auto;
+}
+
+footer, #push{
+	height : 80px;
+}
+
+footer{
+	background-color : whitesmoke;
+	border : none;
+	border-radius : 10px;
+	box-shadow: 0px 8px 15px rgba(182, 176, 176, 0.8);
+	text-align: center;
+	padding-top : 10px;
+	width : 100%;
+	color : gray;
+	
 }
 
 #header_wrap{
@@ -19,7 +43,7 @@ body{
 	flex-wrap : wrap;
     align-items : center;
     font-family: 'Jua', sans-serif;
-    background-color : lightblue;
+    /* background-color : lightblue; */
     height : 200px;
     width : 1000px;
     position : relative;
@@ -28,20 +52,21 @@ body{
 #nav{
 	display : inline-block;
 	justify-content: center;
-	width : auto;
+	width : auto; 
 	position : relative;
 	top : -80px;
-	left : 600px;
+	left : 530px;
 }
 
 
-#notice, #reserve, #review{
-	margin-right : 30px;
+#notice, #fee, #reserve, #review{
+	margin-right : 10px;
     border : none;
-    color : white;
+    color : orange;
     padding : 5px;
     font-size : 35px;
-    cursor : pointer; 
+    cursor : pointer;
+    text-shadow : 0px 2px 2px tan;
 }
 
 
@@ -55,7 +80,7 @@ body{
 
 #section{
 	width : auto;
-	height : 500px;
+	height : auto;
 	align-items: center;
 	margin : auto;
 	

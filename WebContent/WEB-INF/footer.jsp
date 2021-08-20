@@ -6,11 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
 <div>
-footer입니다
+상호명 : 무빙백<br>
+대표 : 2조     |  사업자등록번호 : 123-45-67890    |   02-1234-5678 <br>           
+COPYRIGHT © 2021 MOVINGBAG. ALL RIGHTS RESERVED.
 </div>
+
 </body>
 </html>

@@ -23,14 +23,16 @@ public class ReserveInsertAction implements Action {
 		
 		ReserveService service = ReserveService.getInstance();
 		int user_no = service.getUserNo(id);
-
+		
+		String referer = (String)request.getRequestURI();
+		
 		Forward forward = new Forward();
 		if (id == null) {
 			forward.setForward(false);
-			forward.setPath("login.2jo");
+			forward.setPath("login.2jo?referer="+referer);
 		} else {
 			forward.setForward(true);
-			forward.setPath("WEB-INF/reserve/ReserveInsertForm.jsp");
+			forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveInsertForm.jsp");
 			session.setAttribute("id", id);
 			request.setAttribute("user_no", user_no);	
 		}

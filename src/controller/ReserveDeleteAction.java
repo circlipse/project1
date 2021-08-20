@@ -20,7 +20,7 @@ public class ReserveDeleteAction implements Action {
 		
 		Forward forward = new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/reserve/ReserveDeleteResult.jsp");
+		forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveDeleteResult.jsp");
 		return forward;
 	}
 
