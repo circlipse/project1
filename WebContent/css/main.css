@@ -31,12 +31,12 @@ body{
 	width : auto;
 	position : relative;
 	top : -80px;
-	left : 600px;
+	left : 530px;
 }
 
 
-#notice, #reserve, #review{
-	margin-right : 30px;
+#notice, #fee, #reserve, #review{
+	margin-right : 10px;
     border : none;
     color : white;
     padding : 5px;
