@@ -40,7 +40,7 @@ $().ready(function(){
 
 		<div id="userinsert">
 		아직 회원이 아니십니까?
-		<a href="insert.2jo">회원가입</a>
+		<a href="userinsert.2jo">회원가입</a>
 		</div>
 
 </form>
