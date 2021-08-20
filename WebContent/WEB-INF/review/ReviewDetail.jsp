@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/reviewdetail.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
@@ -30,8 +31,8 @@ $(document).ready(function () {
 			     result+="<td>"+item.user_id+"</td>";
 			     result+="<td>"+item.subcontent;
 				     
-				     result+="<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
-					 result+="</td></tr>";
+				     result+="&nbsp;&nbsp;<input type='button' value='삭제' onclick=subdelete("+item.subno+","+item.rev_no+")>";
+				     result+="</td></tr>";
 
 			$('#result').append(result);
 			});
@@ -51,8 +52,8 @@ $(document).ready(function () {
 	
 	<c:set var="id" value="${sessionScope.id }"/>
 	
-<!-- 	<table class="table table-striped"> -->
-<table>
+<div id="tdetail">
+<table id="detail">
 	<tr>
 		<td>번호</td><td><c:out value="${dto.rev_no }"></c:out></td>
 	</tr>
@@ -67,25 +68,33 @@ $(document).ready(function () {
 	</tr>
 </table>
 
+</div>
 <c:if test="${sessionScope.id==dto.user_id }">
-<a href="reviewmodify.2jo?rev_no=${dto.rev_no }">수정</a>
-<a href="reviewdelete.2jo?rev_no=${dto.rev_no }">삭제</a>
+<div class="btn">
+	<span id="modi">
+	<a href="reviewmodify.2jo?rev_no=${dto.rev_no }">글 수정</a>
+	</span>
+	<span id="del">
+	<a href="reviewdelete.2jo?rev_no=${dto.rev_no }">삭제</a>
+	</span>
+</div>
 </c:if>
-	
-<br>
-<br>
+
+
+<div id="comment">
 <label>-댓글-</label>
 <form method="post" action="subinsert.2jo">  
 	<input type="hidden" name="rev_no" value="${dto.rev_no }">  
-		<input type="text" name ="user_id" value="${id }" readonly="readonly"><br>
-	<textarea rows="3" cols="20" name="subcontent" required></textarea><br>
+	<input type="text" id="user_id" name ="user_id" value="${id }" readonly="readonly"><br>
+	<textarea rows="3" cols="40" name="subcontent" required></textarea><br>
 	<input type="submit" value="추가">
 </form>
 
 <table id="result"></table>
+</div>
 
-<br><br>
-
+<span id="tolist">
 <a href="reviewlist.2jo">목록으로</a> 
+</span>
 </body>
 </html>

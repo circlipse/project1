@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/reviewmodify.css">
 </head>
 <body>
  
@@ -15,19 +16,29 @@
 
 <form method="post" action="reviewmodifyresult.2jo">
 
+<ul>
+	<li>
 	<label for="rev_no">번호</label>
 	<input type="text" name="rev_no" id="rev_no" value=<c:out value="${dto.rev_no }"></c:out> readonly>
-	<br>
+	</li> 
+	
+	<li>
 	<label for="rev_title">제목</label>
 	<input type="text" name="rev_title" id="rev_title" value=<c:out value="${dto.rev_title }"></c:out>>
-	<br>
+	</li>
+	
+	<li id="con">
 	<label for="rev_content">내용</label>
-	<input type="text" name="rev_content" id="rev_content" value=<c:out value="${dto.rev_content }"></c:out>>
-	<br>
-
-	<input type="submit" value="수정 완료">
-	<input type="reset" value="취소">
-
+	<textarea name="rev_content" id="rev_content" rows="15" cols="100"><c:out value="${dto.rev_content }"></c:out></textarea>
+	</li>
+	
+	<li id="btn">
+	<input type="submit" id="submit" value="수정 완료">
+	<input type="reset" id="reset" value="취소">
+	</li>
+	
+	
+</ul>
 </form>
 </body>
 </html>
