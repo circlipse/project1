@@ -65,6 +65,6 @@
 <a href="reviewinsert.2jo" >글쓰기</a>
 </div>
 
-</form>s
+</form>
 </body>
 </html>
