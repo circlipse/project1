@@ -8,16 +8,19 @@
 	justify-content: center;	
 }
 .button{
-	width:500px;
-	text-align:center;
-	margin-top:30px;
-	align-items:center;
+	width:1000px;
+	margin-top:20px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
 }
 table{
 	display:inline-block;
 	width:600px;
 	text-align:center;
 	font-size : 25px;
+	border-radius : 10px;
+	border : 5px double #ccc5af;
 }
 thead th:nth-child(1){
 	 width:180px;
@@ -28,8 +31,28 @@ thead th:nth-child(2){
 thead th:nth-child(3){
 	 width:210px;
 }
-tr{
-	padding-bottom:10px;
-	border:3px solid silver;
-}
+th, td{
+	padding-bottom:15px;
 	
+}
+#modify, #delete{
+	width : 100px;
+	background-color : #ffe0b2;
+	align-items: center;
+	text-align: center;
+	padding:8px;
+	border-radius: 15px;
+	font-size : 20px;
+	border: 1px solid white;
+	font-family: 'Jua', sans-serif;
+}
+#modify{
+	margin-right:20px;
+}	
+#delete{
+	margin-left:20px;
+}
+
+#modify:hover, #delete:hover{
+	cursor : pointer;
+}
