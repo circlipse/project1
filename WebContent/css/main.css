@@ -36,7 +36,6 @@ footer{
 	width : 100%;
 	color : gray;
 	
-	
 }
 
 #header_wrap{
@@ -44,7 +43,7 @@ footer{
 	flex-wrap : wrap;
     align-items : center;
     font-family: 'Jua', sans-serif;
-    background-color : lightblue;
+    /* background-color : lightblue; */
     height : 200px;
     width : 1000px;
     position : relative;
@@ -63,7 +62,7 @@ footer{
 #notice, #fee, #reserve, #review{
 	margin-right : 10px;
     border : none;
-    color : white;
+    color : cornflowerblue;
     padding : 5px;
     font-size : 35px;
     cursor : pointer; 
