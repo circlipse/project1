@@ -67,8 +67,9 @@ $(document).ready(function () {
 		<td>내용</td><td><c:out value="${dto.rev_content }"></c:out></td>
 	</tr>
 </table>
-
 </div>
+
+
 <c:if test="${sessionScope.id==dto.user_id }">
 <div class="btn">
 	<span id="modi">
@@ -93,8 +94,8 @@ $(document).ready(function () {
 <table id="result"></table>
 </div>
 
-<span id="tolist">
+<div id="tolist">
 <a href="reviewlist.2jo">목록으로</a> 
-</span>
+</div>
 </body>
 </html>
