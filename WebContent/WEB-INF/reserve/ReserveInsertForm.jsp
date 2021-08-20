@@ -51,6 +51,7 @@
 	<input type="reset" value="취소">
 	</li>
 </ul>
+<input type="hidden" name="id" value="${id }">
 </form>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert1.js"%></script>
 </body>
