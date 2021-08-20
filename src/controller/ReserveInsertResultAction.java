@@ -29,13 +29,13 @@ public class ReserveInsertResultAction implements Action {
                 
         String bagval_1 = request.getParameter("bag_val_1");
         int bag_val_1=0;
-        if(bagval_1 != "")
+        if(bagval_1 != "" && bagval_1 != null)
         {
         	bag_val_1=Integer.parseInt(bagval_1);
         }
         String bagval_2 = request.getParameter("bag_val_2");
         int bag_val_2 = 0;
-        if(bagval_2 != "")
+        if(bagval_2 != ""  && bagval_2 != null)
         {
         	bag_val_2=Integer.parseInt(bagval_2);
         }

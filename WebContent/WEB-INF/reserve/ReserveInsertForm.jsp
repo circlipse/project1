@@ -13,7 +13,7 @@
 <c:set var="id" value="${sessionScope.id }"></c:set>
 <c:set var="user_no" value="${requestScope.user_no }"></c:set>
 
-<form method="post" action="reserveinsertresult.2jo?user_no=${user_no}&id=${id}">
+<form method="post" action="reserveinsertresult.2jo?user_no=${user_no}">
 <h2>예약</h2>
 <ul>
 	<li>

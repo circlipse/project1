@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import comm.Forward;
+import service.ReserveService;
 import service.UserService;
 
 
@@ -26,6 +27,10 @@ public class LoginResultAction implements Action {
 		UserService service = UserService.getInstance();
 		int result= service.checkUser(id,pwd);
 		
+		ReserveService rservice = ReserveService.getInstance();
+		int user_no = rservice.getUserNo(id);
+		
+		
 		Forward f = new Forward();
 		f.setForward(true);
 
@@ -36,6 +41,7 @@ public class LoginResultAction implements Action {
 			
 			if(referer.equals("/p2jo/reserveinsert.2jo")){
 				f.setPath("/WEB-INF/reserve/ReserveInsertForm.jsp");
+				request.setAttribute("user_no", user_no);
 			}else {
 				//System.out.println("id는 "+id);
 				request.setAttribute("result", result);
