@@ -26,16 +26,16 @@
 	<li>
 		<label for="addr_depart">출발</label>
 		<input type="text" name="addr_depart" id="addr_depart"
-			placeholder="짐 맡기는 위치">
+			placeholder="짐 맡기는 위치" required>
 	</li>
 	<li>
 		<label for="addr_arrive">도착</label>
 		<input type="text" name="addr_arrive" id="addr_arrive"
-			placeholder="짐 찾아가는 위치">
+			placeholder="짐 찾아가는 위치" required>
 	</li>
 	<li>
         <label>가방 종류</label>
-        <select class="bag" name="bag">
+        <select class="bag" name="bag" required>
         <option value="" disabled selected>--- 선택 ---</option>
         <option value="캐리어" id="bag">캐리어</option>
         <option value="백팩" id="bag">백팩</option>
@@ -46,11 +46,13 @@
         <div class="result2"></div>
     </li>
     <li><label>배송시 당부 말씀</label></li>
-    <li><textarea cols="40" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
+    <li><textarea cols="55" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
     </ul>
+    <div class="btn">
         <input type="submit" id="rsv" value="예약하기">
         <input type="reset" id="cancel" value="취소">
 		<input type="hidden" name="id" value="${id }">
+	</div>
 </form>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date.js"%></script>
