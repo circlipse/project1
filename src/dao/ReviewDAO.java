@@ -31,7 +31,7 @@ public class ReviewDAO {
 		  sql.append("                  (                             ");
 		  sql.append("                    select @ROWNUM := 0 ) R     ");
 		  sql.append("                    where 1=1  ) S              ");
-		  sql.append("                    order by rev_no  ) as A     ");
+		  sql.append("                    order by rev_no desc ) as A ");
      	  sql.append(" where rnum >= ? and rnum <=?                   ");
 		
 		ResultSet rs=null;
