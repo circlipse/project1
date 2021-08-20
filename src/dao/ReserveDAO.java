@@ -200,5 +200,31 @@ public class ReserveDAO {
 		}
 	}
 
+	public int getUserNo(Connection conn, String id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(" select user_no          ");
+		sql.append(" from user_2jo           ");
+		sql.append(" where user_id = ?       ");
+		
+		ResultSet rs = null;
+		int user_no = 0;
+		try (
+			PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+						
+		){
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				user_no = rs.getInt("user_no");
+			}
+		} catch(SQLException e) {
+			System.out.println(e);
+		} finally {
+			if(rs != null) try {rs.close();} catch(SQLException e) {}
+		}
+		return user_no;
+	}
+
 
 }

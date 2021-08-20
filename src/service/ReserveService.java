@@ -170,5 +170,25 @@ public class ReserveService {
            if(conn!=null) try {conn.close();} catch(SQLException e) {}
         }
 	}
+	public int getUserNo(String id) {
+		DBConnection dbconn=DBConnection.getdbInstance();
+        Connection conn=null;
+        
+        int user_no = 0;
+        try {
+        	conn=dbconn.getConnection();
+            conn.setAutoCommit(false);
+            
+            ReserveDAO dao=ReserveDAO.getInstance();
+            user_no = dao.getUserNo(conn, id);
+            
+            conn.commit();
+        } catch(NamingException | SQLException e) {
+        	try {conn.rollback();} catch(SQLException e2) {}
+        }finally {
+           if(conn!=null) try {conn.close();} catch(SQLException e) {}
+        }
+		return user_no;
+	}
 
 }

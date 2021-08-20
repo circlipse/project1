@@ -76,6 +76,6 @@
 	<input type="hidden" name="old_bag_val_1" value="${dto2.bag_val_1}">
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify1.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify.js"%></script>
 </body>
 </html>
