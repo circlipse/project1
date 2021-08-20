@@ -15,7 +15,7 @@
 
 	<c:when test="${result==0}">
 		<c:out value="사용 가능한 아이디입니다."></c:out>
-		<a href='javascript:apply(\"" + id + "\")'>[적용]</a>
+		<!-- <a href='javascript:apply(\"" + id + "\")'>[적용]</a> -->
 		
 		<input type="button" value="적용" onclick="idInput()">
 	<script>
