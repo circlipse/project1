@@ -16,6 +16,7 @@
 </head>
 <body>
 <c:set var="list" value="${requestScope.list }"></c:set>
+<div class="wrap">
 <h2>예약현황</h2>
 <table>
 <thead>
@@ -33,5 +34,6 @@
 </c:forEach>
 </tbody>
 </table>
+</div>
 </body>
 </html>
