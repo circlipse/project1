@@ -5,8 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/usermodi.css">
 </head>
 <body>
+<h2>회원 정보 수정</h2>
 <form method="post" action="usermodiresult.2jo">
 	<ul>
 	
@@ -31,7 +33,8 @@
 		</li>
 		
 		<li>
-			<input type="submit" value="수정">
+			<input type="submit" id="submit" value="수정">
+			<input type="reset" id="cancel" value="취소">
 		</li>
 		
 	</ul>

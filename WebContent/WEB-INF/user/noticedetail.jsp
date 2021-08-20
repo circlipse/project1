@@ -18,6 +18,7 @@ function del(notice_no)
 	location.href="noticedelete.2jo?notice_no="+notice_no;
 }
 </script>
+<link rel="stylesheet" href="css/noticedetail.css">
 </head>
 <body>
 	<c:set var="dto" value="${requestScope.dto }"/>
@@ -26,10 +27,14 @@ function del(notice_no)
 <%
 NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 %>
+	<div class="wrap">
 	<table>
+		<thead>
+		<tr><th></th><th></th></tr>
+		</thead>
 		<tbody>
 			<tr>
-				<td>제목: </td>
+				<td>제목</td>
 				<td><c:out value="${dto.notice_title }"></c:out></td>
 			</tr>
 			<tr>
@@ -40,7 +45,7 @@ NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 			if(dto.getNotice_img() !=null){
 			%> 
 			<tr>
-				<td><img src="uploadImage/<%=dto.getNotice_img() %>" width=512 height=384/></td>
+				<td colspan="2"><img src="uploadImage/<%=dto.getNotice_img() %>" width=512 height=384/></td>
 				
 			</tr>
 			<%	
@@ -49,11 +54,13 @@ NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 			
 		</tbody>
 	</table>
+	</div>
 
 	<c:if test="${id eq 'admin' }">
+	<div class="button">
 		<input type="button" id="modify" value="수정" onclick="modify(${dto.notice_no})">
 		<input type="button" id="del" value="삭제" onclick="del(${dto.notice_no })">
-
+	</div>
 	</c:if>
 </body>
 </html>

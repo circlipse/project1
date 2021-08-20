@@ -23,18 +23,26 @@ $().ready(function(){
 	});
 })
 </script>
+<link rel="stylesheet" href="css/userdetail.css">
 </head>
 <body>
 	<c:set var="dto" value="${requestScope.dto}"/>
-	<table >
+	
+	<div class="button">
+	<button id="resevedetail">나의 예약</button>
+	<button id="usermodi">회원 정보 수정</button>
+	<button id="userdel">탈퇴</button>
+	</div>
+	
+	
+	<div class="wrap">
+	<table>
 		<tr><td>아이디</td> <td><c:out value="${dto.user_id }" /></td></tr>
 		<tr><td>이름</td> <td><c:out value="${dto.user_name }" /></td></tr>
 		<tr><td>전화번호</td> <td><c:out value="${dto.user_phone }" /></td></tr>
 	</table>
-	
-<button id="userdel">탈퇴</button>
-<button id="usermodi">정보수정</button>
-<button id="resevedetail">예약현황</button>
+	</div>
+
 	
 </body>
 </html>

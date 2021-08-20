@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+.wrap{
+	width:1000px;
+	position:relative;
+	align-items : center;
+	text-align:center;
+	justify-content: center;	
+}
+.button{
+	width:1000px;
+	margin-top:20px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+table{
+	display:inline-block;
+	width:700px;
+	text-align:center;
+	font-size : 25px;
+	border-radius : 10px;
+	border : 5px double #ccc5af;
+}
+
+td{
+	padding:10px 100px;
+}
+#resevedetail{
+	width : 150px;
+}
+#usermodi{
+	width : 200px;
+}
+#userdel{
+	width : 100px;
+}
+#resevedetail, #usermodi, #userdel{
+	background-color : #ffe0b2;
+	align-items: center;
+	text-align: center;
+	padding:8px;
+	border-radius: 15px;
+	font-size : 20px;
+	border: 1px solid white;
+	font-family: 'Jua', sans-serif;
+	margin:20px;
+}	
+#resevedetail:hover, #usermodi:hover, #userdel:hover{
+	cursor : pointer;
+}

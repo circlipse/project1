@@ -16,6 +16,7 @@
 		});
 	})
 </script>
+<link rel="stylesheet" href="css/noticelist.css">
 </head>
 <body>
 	<c:set var="list" value="${requestScope.list}"></c:set>
@@ -25,10 +26,11 @@
 	<c:set var="datacount" value="${requestScope.datacount}"></c:set>
 	<c:set var="totalpage" value="${requestScope.totalpage}"></c:set>
 	<c:set var="id" value="${sessionScope.id}" />
+	<div class="wrap">
 	<table>
 		<thead>
 			<tr>
-				<th>no</th>
+				<th>No.</th>
 				<th>제목</th>
 				<th>조회수</th>
 				<th>작성자</th>
@@ -51,7 +53,7 @@
 		</c:if>
 	</div>
 
-	<div>
+	<div id="num">
 		<c:forEach var="index" begin="${startblock }" end="${endblock }">
 			<c:if test="${currpage==index }">
 				<c:out value="${index }"></c:out>
@@ -68,14 +70,14 @@
 		</c:if>
 	</div>
 	
-	
+	</div>
 	
 	
 	
 	<c:if test="${id eq 'admin' }">
 	<button id="noticeadd">글쓰기</button>
 	</c:if>
-	
+
 	
 	
 	
