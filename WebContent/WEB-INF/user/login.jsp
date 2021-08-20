@@ -23,7 +23,9 @@ $().ready(function(){
 </head>
 <body>
 <c:set var="referer" value="${requestScope.referer }"/>
+
 <form action="loginresult.2jo" method="post">
+<img src="img/jeju.jpg" id="jeju"/>
 	<ul id="ip">
 		<li>
 			<label for="id">아이디</label>
@@ -36,13 +38,16 @@ $().ready(function(){
 
 		<li id="login">
 			<input type="submit" id="login" value="로그인">
+		
+		</li>
+		
+		<li id="userinsert">
+		아직 회원이 아니십니까?
+		<a href="userinsert.2jo">회원가입</a>
 		</li>
 	</ul>
 
-		<div id="userinsert">
-		아직 회원이 아니십니까?
-		<a href="userinsert.2jo">회원가입</a>
-		</div>
+
 <input type="hidden" name="referer" value="${referer}">
 </form>
 
