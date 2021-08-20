@@ -27,7 +27,7 @@ public class ReserveModifyAction implements Action {
 		
 		Forward forward=new Forward();
 		forward.setForward(true);
-		forward.setPath("WEB-INF/reserve/ReserveModifyForm.jsp");
+		forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveModifyForm.jsp");
 		return forward;
 	}
 

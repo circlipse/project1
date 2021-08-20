@@ -32,7 +32,7 @@ public class ReserveInsertAction implements Action {
 			forward.setPath("login.2jo?referer="+referer);
 		} else {
 			forward.setForward(true);
-			forward.setPath("WEB-INF/reserve/ReserveInsertForm.jsp");
+			forward.setPath("WEB-INF/main.jsp?page=reserve/ReserveInsertForm.jsp");
 			session.setAttribute("id", id);
 			request.setAttribute("user_no", user_no);	
 		}

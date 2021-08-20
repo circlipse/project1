@@ -40,7 +40,7 @@ public class LoginResultAction implements Action {
 			session.setAttribute("id", id);
 			
 			if(referer.equals("/p2jo/reserveinsert.2jo")){
-				f.setPath("/WEB-INF/reserve/ReserveInsertForm.jsp");
+				f.setPath("/WEB-INF/main.jsp?page=reserve/ReserveInsertForm.jsp");
 				request.setAttribute("user_no", user_no);
 			}else {
 				//System.out.println("id는 "+id);
