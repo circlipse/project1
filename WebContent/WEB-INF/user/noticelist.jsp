@@ -24,7 +24,6 @@
 	<c:set var="endblock" value="${requestScope.endblock}"></c:set>
 	<c:set var="datacount" value="${requestScope.datacount}"></c:set>
 	<c:set var="totalpage" value="${requestScope.totalpage}"></c:set>
-	<c:set var="fullpath" value="${requestScope.fullpath}"></c:set>
 	<c:set var="id" value="${sessionScope.id}" />
 	<table>
 		<thead>
