@@ -7,9 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/reviewlist.css">
-
-
 </head>
 <body>  
 
@@ -20,7 +17,6 @@
 <c:set var="endblock" value="${requestScope.endblock }"></c:set>
 <c:set var="totalpage" value="${requestScope.totalpage }"></c:set>
 
-<form>
 <table>
 	<thead><tr><th>글번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
 	</thead>
@@ -37,10 +33,12 @@
 	</tbody>
 </table>
 
-<div id="paging">
+
  <c:if test="${startblock>1 }">
     <a href="reviewlist.2jo?curr=${currpage-1}">이전</a>
  </c:if>
+
+
 
 
 <c:forEach var="index" begin="${startblock }" end="${endblock }">
@@ -53,15 +51,16 @@
 </c:forEach>
 
 
+
+
 <c:if test="${endblock<totalpage}">
   <a href="reviewlist.2jo?curr=${currpage+1 }">다음</a>
 </c:if>
-</div>
 
-<div id="write">
-<a href="reviewinsert.2jo" >글쓰기</a>
-</div>
 
-</form>
+<br>
+<br>
+<a href="reviewinsert.2jo">글쓰기</a>
+
 </body>
 </html>
