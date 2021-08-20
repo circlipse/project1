@@ -13,67 +13,6 @@ form{
 	height : 500px;
 	width : 1000px;
 	flex-direction: column;
-<<<<<<< HEAD
-	font-size : 30px;
-}
-
-table{
-	table-layout : fixed;
-	border-collapse : collapse;
-	flex-direction : column;
-	align-items: center;
-	
-}
-
-thead th:nth-child(1) {
-  width: 30%;
-}
-
-thead th:nth-child(2) {
-  width: 20%;
-}
-
-thead th:nth-child(3) {
-  width: 15%;
-}
-
-thead th:nth-child(4) {
-  width: 35%;
-}
-
-tbody{
-  align-items: center;
-  text-align: center;
-  	
-}
-
-
-th, td {
-  padding-top : 15px;
-  padding-right : 20px;
-}
-
-
-#paging{
-	margin-top : 15px;
-}
-
-#write{
-	width : 100px;
-	display : flex;
-	justify-content: center;
-	margin-right : -700px;
-	background-color : lightpink;
-	align-items: center;
-	text-align: center;
-	border-radius: 15px;
-	font-size : 25px;
-	
-}
-
-#paging{
-	font-size : 25px;
-=======
 	font-size : 25px;
 }
 
@@ -133,7 +72,6 @@ th, td {
 
 #paging{
 	font-size : 20px;
->>>>>>> branch 'master' of https://github.com/circlipse/project1.git
 }
 
 #a:hover {
