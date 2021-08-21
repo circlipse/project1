@@ -33,9 +33,11 @@ $().ready(function(){
 </head>
 <body>
   <div id="header_wrap">
-	<a href="main.2jo" >
+	<a href="main.2jo" id="block">
 	<img src="img/h_bag.png" id="h_bag"/>
 	</a>
+	<img src="img/moving.png" id="moving"/>
+
 	   <div id="nav">
 		<span id="notice">공지사항</span>
 		<span id="fee">요금안내</span>
