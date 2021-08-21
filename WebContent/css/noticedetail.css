@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 .wrap{
 	width:1000px;
@@ -54,4 +55,8 @@ th, td{
 
 #modify:hover, #del:hover{
 	cursor : pointer;
+}
+
+pre{
+	font-family: 'Jua', sans-serif;
 }

@@ -60,6 +60,20 @@ input:focus, textarea:focus{
 	align-content: center;
 }
 
+textarea{
+	font-family:inherit;
+}
+
+#submit, #reset{
+	background-color : #ffe0b2;
+	padding : 8px;
+	border-radius : 10px;
+	text-align: center;
+	align-content: center;
+	margin-right : 8px;
+	border : none;
+}
+
 #submit:hover, #reset:hover{
 	cursor : pointer;
 }
@@ -67,6 +81,8 @@ input:focus, textarea:focus{
 #btn{
 	margin-left : 320px;
 }
+
+
 
 
 

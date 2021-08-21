@@ -9,6 +9,10 @@ body{
 	font-family: 'Jua', sans-serif;
 }
 
+pre{
+	font-family: 'Jua', sans-serif;
+}
+
 
 #tdetail{
 	/* margin-top : 100px; */	
@@ -127,6 +131,11 @@ textarea{
 	text-align: center;
 	align-content: center;
 	margin-right : 8px;
+}
+
+textarea{
+	font-family:inherit;
+	font-size:inherit;
 }
 
 #tolist{
