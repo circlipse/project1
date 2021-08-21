@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 form{
 	display : flex;
 	width : auto;
@@ -8,11 +9,16 @@ form{
 	flex-direction: column;
 }
 
-#fee{
+#feelist{
 	width : 800px;
-	height : 450px;
+/* 	height : 450px; */
 }
 
 #warning{
 	width : 800px;
 }
+
+#feelist:hover, #warning{
+	cursor : default;
+}
+
