@@ -42,7 +42,7 @@ th, td{
 	padding-bottom:15px;
 	
 }
-#modify, #delete{
+#modify, #delete, #reviewi{
 	width : 100px;
 	background-color : #ffe0b2;
 	align-items: center;
@@ -53,13 +53,14 @@ th, td{
 	border: 1px solid white;
 	font-family: 'Jua', sans-serif;
 }
-#modify{
+#modify, #delete{
 	margin-right:20px;
 }	
-#delete{
+#delete, #reviewi{
 	margin-left:20px;
 }
 
-#modify:hover, #delete:hover{
+
+#modify:hover, #delete:hover, #reviewi:hover{
 	cursor : pointer;
 }

@@ -87,7 +87,7 @@
 <div class="button">
 	<input type="button" id="modify" value="예약 변경" onclick="reserveModify(${dto.rsv_no})">
 	<input type="button" id="delete" value="예약 취소" onclick="reserveDelete(${dto.rsv_no })">
-	<input type="button" id="review" value="후기 작성" onclick="reserveReview(${dto.rsv_no })">
+	<input type="button" id="reviewi" value="후기 작성" onclick="reserveReview(${dto.rsv_no })">
 </div>
 
 
