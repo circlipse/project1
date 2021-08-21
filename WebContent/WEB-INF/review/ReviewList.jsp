@@ -23,7 +23,7 @@
 
 <form>
 <table>
-	<thead><tr><th>글번호</th><th>제목</th><th>작성자</th><th>조회수</th></tr>
+	<thead><tr><th>No.</th><th>제목</th><th>조회수</th><th>작성자</th></tr>
 	</thead>
 	
 	<tbody>
@@ -33,8 +33,8 @@
 	<tr>
     <td><c:out value="${item.rev_no }"></c:out></td>
 	<td><a href="reviewdetail.2jo?rev_no=${item.rev_no }"><c:out value="${item.rev_title }"></c:out></a></td>
-	<td><c:out value="${item.user_id }"></c:out></td>
 	<td><c:out value="${item.rev_readno}"></c:out></td>
+	<td><c:out value="${item.user_id }"></c:out></td>
 	</tr>
 	</c:forEach>
 	</tbody>
@@ -54,6 +54,7 @@
       <a href="reviewlist.2jo?curr=${index}">${index}</a> 
   </c:if>
 </c:forEach>
+
 
 
 <c:if test="${endblock<totalpage}">
