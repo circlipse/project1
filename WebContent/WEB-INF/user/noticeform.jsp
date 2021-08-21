@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/noticeform.css">
 </head>
 <body>
 <form method="post" action="noticeadd.2jo" encType = "multipart/form-data" >
@@ -19,7 +20,7 @@
 		</li>
 		<li>
 			<label for="notice_content">내용</label>
-			<textarea rows="3" cols="100" name="notice_content" id="notice_content" required="required"></textarea>
+			<textarea rows="10" cols="40" name="notice_content" id="notice_content" required="required"></textarea>
 		</li>
 		
 		<li>

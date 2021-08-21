@@ -69,7 +69,21 @@ th, td{
 #reset{
 	margin-left:20px;
 }
-
+input, select{
+	border-top : none;
+	border-left : none;
+	border-right : none;
+	border-bottom : 2px solid grey;
+	font-size : 20px;
+	font-family: 'Jua', sans-serif;
+	color : grey;
+}
+select{
+	margin-left:30px;
+}
 #modify:hover, #reset:hover, #delete:hover{
 	cursor : pointer;
+}
+textarea{
+	font-family:inherit;
 }

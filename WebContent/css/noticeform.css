@@ -17,31 +17,6 @@ h2 {
 	text-align: center;
 	text-decoration: underline;
 }
-#rsv_date {
-  margin-left: 130px;
-  padding: 3px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
-#sub_date {
-  margin-left: 115px;
-  padding: 3px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
-#addr_depart {
-  margin-left: 147px;
-  padding: 3px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
-#addr_arrive {
-  margin-left: 147px;
-  padding: 3px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
-
 ul li,
 div li {
   list-style: none;
@@ -118,7 +93,7 @@ div li div li{
 	font-size: 20px; 
 	color: #8d6e63;
 }
-input, select{
+input{
 	border-top : none;
 	border-left : none;
 	border-right : none;
@@ -127,10 +102,9 @@ input, select{
 	font-family: 'Jua', sans-serif;
 	color : grey;
 }
-select{
-	margin-left:110px;
-}
 textarea{
 	font-family:inherit;
 }
-
+input:hover{
+	cursor:pointer;
+}
