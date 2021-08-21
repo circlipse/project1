@@ -19,10 +19,8 @@
 		</li>
 		<li>
 			<label for="notice_content">내용</label>
-			<textarea rows="3" cols="20" name="notice_content" id="notice_content" required="required"></textarea>
+			<textarea rows="3" cols="100" name="notice_content" id="notice_content" required="required"></textarea>
 		</li>
-		
-			
 		
 		<li>
 			<input type="submit" value="글쓰기">

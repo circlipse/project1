@@ -39,7 +39,7 @@ NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 			</tr>
 			<tr>
 				<td>내용</td>
-				<td><c:out value="${dto.notice_content }"></c:out></td>
+				<td><pre><c:out value="${dto.notice_content }"/></pre></td>
 			</tr>
 			<%
 			if(dto.getNotice_img() !=null){

@@ -69,7 +69,7 @@ public class NoticeService {
 		
 		return dto;		
 	}
-	public int modify(int notice_no, String notice_title, String notice_content) {
+	public int modify(int notice_no, String notice_title, String notice_content, String fileRealName) {
 		// TODO Auto-generated method stub
 		DBConnection dbconn = DBConnection.getdbInstance();
 		Connection conn =null;
@@ -77,7 +77,7 @@ public class NoticeService {
 		try {
 			conn = dbconn.getConnection();
 			NoticeDAO dao = NoticeDAO.getinstace();
-			result = dao.modify(conn,notice_no,notice_title,notice_content);
+			result = dao.modify(conn,notice_no,notice_title,notice_content,fileRealName);
 		}catch(SQLException|NamingException e) {
 			System.out.println(e);
 		}finally {

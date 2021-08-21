@@ -103,17 +103,18 @@ public class NoticeDAO {
 		return dto;
 	}
 
-	public int modify(Connection conn, int notice_no, String notice_title, String notice_content) {
+	public int modify(Connection conn, int notice_no, String notice_title, String notice_content, String fileRealName) {
 		// TODO Auto-generated method stub
 		StringBuilder sql = new StringBuilder();
-		sql.append(" update notice_2jo set  notice_title =? ,notice_content =?");
+		sql.append(" update notice_2jo set  notice_title =? ,notice_content =? ,notice_img =?");
 		sql.append(" where notice_no = ? ");
 
 		int result = 0;
 		try (PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
 			pstmt.setString(1, notice_title);
 			pstmt.setString(2, notice_content);
-			pstmt.setInt(3, notice_no);
+			pstmt.setString(3, fileRealName);
+			pstmt.setInt(4, notice_no);
 
 			result = pstmt.executeUpdate();
 
