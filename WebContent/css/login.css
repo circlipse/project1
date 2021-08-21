@@ -33,8 +33,6 @@ form{
 	height : 200px;
 	border : none;
 	margin-left : 30px;
-
-	
 }
 
 li{
@@ -93,6 +91,10 @@ a:link{
 	text-decoration: none;
 }
 
-
-
+.info{
+	display : flex;
+	align-items: center;
+	justify-content: center;
+	
+}
 

@@ -44,6 +44,11 @@
 		  </div>
 			
 </form>
+
+		<div class="info">
+			<img src="img/info.jpg" id="infoimg" />
+		</div>
+		
 	<%-- <c:if test="${id !=null}">
 		<c:choose>
 			<c:when test="${result >0}">

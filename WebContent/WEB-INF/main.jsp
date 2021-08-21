@@ -20,8 +20,8 @@
 		<c:set var="contentpage" value="${param.page }"></c:set>
 		<jsp:include page="${contentpage }"></jsp:include>
 	</section>
-	
 </div>
+
 	<div id="push">
 	</div>
 	<footer id="footer">

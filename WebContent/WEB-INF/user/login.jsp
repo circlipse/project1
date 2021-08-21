@@ -47,9 +47,10 @@ $().ready(function(){
 		</li>
 	</ul>
 
-
 <input type="hidden" name="referer" value="${referer}">
 </form>
-
+		<div class="info">
+			<img src="img/info.jpg" id="infoimg" />
+		</div>
 </body>
 </html>
