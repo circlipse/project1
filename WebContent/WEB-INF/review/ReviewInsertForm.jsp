@@ -33,8 +33,8 @@
 	
 
 	<li id="put">
-	<input type="submit" id="submit" value="등록">
-	<input type="reset" id="reset" value="취소">
+	<input type="submit" id="rsubmit" value="등록">
+	<input type="reset" id="rreset" value="취소">
 	</li>
 </ul>
 

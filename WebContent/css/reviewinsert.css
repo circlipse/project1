@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 body{
@@ -65,16 +64,30 @@ input:focus, textarea:focus{
 	align-content: center;
 }
 
-#insert:hover, #submit:hover, #reset:hover{
+#insert:hover, #rsubmit:hover, #rreset:hover{
 	cursor : pointer;
 }
 
 #put{
-	margin-left : 350px;
+	margin-left : 330px;
+}
+
+#rsubmit, #rreset{
+	width : 80px;
+	background-color : #ffe0b2;
+	align-items: center;
+	text-align: center;
+	padding:6px;
+	border-radius: 15px;
+	font-size : 20px;
+	border: 1px solid white;
+	font-family: 'Jua', sans-serif;
 }
 
 
-
+textarea{
+	font-family:inherit;
+}
 
 
 
