@@ -40,7 +40,7 @@
 		<c:forEach var="item" items="${list }">
 				<tr>
 					<td><c:out value="${item.notice_no }"></c:out></td>
-					<td><a href="noticedetail.2jo?notice_no=${item.notice_no }"><c:out value="${item.notice_title }"></c:out></a></td>
+					<td><a href="noticedetail.2jo?notice_no=${item.notice_no }" class="aa"><c:out value="${item.notice_title }"></c:out></a></td>
 					<td><c:out value="${item.notice_readno }"></c:out></td>
 					<td>관리자</td>
 				</tr>
@@ -49,7 +49,7 @@
 	</table>
 	<div>
 		<c:if test="${startblock>1}">
-			<a href="noticelist.2jo?curr=${currpage-1 }">이전</a>
+			<a href="noticelist.2jo?curr=${currpage-1 }" class="aa">이전</a>
 		</c:if>
 	</div>
 
@@ -59,14 +59,14 @@
 				<c:out value="${index }"></c:out>
 			</c:if>
 			<c:if test="${currpage!=index }">
-				<a href="noticelist.2jo?curr=${index}">${index}</a>
+				<a href="noticelist.2jo?curr=${index}" class="aa">${index}</a>
 			</c:if>
 		</c:forEach>
 	</div>
 
 	<div>
 		<c:if test="${endblock<totalpage}">
-			<a href="noticelist.2jo?curr=${currpage+1 }">다음</a>
+			<a href="noticelist.2jo?curr=${currpage+1 }" class="aa">다음</a>
 		</c:if>
 	</div>
 	

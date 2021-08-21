@@ -47,14 +47,20 @@ th, td{
 	border: 1px solid white;
 	font-family: 'Jua', sans-serif;
 }
-a, #num{
+
+a{
+	width : 0px;
+	height : 0px;
+}
+.aa, #num{
 	font-size : 20px;
 	padding:15px 10px;
 }
-a{
+.aa{
 	text-decoration:none;
 	color:gray;
 }
+
 #noticeadd{
 	margin-left:750px;
 }	
