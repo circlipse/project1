@@ -3,7 +3,7 @@
 .wrap{
 	width:1000px;
 	position:relative;
- 	text-align:center; 
+ 	text-align:center; 	 
 }
 
 table{
@@ -12,6 +12,14 @@ table{
 	text-align:center;
 	font-size : 25px;
 }
+
+
+h2{
+	text-align : center;
+	font-size : 28px;
+	text-decoration : underline;
+}
+
 .detail{
 	width : 120px;
 	background-color : #ffe0b2;
