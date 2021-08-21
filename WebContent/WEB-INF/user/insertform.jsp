@@ -19,16 +19,18 @@
 		<ul>
 			<li><label>아이디</label> <input type="text" name="id" id="id"
 				size="15" readonly> <input type="button" value="ID중복확인"
-				onclick="idCheck()"></li>
-			<li><label for="user_pwd">패스워드</label> <input type="text"
+				onclick="idCheck()" id="idcheck"></li>
+			<li><label for="user_pwd">패스워드</label> <input type="password"
 				name="user_pwd" id="user_pwd" required="required"></li>
 			<li><label for="user_name">이름</label> <input type="text"
 				name="user_name" id="user_name" required="required"></li>
 			<li><label for="user_phone">전화번호</label> <input type="text"
 				name="user_phone" id="user_phone" required="required"></li>
-
-			<li><input type="submit" value="회원가입"></li>
 		</ul>
+			<img src="img/insertform.png" id="insertform">	
+		
+			<input type="submit" id="submit" value="회원가입">
+
 	</form>
 
 </body>
