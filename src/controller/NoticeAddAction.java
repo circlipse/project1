@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -25,10 +26,19 @@ public class NoticeAddAction implements Action {
 
 		request.setCharacterEncoding("utf-8");
 
-		 String uploadDir =this.getClass().getResource("").getPath();
+//		 String uploadDir =this.getClass().getResource("").getPath();
+//
+//		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))
+//				 +"p2jo/WebContent/uploadImage";
 
-		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))
-				 +"p2jo/WebContent/uploadImage";
+//		File path = new File("p2jo/WebContent/uploadImage");
+//		String uploadDir=path.getAbsolutePath();
+		
+		 String uploadDir2 =request.getSession().getServletContext().getRealPath("/");
+
+		 String uploadDir= uploadDir2+"uploadImage";
+		 
+		
 		
 		 int maxSize = 1024 * 1024 * 100;
 

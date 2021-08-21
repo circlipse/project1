@@ -5,8 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>무빙백</title>
 <link rel="stylesheet" href="css/main.css">
+<link rel="icon" href="img/h_bag.png">
 
 </head>
 <body>
