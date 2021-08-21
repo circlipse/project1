@@ -50,7 +50,7 @@
 		<td colspan="2"><input type="text" id="addr_arrive" name="addr_arrive" value="${dto.addr_arrive }"></td>
 	</tr>
 	<tr>
-		<td rowspan="5">예약 종류</td>
+		<td rowspan="3">예약 종류</td>
 		<td>
 		<label>가방 종류
         <select class="bag" name="bag">
@@ -61,18 +61,18 @@
       	</label>
       	</td>
 	</tr>
-	<tr>
-		<td id="bagg1" class="캐리어">캐리어
-		<input type="number" min="1" max="20" id="val" name="bag_val_1" value="${dto2.bag_val_1 }">
+	<tr class="result1">
+		<td id="bagg1">캐리어
+		<input type="number" min="1" max="20" id="val" name="bag_val_1" 
+			value="${dto2.bag_val_1 }" onchange="sumprice()">
 		<button type="button" id="delete" onclick="del1();">삭제</button></td>
 	</tr>
-	<tr>
-		<td id="bagg2" class="백팩">백팩
-		<input type="number" min="1" max="20" id="val" name="bag_val_2" value="${dto2.bag_val_2 }">
+	<tr class="result2">
+		<td id="bagg2">백팩
+		<input type="number" min="1" max="20" id="val" name="bag_val_2" 
+			value="${dto2.bag_val_2 }" onchange="sumprice()">
 		<button type="button" id="delete" onclick="del2();">삭제</button></td>
 	</tr>
-	<tr class="result1"></tr>
-	<tr class="result2"></tr>
 	<tr>
 		<td><label>금액</label></td>
         <td><input type="text" name="price" id="price" value="<%=dto3.getBag_val_1()*15000 + dto3.getBag_val_2()*10000%>" readonly></td>
@@ -91,7 +91,7 @@
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </div>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify12.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify1.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date2.js"%></script>
 </body>
 </html>

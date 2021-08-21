@@ -1,3 +1,4 @@
+<%@page import="dto.ReserveDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,9 +9,6 @@
 <title>Insert title here</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-/*
- * d
- */
 	function reserveModify(rsv_no)
 	{ 
 		console.log(rsv_no);
@@ -33,6 +31,7 @@
 	<c:set var="id" value="${sessionScope.id }"></c:set>
 	<c:set var="dto" value="${requestScope.dto }"></c:set>
 	<c:set var="dto2" value="${requestScope.dto2 }"></c:set>
+	<% ReserveDTO dto3=(ReserveDTO)request.getAttribute("dto2"); %>
 <h2>예약 상세 내역</h2>
 <div class="wrap">
 <table>
@@ -76,6 +75,10 @@
 	<tr>
 		<td>배낭</td>
 		<td><c:out value="${dto2.bag_val_2 }"></c:out></td>
+	</tr>
+	<tr>
+		<td>금액</td>
+		<td><c:out value="<%=dto3.getBag_val_1()*15000 + dto3.getBag_val_2()*10000%>"/>
 	</tr>
 	<tr>
 		<td>배송 시 <br>당부 말씀</td>
