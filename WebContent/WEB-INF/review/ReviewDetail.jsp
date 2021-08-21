@@ -64,7 +64,7 @@ $(document).ready(function () {
 		<td>작성자</td><td><c:out value="${dto.user_id }"></c:out></td>
 	</tr>
 	<tr>
-		<td>내용</td><td><c:out value="${dto.rev_content }"></c:out></td>
+		<td>내용</td><td><pre><c:out value="${dto.rev_content }"></c:out></pre></td>
 	</tr>
 </table>
 </div>
