@@ -45,6 +45,10 @@
         <div class="result1"></div>
         <div class="result2"></div>
     </li>
+    <li>
+        <label>금액</label>
+        <input type="text" name="sumprice" id="sumprice" readonly>
+    </li>
     <li><label>배송시 당부 말씀</label></li>
     <li><textarea cols="55" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
     </ul>
@@ -54,7 +58,7 @@
 		<input type="hidden" name="id" value="${id }">
 	</div>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert2.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date.js"%></script>
 </body>
 </html>

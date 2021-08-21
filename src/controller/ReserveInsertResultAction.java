@@ -26,7 +26,7 @@ public class ReserveInsertResultAction implements Action {
         String sub_date=request.getParameter("sub_date");
         String addr_depart=request.getParameter("addr_depart");
         String addr_arrive=request.getParameter("addr_arrive");
-                
+        
         String bagval_1 = request.getParameter("bag_val_1");
         int bag_val_1=0;
         if(bagval_1 != "" && bagval_1 != null)
