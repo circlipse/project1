@@ -47,13 +47,13 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<div>
+	<div id=num>
 		<c:if test="${startblock>1}">
 			<a href="noticelist.2jo?curr=${currpage-1 }" class="aa">이전</a>
 		</c:if>
-	</div>
 
-	<div id="num">
+
+
 		<c:forEach var="index" begin="${startblock }" end="${endblock }">
 			<c:if test="${currpage==index }">
 				<c:out value="${index }"></c:out>
@@ -62,15 +62,14 @@
 				<a href="noticelist.2jo?curr=${index}" class="aa">${index}</a>
 			</c:if>
 		</c:forEach>
-	</div>
 
-	<div>
+
+
 		<c:if test="${endblock<totalpage}">
 			<a href="noticelist.2jo?curr=${currpage+1 }" class="aa">다음</a>
 		</c:if>
 	</div>
 	
-	</div>
 	
 	
 	

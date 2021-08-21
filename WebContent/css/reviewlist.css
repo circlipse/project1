@@ -66,6 +66,7 @@ th, td {
 
 #paging{
 	margin-top : 15px;
+	font-size : 20px;
 }
 
 #write{
@@ -83,9 +84,6 @@ th, td {
 
 }
 
-#paging{
-	font-size : 20px;
-}
 
 a{
 	font-size : 20px;

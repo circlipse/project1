@@ -47,7 +47,7 @@ public class NoticeListAction implements Action {
 			endrow = totalcount;
 		}
 
-		int pageblock = 5;
+		int pageblock = 3;
 		int startblock = (currpage - 1) / pageblock * pageblock + 1;
 		int endblock = startblock + pageblock - 1;
 		if (endblock > totalpage) {

@@ -54,7 +54,7 @@ a{
 }
 .aa, #num{
 	font-size : 20px;
-	padding:15px 10px;
+	padding:15px 0px;
 }
 .aa{
 	text-decoration:none;
@@ -67,3 +67,4 @@ a{
 #noticeadd:hover{
 	cursor : pointer;
 }
+
