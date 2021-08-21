@@ -37,8 +37,8 @@
         <label>가방 종류</label>
         <select class="bag" name="bag" required>
         <option value="" disabled selected>--- 선택 ---</option>
-        <option value="캐리어" id="bag">캐리어</option>
-        <option value="백팩" id="bag">백팩</option>
+        <option value="캐리어" id="bag1">캐리어</option>
+        <option value="백팩" id="bag2">백팩</option>
         </select>
     </li>
     <li>
@@ -58,7 +58,8 @@
 		<input type="hidden" name="id" value="${id }">
 	</div>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert2.js"%></script>
+<div class="btm"><p></p></div>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date.js"%></script>
 </body>
 </html>

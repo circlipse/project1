@@ -10,6 +10,9 @@ form {
   border-radius: 10px;
   
 }
+.btm{
+	padding-bottom: 60px;
+}
 h2 {
 	text-align: center;
 	text-decoration: underline;
@@ -78,6 +81,12 @@ div li{
   	font-family: 'Jua', sans-serif;
 	font-size: 15px; 
 	color: #8d6e63;
+}
+#sumprice{
+	margin-left: 150px;
+	padding: 3px;
+	border: 1px solid #bdbdbd;
+  	border-radius: 5px;
 }
 #rsv_content{
 
