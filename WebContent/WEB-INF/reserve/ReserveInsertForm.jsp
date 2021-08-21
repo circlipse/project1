@@ -47,7 +47,7 @@
     </li>
     <li>
         <label>금액</label>
-        <input type="text" name="sumprice" id="sumprice" readonly>
+        <input type="text" name="price" id="price" readonly>
     </li>
     <li><label>배송시 당부 말씀</label></li>
     <li><textarea cols="55" rows="10" name="rsv_content" id="rsv_content"></textarea></li>
@@ -59,7 +59,7 @@
 	</div>
 </form>
 <div class="btm"><p></p></div>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert1.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date.js"%></script>
 </body>
 </html>

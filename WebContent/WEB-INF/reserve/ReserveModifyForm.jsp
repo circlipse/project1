@@ -1,3 +1,4 @@
+<%@page import="dto.ReserveDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,6 +13,7 @@
 <form method="post" action="reservemodifyresult.2jo">
 	<c:set var="dto" value="${requestScope.dto }"/>
 	<c:set var="dto2" value="${requestScope.dto2 }"/>
+<% ReserveDTO dto3=(ReserveDTO)request.getAttribute("dto2"); %>
 <h2>예약 변경</h2>
 <div class="wrap">
 <table>
@@ -53,8 +55,8 @@
 		<label>가방 종류
         <select class="bag" name="bag">
           <option value="" disabled selected>------</option>
-          <option value="캐리어" id="bag">캐리어</option>
-          <option value="백팩" id="bag">백팩</option>
+          <option value="캐리어" id="bag1">캐리어</option>
+          <option value="백팩" id="bag2">백팩</option>
         </select>
       	</label>
       	</td>
@@ -72,6 +74,10 @@
 	<tr class="result1"></tr>
 	<tr class="result2"></tr>
 	<tr>
+		<td><label>금액</label></td>
+        <td><input type="text" name="price" id="price" value="<%=dto3.getBag_val_1()*15000 + dto3.getBag_val_2()*10000%>" readonly></td>
+	</tr>
+	<tr>
 		<td>배송 시<br>당부 사항</td>
 		<td colspan="2"><textarea cols="30" rows="5" name="rsv_content"><c:out value="${dto.rsv_content }"/></textarea></td>
 	</tr>
@@ -85,6 +91,7 @@
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </div>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify12.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/date2.js"%></script>
 </body>
 </html>
