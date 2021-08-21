@@ -78,7 +78,7 @@
 	</tr>
 	<tr>
 		<td>금액</td>
-		<td><c:out value="<%=dto3.getBag_val_1()*15000 + dto3.getBag_val_2()*10000%>"/>
+		<td colspan="2"><c:out value="<%=dto3.getBag_val_1()*15000 + dto3.getBag_val_2()*10000%>"/>
 	</tr>
 	<tr>
 		<td>배송 시 <br>당부 말씀</td>
