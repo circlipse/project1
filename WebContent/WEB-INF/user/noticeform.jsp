@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/noticeform.css">
 </head>
 <body>
+<h2>공지사항 작성</h2>
 <form method="post" action="noticeadd.2jo" encType = "multipart/form-data" >
 	<ul>
 		<li>
@@ -23,13 +24,13 @@
 			<textarea rows="10" cols="40" name="notice_content" id="notice_content" required="required"></textarea>
 		</li>
 		
-		<li>
-			<input type="submit" value="글쓰기">
-			<input type="reset" value="취소">
+		<li class="btns">
+			<input type="submit" id="nsubmit" value="글쓰기">
+			<input type="reset" id="nreset" value="취소">
 		</li>
 	</ul>
-	<div>
-	<input type="file" name="fileName">
+	<div class="fileName">
+	<input type="file" name="fileName" id="fileName">
 	</div>
 </form>
 

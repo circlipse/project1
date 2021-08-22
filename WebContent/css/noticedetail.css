@@ -22,6 +22,7 @@ table{
 	font-size : 25px;
 	border-radius : 10px;
 	border : 5px double #ccc5af;
+	margin-bottom : 50px;
 }
 thead th:nth-child(1){
 	 width:50px;

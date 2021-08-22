@@ -33,7 +33,8 @@ NoticeDTO dto= (NoticeDTO) request.getAttribute("dto");
 		<input type="reset" id="cancel" value="취소">
 	</div>	
 	<div>
-	<input type="file" name="fileName">
+	<input type="file" name="fileName" id="nfileName">
+	
 	</div>
 	</form>
 

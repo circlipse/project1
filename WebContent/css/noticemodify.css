@@ -13,6 +13,7 @@ form {
 }
 h2 {
 	text-align: center;
+	text-decoration : underline;
 }
 #notice_title, #notice_content {
   margin-left: 40px;
@@ -20,6 +21,8 @@ h2 {
   border: 1px solid #bdbdbd;
   border-radius: 5px;  
   width:450px;
+  font-family: 'Jua', sans-serif;
+  font-size : 15px;
 }
 ul li, div li {
   list-style: none;
@@ -33,12 +36,7 @@ ul li label:nth-child(1){
   left:300;
   top:500;
 }
-.bag {
-  margin-left: 110px;
-  padding: 3px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
+
 .btn{
 	display: flex;
 	justify-content: center;
@@ -65,3 +63,15 @@ ul li label:nth-child(1){
 #rsv:hover, #cancel:hover{
 	cursor : pointer;
 }
+
+textarea{
+	font-family:inherit;
+	resize : none;
+}
+
+#nfileName{
+	font-size : 15px;
+	font-family : inherit;
+}
+
+
