@@ -12,27 +12,27 @@
 <body>
 
 <c:set var="id" value="${sessionScope.id }"/>	
-
+<h2>리뷰 작성</h2>
 <form method="post" action="reviewinsertresult.2jo"> 
 <ul>
 	<li>
 	<label for="rev_title">제목</label> 
-	<input type="text" id="rev_title" name="rev_title" required>
+	<input type="text" id="rrev_title" name="rev_title" required>
 	</li>
 	
 	<li>
 	<label for="rev_content">작성자</label>
-	<input type="text" id="id" name="id" value="${id }" readonly>
+	<input type="text" id="rid" name="id" value="${id }" readonly>
 	</li>
 	
 	
 	<li id="con">
 	<label for="rev_content">내용</label>
-	<textarea id="rev_content" name="rev_content" rows="15" cols="100" required></textarea>
+	<textarea id="rev_contents" name="rev_content" rows="15" cols="100" required></textarea>
 	</li>
 	
 
-	<li id="put">
+	<li id="rput">
 	<input type="submit" id="rsubmit" value="등록">
 	<input type="reset" id="rreset" value="취소">
 	</li>

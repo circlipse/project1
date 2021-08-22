@@ -14,6 +14,7 @@
 
 <c:set var="dto" value="${requestScope.dto }"/>	
 
+<h2>리뷰 수정</h2>
 <form method="post" action="reviewmodifyresult.2jo">
 
 <ul>
@@ -32,9 +33,9 @@
 	<textarea name="rev_content" id="rev_content" rows="15" cols="100"><c:out value="${dto.rev_content }"></c:out></textarea>
 	</li>
 	
-	<li id="btn">
-	<input type="submit" id="submit" value="수정 완료">
-	<input type="reset" id="reset" value="취소">
+	<li id="rbtn">
+	<input type="submit" id="rrsubmit" value="수정 완료">
+	<input type="reset" id="rrreset" value="취소">
 	</li>
 	
 	
