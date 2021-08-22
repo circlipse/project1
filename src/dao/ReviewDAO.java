@@ -309,7 +309,7 @@ public class ReviewDAO {
 		sql.append("  from user_2jo 	           ");
 		sql.append("  where user_id = ?           ");
 		
-		System.out.println("id는 "+id);
+
 		ResultSet rs=null;
 		UserDTO dto=new UserDTO();
 		try(PreparedStatement pstmt=conn.prepareStatement(sql.toString());

@@ -34,9 +34,6 @@ public class SubReviewDeleteAction implements Action {
 
 		String user_id = service.getUserid(subno);
 
-		System.out.println("유저: " + user_id);
-		System.out.println("세션id :" + id);
-
 		Forward forward = new Forward();
 		if (id == null) {
 

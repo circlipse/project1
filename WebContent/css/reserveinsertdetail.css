@@ -8,6 +8,11 @@
 	justify-content: center;	
 }
 
+h2 {
+	text-align: center;
+	text-decoration: underline;
+}
+
 table{
 	display:inline-block;
 	width:600px;
@@ -44,4 +49,6 @@ td, th{
 #button:hover{
 	cursor : pointer;
 }
+
+
 	
