@@ -21,34 +21,38 @@ public class NoticeModifyAction implements Action {
 
 		request.setCharacterEncoding("utf-8");
 		//
-		 String uploadDir =this.getClass().getResource("").getPath();
+		/*
+		 * String uploadDir =this.getClass().getResource("").getPath();
+		 * 
+		 * uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))
+		 * +"p2jo/WebContent/uploadImage";
+		 */
 
-		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))
-				 +"p2jo/WebContent/uploadImage";
-		
-		 int maxSize = 1024 * 1024 * 100;
+		String uploadDir2 = request.getSession().getServletContext().getRealPath("/");
+
+		String uploadDir = uploadDir2 + "uploadImage";
+
+		int maxSize = 1024 * 1024 * 100;
 
 		String encoding = "UTF-8";
-		
-		MultipartRequest multipartRequest = 
-				new MultipartRequest(request, uploadDir, maxSize, encoding,new DefaultFileRenamePolicy());
+
+		MultipartRequest multipartRequest = new MultipartRequest(request, uploadDir, maxSize, encoding,
+				new DefaultFileRenamePolicy());
 
 		String fileRealName = multipartRequest.getFilesystemName("fileName");
 
-		
-		
 		//
 		int notice_no = Integer.parseInt(multipartRequest.getParameter("notice_no"));
 		String notice_title = multipartRequest.getParameter("notice_title");
 		String notice_content = multipartRequest.getParameter("notice_content");
-		
+
 		NoticeService service = NoticeService.getinstace();
-		
-		int result = service.modify(notice_no,notice_title,notice_content,fileRealName);
-		
+
+		int result = service.modify(notice_no, notice_title, notice_content, fileRealName);
+
 		request.setAttribute("result", result);
-		
-		Forward f= new Forward();
+
+		Forward f = new Forward();
 		f.setForward(true);
 		f.setPath("/WEB-INF/main.jsp?page=user/noticemodifyresult.jsp");
 		return f;

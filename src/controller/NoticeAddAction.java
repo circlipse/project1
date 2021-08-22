@@ -33,25 +33,23 @@ public class NoticeAddAction implements Action {
 
 //		File path = new File("p2jo/WebContent/uploadImage");
 //		String uploadDir=path.getAbsolutePath();
-		
-		 String uploadDir2 =request.getSession().getServletContext().getRealPath("/");
 
-		 String uploadDir= uploadDir2+"uploadImage";
-		 
-		
-		
-		 int maxSize = 1024 * 1024 * 100;
+		String uploadDir2 = request.getSession().getServletContext().getRealPath("/");
+
+		String uploadDir = uploadDir2 + "uploadImage";
+
+		int maxSize = 1024 * 1024 * 100;
 
 		String encoding = "UTF-8";
-		
-		MultipartRequest multipartRequest = 
-				new MultipartRequest(request, uploadDir, maxSize, encoding,new DefaultFileRenamePolicy());
-		
+
+		MultipartRequest multipartRequest = new MultipartRequest(request, uploadDir, maxSize, encoding,
+				new DefaultFileRenamePolicy());
+
 		String fileName = multipartRequest.getOriginalFileName("fileName");
 		String fileRealName = multipartRequest.getFilesystemName("fileName");
 
 		NoticeDTO dto = new NoticeDTO();
-		
+
 //		String realFolder = "";
 //		String filename1 = "";
 //		int maxSize = 1024 * 1024 * 100;
@@ -84,15 +82,14 @@ public class NoticeAddAction implements Action {
 //			e.printStackTrace();
 //		}
 
-
 		String notice_title = multipartRequest.getParameter("notice_title");
 		String notice_content = multipartRequest.getParameter("notice_content");
 		dto.setNotice_title(notice_title);
 		dto.setNotice_content(notice_content);
-		
+
 		NoticeService service = NoticeService.getinstace();
 
-		int result = service.noticAdd(dto,fileRealName);
+		int result = service.noticAdd(dto, fileRealName);
 
 		request.setAttribute("result", result);
 		Forward forward = new Forward();
