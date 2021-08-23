@@ -59,7 +59,7 @@
 	</div>
 </form>
 <div class="btm"><p></p></div>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert1.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/baginsert2.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date.js"%></script>
 </body>
 </html>
