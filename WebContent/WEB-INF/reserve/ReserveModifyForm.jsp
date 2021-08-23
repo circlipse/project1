@@ -53,7 +53,7 @@
 		<td rowspan="3">예약 종류</td>
 		<td>
 		<label>가방 종류
-        <select class="bag" name="bag">
+        <select class="bag" name="bag" required>
           <option value="" disabled selected>------</option>
           <option value="캐리어" id="bag1">캐리어</option>
           <option value="백팩" id="bag2">백팩</option>
@@ -91,7 +91,7 @@
 	<input type="hidden" name="old_bag_val_2" value="${dto2.bag_val_2}">
 </div>
 </form>
-<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify1.js"%></script>
+<script type="text/javascript" charset="utf-8"><%@ include file="../js/bagmodify2.js"%></script>
 <script type="text/javascript" charset="utf-8"><%@ include file="../js/date2.js"%></script>
 </body>
 </html>
